@@ -1,0 +1,83 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 366K of event 'cycles'
+# Event count (approx.): 11581986584
+#
+# Overhead  Command       Shared Object     Symbol                          
+# ........  ............  ................  ................................
+#
+    21.11%  coremark.exe  coremark.exe      [.] crcu8
+    16.55%  coremark.exe  coremark.exe      [.] core_state_transition
+    12.37%  coremark.exe  coremark.exe      [.] matrix_mul_matrix_bitextract
+    11.46%  coremark.exe  coremark.exe      [.] core_list_reverse
+    10.18%  coremark.exe  coremark.exe      [.] matrix_mul_matrix
+     7.65%  coremark.exe  coremark.exe      [.] ee_isdigit
+     7.37%  coremark.exe  coremark.exe      [.] core_list_find
+     3.50%  coremark.exe  coremark.exe      [.] matrix_sum
+     1.86%  coremark.exe  coremark.exe      [.] core_list_mergesort
+     1.74%  coremark.exe  coremark.exe      [.] matrix_add_const
+     1.73%  coremark.exe  coremark.exe      [.] core_bench_state
+     0.86%  coremark.exe  coremark.exe      [.] matrix_mul_const
+     0.81%  coremark.exe  coremark.exe      [.] matrix_mul_vect
+     0.68%  coremark.exe  coremark.exe      [.] calc_func
+     0.58%  coremark.exe  coremark.exe      [.] cmp_idx
+     0.58%  coremark.exe  coremark.exe      [.] core_bench_list
+     0.38%  coremark.exe  coremark.exe      [.] crcu16
+     0.22%  coremark.exe  coremark.exe      [.] crc16
+     0.14%  coremark.exe  coremark.exe      [.] cmp_complex
+     0.13%  coremark.exe  coremark.exe      [.] crcu32
+     0.04%  coremark.exe  coremark.exe      [.] matrix_test
+     0.02%  coremark.exe  coremark.exe      [.] core_bench_matrix
+     0.01%  coremark.exe  coremark.exe      [.] iterate
+     0.01%  coremark.exe  coremark.exe      [.] core_list_remove
+     0.00%  coremark.exe  coremark.exe      [.] core_list_undo_remove
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __do_softirq
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] unwind_frame
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __mod_node_page_state
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __page_cache_release
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __bitmap_and
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] find_busiest_group
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] tty_ldisc_ref_wait
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] update_blocked_averages
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] preempt_count_sub
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] mutex_trylock
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] rebalance_domains
+     0.00%  coremark.exe  coremark.exe      [.] __printf_fp_l
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] fpsimd_load_state
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x00000000009b8f60
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x0000000000639f98
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] page_remove_rmap
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] mod_zone_state
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] exit_mmap
+     0.00%  coremark.exe  coremark.exe      [.] portable_malloc
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] split_vma
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] vmacache_find
+     0.00%  coremark.exe  coremark.exe      [.] ptmalloc_init.part.0
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __d_lookup_rcu
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __alloc_pages_nodemask
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] alloc_set_pte
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] return_address
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] save_return_addr
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] iput
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x00000000002718bc
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] vm_pgprot_modify
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] elf_map
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] clear_page
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] randomize_stack_top
+     0.00%  perf_5.4      [kernel.vmlinux]  [k] perf_iterate_sb
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] task_fpsimd_load
+     0.00%  perf_5.4      [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To show assembler sample contexts use perf record -b / perf script -F +brstackinsn --xed)
+#

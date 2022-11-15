@@ -1,0 +1,285 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 245K of event 'cycles'
+# Event count (approx.): 11595314335
+#
+# Overhead  Command       Shared Object     Symbol                          
+# ........  ............  ................  ................................
+#
+    21.08%  coremark.exe  coremark.exe      [.] crcu8
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               |          
+                --20.93%--core_bench_list
+                          |          
+                          |--12.72%--core_list_mergesort
+                          |          cmp_complex
+                          |          calc_func
+                          |          |          
+                          |          |--9.33%--core_bench_state
+                          |          |          crcu32
+                          |          |          crc16
+                          |          |          |          
+                          |          |           --9.32%--crcu16
+                          |          |                     crcu8
+                          |          |          
+                          |          |--2.09%--crcu16
+                          |          |          crcu8
+                          |          |          
+                          |           --1.30%--core_bench_matrix
+                          |                     |          
+                          |                      --0.98%--matrix_test
+                          |                                crc16
+                          |                                crcu16
+                          |                                crcu8
+                          |          
+                           --8.21%--crc16
+                                     |          
+                                      --8.19%--crcu16
+                                                crcu8
+
+    16.41%  coremark.exe  coremark.exe      [.] core_state_transition
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               |          
+                --16.40%--core_bench_state
+                          core_state_transition
+
+    12.26%  coremark.exe  coremark.exe      [.] matrix_mul_matrix_bitextract
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_test
+               matrix_mul_matrix_bitextract
+
+    11.55%  coremark.exe  coremark.exe      [.] core_list_reverse
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               |          
+                --11.53%--core_bench_list
+                          core_list_reverse
+
+    10.08%  coremark.exe  coremark.exe      [.] matrix_mul_matrix
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_test
+               matrix_mul_matrix
+
+     7.72%  coremark.exe  coremark.exe      [.] ee_isdigit
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_state
+               |          
+                --7.39%--core_state_transition
+                          ee_isdigit
+
+     7.30%  coremark.exe  coremark.exe      [.] core_list_find
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               |          
+                --7.29%--core_bench_list
+                          core_list_find
+
+     3.69%  coremark.exe  coremark.exe      [.] matrix_sum
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               |          
+                --3.69%--matrix_test
+                          matrix_sum
+
+     1.86%  coremark.exe  coremark.exe      [.] core_list_mergesort
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+
+     1.78%  coremark.exe  coremark.exe      [.] core_bench_state
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               |          
+                --1.78%--calc_func
+                          core_bench_state
+
+     1.70%  coremark.exe  coremark.exe      [.] matrix_add_const
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_test
+               matrix_add_const
+
+     0.85%  coremark.exe  coremark.exe      [.] matrix_mul_const
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_test
+               matrix_mul_const
+
+     0.85%  coremark.exe  coremark.exe      [.] matrix_mul_vect
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_test
+               matrix_mul_vect
+
+     0.73%  coremark.exe  coremark.exe      [.] calc_func
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               core_list_mergesort
+               |          
+                --0.72%--cmp_complex
+                          calc_func
+
+     0.58%  coremark.exe  coremark.exe      [.] cmp_idx
+            |
+            ---_start
+               __libc_start_main
+               main
+               iterate
+               core_bench_list
+               |          
+                --0.58%--core_list_mergesort
+                          cmp_idx
+
+     0.57%  coremark.exe  coremark.exe      [.] core_bench_list
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.57%--iterate
+                          core_bench_list
+
+     0.38%  coremark.exe  coremark.exe      [.] crcu16
+     0.23%  coremark.exe  coremark.exe      [.] crc16
+     0.15%  coremark.exe  coremark.exe      [.] cmp_complex
+     0.12%  coremark.exe  coremark.exe      [.] crcu32
+     0.04%  coremark.exe  coremark.exe      [.] matrix_test
+     0.03%  coremark.exe  coremark.exe      [.] core_bench_matrix
+     0.01%  coremark.exe  coremark.exe      [.] core_list_remove
+     0.01%  coremark.exe  coremark.exe      [.] iterate
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.00%  coremark.exe  coremark.exe      [.] core_list_undo_remove
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] rcu_core
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] filemap_map_pages
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x00000000000b3b1c
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] vfs_getattr_nosec
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __do_softirq
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x00000000000b3b30
+     0.00%  coremark.exe  coremark.exe      [.] start_time
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x000000000063a3ec
+     0.00%  coremark.exe  coremark.exe      [.] __aarch64_swp4_rel
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] 0x000000000020c25c
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] unmap_page_range
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] tty_write
+     0.00%  coremark.exe  coremark.exe      [.] _int_free
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] preempt_count_sub
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __mod_node_page_state
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] clear_page
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] filename_lookup
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] do_page_fault
+     0.00%  coremark.exe  coremark.exe      [.] __brk
+     0.00%  coremark.exe  coremark.exe      [.] core_list_insert_new
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] __slab_alloc.constprop.0
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] copy_page
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] wp_page_copy
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] pipe_release
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] perf_output_copy
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] unwind_frame
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] prepend_name
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] tlb_flush
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] setup_arg_pages
+     0.00%  coremark.exe  [kernel.vmlinux]  [k] perf_output_begin
+     0.00%  perf_5.4      [kernel.vmlinux]  [k] 0x0000000000021718
+     0.00%  perf_5.4      [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To report cacheline events from previous recording: perf c2c report)
+#
