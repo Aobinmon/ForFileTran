@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1980597419
+#
+# Overhead  Command  Shared Object     Symbol                    
+# ........  .......  ................  ..........................
+#
+    99.73%  long     long              [.] dumb_stuff
+            |
+            ---_start
+               __libc_start_main
+               dumb_stuff
+
+     0.25%  long     long              [.] main
+     0.01%  long     [kernel.vmlinux]  [k] 0x000000000024a3cc
+     0.01%  long     [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+     0.00%  long     [kernel.vmlinux]  [k] unwind_frame
+     0.00%  perf_5.  [kernel.vmlinux]  [k] save_return_addr
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Profiling branch (mis)predictions with: perf record -b / perf report)
+#

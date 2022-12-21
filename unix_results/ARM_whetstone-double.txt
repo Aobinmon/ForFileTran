@@ -1,0 +1,102 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 50K of event 'cpu-cycles'
+# Event count (approx.): 12554567066
+#
+# Overhead  Command          Shared Object     Symbol                    
+# ........  ...............  ................  ..........................
+#
+    33.62%  whetstone-doubl  whetstone-double  [.] p3
+            |
+            ---_start
+               __libc_start_main
+               main
+               p3
+
+    29.28%  whetstone-doubl  whetstone-double  [.] whetstones
+            |
+            ---_start
+               __libc_start_main
+               main
+               whetstones
+
+     8.33%  whetstone-doubl  whetstone-double  [.] po
+            |
+            ---_start
+               __libc_start_main
+               main
+               po
+
+     7.98%  whetstone-doubl  whetstone-double  [.] __atan
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--5.23%--whetstones
+               |          __atan
+               |          
+                --2.75%--__atan
+
+     6.74%  whetstone-doubl  whetstone-double  [.] __cos
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --6.65%--whetstones
+                          __cos
+
+     5.16%  whetstone-doubl  whetstone-double  [.] __ieee754_exp
+            |
+            ---_start
+               __libc_start_main
+               main
+               __ieee754_exp
+
+     4.89%  whetstone-doubl  whetstone-double  [.] pa
+            |
+            ---_start
+               __libc_start_main
+               main
+               pa
+
+     1.54%  whetstone-doubl  whetstone-double  [.] __sqrt
+            |
+            ---_start
+               __libc_start_main
+               main
+               __sqrt
+
+     1.26%  whetstone-doubl  whetstone-double  [.] __ieee754_log
+            |
+            ---_start
+               __libc_start_main
+               main
+               __ieee754_log
+
+     1.18%  whetstone-doubl  whetstone-double  [.] __sin
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.14%--whetstones
+                          __sin
+
+     0.00%  whetstone-doubl  whetstone-double  [.] __libc_write
+     0.00%  whetstone-doubl  whetstone-double  [.] __mpn_rshift
+     0.00%  whetstone-doubl  whetstone-double  [.] __printf_fp_l
+     0.00%  whetstone-doubl  whetstone-double  [.] __memset_generic
+     0.00%  whetstone-doubl  [kernel.vmlinux]  [k] kmem_cache_free
+     0.00%  whetstone-doubl  [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  perf_5.4         [kernel.vmlinux]  [k] __set_task_comm
+     0.00%  perf_5.4         [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Skip collecting build-id when recording: perf record -B)
+#

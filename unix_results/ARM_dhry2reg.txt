@@ -1,0 +1,121 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1977681533
+#
+# Overhead  Command   Shared Object     Symbol                         
+# ........  ........  ................  ...............................
+#
+    18.59%  dhry2reg  dhry2reg          [.] Func_1
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--10.47%--Func_1
+               |          
+                --8.12%--main
+                          Func_1
+
+    15.85%  dhry2reg  dhry2reg          [.] Proc_8
+            |
+            ---_start
+               __libc_start_main
+               Proc_8
+
+    11.81%  dhry2reg  dhry2reg          [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+    10.10%  dhry2reg  dhry2reg          [.] Proc_7
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--6.96%--main
+               |          |          
+               |          |--4.81%--Proc_1
+               |          |          Proc_7
+               |          |          
+               |           --2.15%--Proc_7
+               |          
+                --3.14%--Proc_7
+
+     9.26%  dhry2reg  dhry2reg          [.] Proc_1
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+
+     8.50%  dhry2reg  dhry2reg          [.] Proc_2
+            |
+            ---_start
+               __libc_start_main
+               Proc_2
+
+     7.95%  dhry2reg  dhry2reg          [.] Func_2
+            |
+            ---_start
+               __libc_start_main
+               main
+               Func_2
+
+     5.47%  dhry2reg  dhry2reg          [.] Func_3
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+               Func_3
+
+     4.26%  dhry2reg  dhry2reg          [.] Proc_6
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+               Proc_6
+
+     3.42%  dhry2reg  dhry2reg          [.] Proc_3
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --2.92%--Proc_1
+                          Proc_3
+
+     2.11%  dhry2reg  dhry2reg          [.] strcmp
+            |
+            ---_start
+               __libc_start_main
+               main
+               strcmp
+
+     1.78%  dhry2reg  dhry2reg          [.] Proc_4
+            |
+            ---_start
+               __libc_start_main
+               Proc_4
+
+     0.87%  dhry2reg  dhry2reg          [.] Proc_5
+            |
+            ---_start
+               __libc_start_main
+               Proc_5
+
+     0.01%  dhry2reg  [kernel.vmlinux]  [k] clear_page
+     0.01%  dhry2reg  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.01%  dhry2reg  [kernel.vmlinux]  [k] integrity_inode_free
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] 0x000000000002172c
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To browse sample contexts use perf report --sample 10 and select in context menu)
+#

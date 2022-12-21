@@ -1,0 +1,51 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1976678626
+#
+# Overhead  Command  Shared Object     Symbol                  
+# ........  .......  ................  ........................
+#
+    99.75%  hanoi    hanoi             [.] mov
+            |
+            ---_start
+               __libc_start_main
+               main
+               mov
+               |          
+                --99.55%--mov
+                          |          
+                           --99.21%--mov
+                                     |          
+                                      --98.34%--mov
+                                                |          
+                                                 --96.80%--mov
+                                                           |          
+                                                            --95.30%--mov
+                                                                      |          
+                                                                       --92.15%--mov
+                                                                                 |          
+                                                                                  --85.54%--mov
+                                                                                            |          
+                                                                                             --72.71%--mov
+                                                                                                       |          
+                                                                                                        --43.85%--mov
+
+     0.10%  hanoi    [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.09%  hanoi    hanoi             [.] main
+     0.01%  hanoi    [kernel.vmlinux]  [k] preempt_count_sub
+     0.01%  hanoi    [kernel.vmlinux]  [k] mmput
+     0.01%  hanoi    [kernel.vmlinux]  [k] find_next_and_bit
+     0.01%  hanoi    [kernel.vmlinux]  [k] 0x000000000002171c
+     0.01%  hanoi    [kernel.vmlinux]  [k] __srcu_read_lock
+     0.00%  hanoi    [kernel.vmlinux]  [k] clear_page
+     0.00%  perf_5.  [kernel.vmlinux]  [k] preempt_count_add
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#

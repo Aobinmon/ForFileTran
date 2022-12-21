@@ -1,0 +1,736 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 81  of event 'cpu-cycles'
+# Event count (approx.): 9688217
+#
+# Overhead  Command   Shared Object     Symbol                         
+# ........  ........  ................  ...............................
+#
+     4.65%  multi.sh  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+            |--2.48%--0x5564fa426c
+            |          __libc_start_main
+            |          0x5564fa41fc
+            |          0x5564fadb38
+            |          0x5564fa60d0
+            |          0x5564fa688c
+            |          0x5564fa6104
+            |          0x5564fa6104
+            |          0x5564fa7214
+            |          0x5564faac10
+            |          0x5564faa15c
+            |          0x5564fa76ec
+            |          0x5564fad420
+            |          __libc_fork
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_clone
+            |          _do_fork
+            |          copy_process
+            |          perf_event_init_task
+            |          inherit_task_group.isra.0
+            |          inherit_event.constprop.0
+            |          _raw_spin_unlock_irqrestore
+            |          
+             --2.17%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       0xffffffc0100eb508
+                       do_group_exit
+                       do_exit
+                       mmput
+                       exit_mmap
+                       tlb_finish_mmu
+                       tlb_flush_mmu
+                       free_pages_and_swap_cache
+                       release_pages
+                       _raw_spin_unlock_irqrestore
+
+     3.55%  multi.sh  [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+            |          
+            |--2.86%--0x5564fa426c
+            |          __libc_start_main
+            |          __GI___getuid
+            |          el0_ia
+            |          do_el0_ia_bp_hardening
+            |          
+             --0.69%--__libc_start_main
+                       0x5564fa41fc
+                       0x5564fadb38
+                       0x5564fa60d0
+                       0x5564fa688c
+                       0x5564fa6074
+                       0x5564fa6104
+                       0x5564fa6be8
+                       0x5564fad434
+                       0x5564fb7860
+                       el0_ia
+                       do_el0_ia_bp_hardening
+
+     3.36%  expr      [kernel.vmlinux]  [k] vma_interval_tree_insert
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               mmap64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               vma_link
+               __vma_link_file
+               vma_interval_tree_insert
+
+     3.31%  expr      [kernel.vmlinux]  [k] filemap_map_pages
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               memchr
+               el0_ia
+               do_el0_ia_bp_hardening
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               filemap_map_pages
+
+     3.21%  expr      libc-2.31.so      [.] _dl_addr
+            |
+            ---0x55783931cc
+               __libc_start_main
+               0x5578392fdc
+               setlocale
+               _nl_find_locale
+               _nl_load_locale_from_archive
+               _nl_normalize_codeset
+               malloc_hook_ini
+               ptmalloc_init.part.0
+               _dl_addr
+
+     3.11%  expr      libc-2.31.so      [.] __GI___fileno
+            |
+            ---0x55783931cc
+               __libc_start_main
+               0x7fb187a91c
+               __run_exit_handlers
+               0x5578395268
+               0x55783a59b8
+               __GI___fileno
+
+     3.06%  expr      [kernel.vmlinux]  [k] 0x00000000009bcabc
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_relocate_object
+               el0_da
+               do_mem_abort
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_wp_page
+               wp_page_copy
+               0xffffffc010a2cabc
+
+     3.06%  expr      ld-2.31.so        [.] _dl_cache_libcmp
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_cache_libcmp
+
+     2.97%  sh        [kernel.vmlinux]  [k] mmap_region
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               _dl_new_object
+               mmap64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+
+     2.92%  sh        [kernel.vmlinux]  [k] free_unref_page_list
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               mmap64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __do_munmap
+               unmap_region
+               lru_add_drain
+               lru_add_drain_cpu
+               release_pages
+               free_unref_page_list
+
+     2.89%  sh        [kernel.vmlinux]  [k] el1_ia
+            |
+            ---__GI___execve
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               __arch_clear_user
+               el1_ia
+
+     2.87%  sh        ld-2.31.so        [.] check_match
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_relocate_object
+               _dl_lookup_symbol_x
+               do_lookup_x
+               check_match
+
+     2.87%  multi.sh  ld-2.31.so        [.] _dl_lookup_symbol_x
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_relocate_object
+               _dl_lookup_symbol_x
+
+     2.87%  expr      [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---__GI___execve
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               setup_arg_pages
+               arch_align_stack
+               get_random_u32
+               _raw_spin_unlock_irqrestore
+
+     2.86%  sh        [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---__GI___execve
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               arch_randomize_brk
+               randomize_page
+               get_random_u64
+               _raw_spin_unlock_irqrestore
+
+     2.84%  expr      [kernel.vmlinux]  [k] page_add_file_rmap
+            |
+            ---0x556614b1cc
+               __libc_start_main
+               0x556614afdc
+               setlocale
+               _nl_find_locale
+               _nl_load_locale_from_archive
+               __sysconf
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               filemap_map_pages
+               alloc_set_pte
+               page_add_file_rmap
+
+     2.82%  sh        libc-2.31.so      [.] _dl_addr
+            |
+            ---0x556f49726c
+               __libc_start_main
+               0x556f4970d0
+               0x556f4aa6cc
+               0x556f4a9a98
+               0x556f4a0eac
+               malloc_hook_ini
+               ptmalloc_init.part.0
+               _dl_addr
+
+     2.82%  multi.sh  [kernel.vmlinux]  [k] walk_component
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa40d0
+               __xstat64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_newfstatat
+               __do_sys_newfstatat
+               vfs_statx
+               user_path_at_empty
+               filename_lookup
+               path_lookupat
+               walk_component
+
+     2.78%  sh        [kernel.vmlinux]  [k] __dec_node_page_state
+            |
+            ---el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               0xffffffc0100eb508
+               do_group_exit
+               do_exit
+               mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               page_remove_rmap
+               __dec_node_page_state
+
+     2.78%  expr      [kernel.vmlinux]  [k] handle_mm_fault
+            |
+            ---0x556614b1cc
+               __libc_start_main
+               0x556614b094
+               0x556614d0e0
+               0x556614cf90
+               0x556614cbc0
+               __gmpz_init_set_str
+               el0_ia
+               do_el0_ia_bp_hardening
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+
+     2.74%  expr      [kernel.vmlinux]  [k] __this_cpu_preempt_check
+            |
+            ---el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               0xffffffc0100eb508
+               do_group_exit
+               do_exit
+               mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               page_remove_rmap
+               __dec_node_page_state
+               __dec_node_state
+               __this_cpu_preempt_check
+
+     2.61%  sh        ld-2.31.so        [.] do_lookup_x
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_relocate_object
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     2.56%  multi.sh  [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               _dl_start
+               _dl_start_final
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_load_cache_lookup
+               mmap64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               perf_event_mmap
+               perf_iterate_sb
+               preempt_count_add
+
+     2.56%  sh        [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+            |
+            ---0x556b0a326c
+               __libc_start_main
+               __GI___getuid
+               el0_ia
+               do_el0_ia_bp_hardening
+
+     2.54%  sh        dash              [.] 0x000000000001063c
+            |
+            ---0x556b0a326c
+               __libc_start_main
+               0x556b0a30e4
+               0x556b0af6d4
+               0x556b0af63c
+
+     2.54%  sh        [kernel.vmlinux]  [k] kmem_cache_free
+            |
+            ---el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               0xffffffc0100eb508
+               do_group_exit
+               do_exit
+               exit_fs
+               kmem_cache_free
+
+     2.52%  multi.sh  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6074
+               0x5564fa6104
+               0x5564fa6be8
+               0x5564fad420
+               __libc_fork
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               perf_event_init_task
+               _raw_spin_unlock_irqrestore
+               preempt_count_sub
+               return_address
+               walk_stackframe
+               0xffffffc01009172c
+
+     2.49%  multi.sh  [kernel.vmlinux]  [k] copy_fd_bitmaps
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6074
+               0x5564fa6104
+               0x5564fa6be8
+               0x5564fad420
+               __libc_fork
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               dup_fd
+               copy_fd_bitmaps
+
+     2.48%  multi.sh  [kernel.vmlinux]  [k] lockref_put_return
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa200
+               __close
+               work_pending
+               do_notify_resume
+               task_work_run
+               ____fput
+               __fput
+               lockref_put_return
+
+     2.22%  multi.sh  [kernel.vmlinux]  [k] kmem_cache_alloc
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa15c
+               0x5564fa76ec
+               0x5564fad420
+               __libc_fork
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               __vmalloc_node_range
+               __get_vm_area_node.isra.0
+               alloc_vmap_area.constprop.0
+               kmem_cache_alloc
+
+     2.18%  multi.sh  [kernel.vmlinux]  [k] xas_start
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6074
+               0x5564fa6104
+               0x5564fa6b84
+               0x5564fa6104
+               0x5564fa7664
+               0x5564fa7f20
+               __GI___execve
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               load_elf_phdrs
+               kernel_read
+               vfs_read
+               __vfs_read
+               new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               pagecache_get_page
+               find_get_entry
+               xas_start
+
+     2.12%  multi.sh  dash              [.] 0x000000000000a264
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa264
+
+     2.08%  multi.sh  [kernel.vmlinux]  [k] vfs_read
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa1c4
+               read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+
+     2.07%  multi.sh  [kernel.vmlinux]  [k] kernel_init_free_pages
+            |
+            ---0x5564fa426c
+               __libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6074
+               0x5564fa6104
+               0x5564fa6b84
+               0x5564fa6104
+               0x5564fa7664
+               0x5564fa7f20
+               __GI___execve
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               copy_strings.isra.0
+               get_user_pages_remote
+               __get_user_pages
+               handle_mm_fault
+               __handle_mm_fault
+               __pte_alloc
+               __alloc_pages_nodemask
+               get_page_from_freelist
+               prep_new_page
+               kernel_init_free_pages
+
+     1.35%  multi.sh  [kernel.vmlinux]  [k] copy_page
+            |          
+             --1.26%--0x7faa754d88
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       __arm64_sys_execve
+                       __do_execve_file
+                       search_binary_handler.part.0
+                       load_script
+                       search_binary_handler
+                       search_binary_handler.part.0
+                       load_elf_binary
+                       __arch_clear_user
+                       el1_ia
+                       do_mem_abort
+                       do_translation_fault
+                       do_page_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       copy_page
+
+     1.05%  multi.sh  [kernel.vmlinux]  [k] filemap_map_pages
+            |
+            ---__libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa15c
+               0x5564fa7798
+               0x5564fa6104
+               0x5564fa7014
+               0x5564faac10
+               0x5564fa9e00
+               __memcpy_generic
+               el0_ia
+               do_el0_ia_bp_hardening
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               filemap_map_pages
+
+     1.04%  multi.sh  [kernel.vmlinux]  [k] ptep_set_access_flags
+            |
+            ---__libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6104
+               0x5564fa6104
+               0x5564fa7214
+               0x5564faac10
+               0x5564faa15c
+               0x5564fa7798
+               0x5564fa5f38
+               el0_da
+               do_mem_abort
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               ptep_set_access_flags
+
+     0.58%  multi.sh  [kernel.vmlinux]  [k] __handle_mm_fault
+            |
+            ---__libc_start_main
+               0x5564fa41fc
+               0x5564fadb38
+               0x5564fa60d0
+               0x5564fa688c
+               0x5564fa6074
+               0x5564fa6104
+               0x5564fa6be8
+               0x5564fad420
+               el0_ia
+               do_el0_ia_bp_hardening
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+
+     0.24%  multi.sh  [kernel.vmlinux]  [k] __alloc_pages_nodemask
+     0.20%  multi.sh  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.13%  multi.sh  [kernel.vmlinux]  [k] do_page_fault
+     0.11%  multi.sh  [kernel.vmlinux]  [k] wp_page_copy
+     0.03%  perf_5.4  [kernel.vmlinux]  [k] __pi_strrchr
+     0.01%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To set sample time separation other than 100ms with --sort time use --time-quantum)
+#

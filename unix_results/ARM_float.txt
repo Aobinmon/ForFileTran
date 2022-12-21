@@ -1,0 +1,34 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1980769905
+#
+# Overhead  Command  Shared Object     Symbol                   
+# ........  .......  ................  .........................
+#
+    99.17%  float    float             [.] dumb_stuff
+            |
+            ---_start
+               __libc_start_main
+               dumb_stuff
+
+     0.80%  float    float             [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.01%  float    [kernel.vmlinux]  [k] __handle_mm_fault
+     0.01%  float    float             [.] _IO_new_file_overflow
+     0.01%  float    [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.00%  float    [kernel.vmlinux]  [k] return_address
+     0.00%  perf_5.  [kernel.vmlinux]  [k] 0x00000000009bcac0
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To set sample time separation other than 100ms with --sort time use --time-quantum)
+#

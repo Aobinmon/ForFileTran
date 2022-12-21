@@ -1,0 +1,570 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1975440319
+#
+# Overhead  Command  Shared Object     Symbol                         
+# ........  .......  ................  ...............................
+#
+    34.79%  pipe     [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--19.66%--__libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_read
+               |          ksys_read
+               |          vfs_read
+               |          __vfs_read
+               |          new_sync_read
+               |          pipe_read
+               |          __wake_up_sync_key
+               |          __wake_up_common_lock
+               |          _raw_spin_unlock_irqrestore
+               |          
+                --15.13%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          pipe_write
+                          __wake_up_sync_key
+                          __wake_up_common_lock
+                          _raw_spin_unlock_irqrestore
+
+    13.71%  pipe     pipe              [.] __libc_write
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --13.70%--main
+                          __libc_write
+
+     8.63%  pipe     pipe              [.] __libc_read
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --8.58%--main
+                          __libc_read
+
+     7.33%  pipe     [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--4.71%--__libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+                --2.62%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+     2.05%  pipe     [kernel.vmlinux]  [k] __arch_copy_to_user
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               __vfs_read
+               new_sync_read
+               pipe_read
+               copy_page_to_iter
+               __arch_copy_to_user
+
+     1.79%  pipe     [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.34%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          pipe_write
+                          |          
+                           --0.62%--__wake_up_sync_key
+                                     __wake_up_common_lock
+
+     1.73%  pipe     [kernel.vmlinux]  [k] unwind_frame
+            |          
+             --1.71%--_start
+                       __libc_start_main
+                       main
+                       |          
+                       |--1.09%--__libc_write
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          __arm64_sys_write
+                       |          ksys_write
+                       |          vfs_write
+                       |          __vfs_write
+                       |          new_sync_write
+                       |          pipe_write
+                       |          __wake_up_sync_key
+                       |          __wake_up_common_lock
+                       |          _raw_spin_unlock_irqrestore
+                       |          preempt_count_sub
+                       |          return_address
+                       |          |          
+                       |           --1.00%--walk_stackframe
+                       |                     unwind_frame
+                       |          
+                        --0.63%--__libc_read
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_read
+                                  ksys_read
+                                  vfs_read
+                                  __vfs_read
+                                  new_sync_read
+                                  pipe_read
+                                  __wake_up_sync_key
+                                  __wake_up_common_lock
+                                  _raw_spin_unlock_irqrestore
+                                  preempt_count_sub
+                                  return_address
+                                  |          
+                                   --0.54%--walk_stackframe
+                                             unwind_frame
+
+     1.57%  pipe     [kernel.vmlinux]  [k] fsnotify
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--0.99%--__libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_read
+               |          ksys_read
+               |          vfs_read
+               |          |          
+               |           --0.66%--rw_verify_area
+               |                     security_file_permission
+               |                     fsnotify
+               |          
+                --0.59%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          |          
+                           --0.57%--vfs_write
+                                     fsnotify
+
+     1.55%  pipe     [kernel.vmlinux]  [k] __arch_copy_from_user
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               vfs_write
+               __vfs_write
+               new_sync_write
+               pipe_write
+               copy_page_from_iter
+               __arch_copy_from_user
+
+     1.40%  pipe     [kernel.vmlinux]  [k] ktime_get_coarse_real_ts64
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--0.89%--__libc_write
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_write
+               |          ksys_write
+               |          vfs_write
+               |          __vfs_write
+               |          new_sync_write
+               |          pipe_write
+               |          file_update_time
+               |          |          
+               |           --0.87%--current_time
+               |                     ktime_get_coarse_real_ts64
+               |          
+                --0.51%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+                          touch_atime
+                          atime_needs_update
+                          current_time
+                          ktime_get_coarse_real_ts64
+
+     1.34%  pipe     [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.90%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+                          __wake_up_sync_key
+                          |          
+                           --0.84%--__wake_up_common_lock
+                                     _raw_spin_lock_irqsave
+
+     1.22%  pipe     [kernel.vmlinux]  [k] pipe_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               __vfs_read
+               |          
+                --1.17%--new_sync_read
+                          pipe_read
+
+     1.21%  pipe     [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.20%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          pipe_write
+                          |          
+                           --0.67%--__sb_start_write
+                                     preempt_count_add
+
+     1.00%  pipe     [kernel.vmlinux]  [k] __fsnotify_parent
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.61%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+
+     0.97%  pipe     [kernel.vmlinux]  [k] __fdget_pos
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.92%  pipe     [kernel.vmlinux]  [k] 0x00000000009b8f78
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.64%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+                          0xffffffc010a28f78
+
+     0.87%  pipe     [kernel.vmlinux]  [k] 0x00000000009b90d8
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.57%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+                          0xffffffc010a290d8
+
+     0.85%  pipe     [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.51%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          pipe_write
+                          __wake_up_sync_key
+                          __wake_up_common_lock
+                          _raw_spin_unlock_irqrestore
+                          preempt_count_sub
+                          return_address
+                          walk_stackframe
+                          0xffffffc01009172c
+
+     0.84%  pipe     [kernel.vmlinux]  [k] __wake_up_common_lock
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.51%--__libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+
+     0.77%  pipe     [kernel.vmlinux]  [k] return_address
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.77%  pipe     pipe              [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.75%  pipe     [kernel.vmlinux]  [k] pipe_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               vfs_write
+               __vfs_write
+               |          
+                --0.74%--new_sync_write
+                          pipe_write
+
+     0.70%  pipe     [kernel.vmlinux]  [k] anon_pipe_buf_release
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               __vfs_read
+               new_sync_read
+
+     0.69%  pipe     [kernel.vmlinux]  [k] __sb_start_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.67%--__libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          pipe_write
+                          __sb_start_write
+
+     0.65%  pipe     [kernel.vmlinux]  [k] kill_fasync
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.64%  pipe     [kernel.vmlinux]  [k] new_sync_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               |          
+                --0.61%--__vfs_read
+                          new_sync_read
+
+     0.62%  pipe     [kernel.vmlinux]  [k] vfs_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               vfs_write
+
+     0.54%  pipe     [kernel.vmlinux]  [k] file_update_time
+            |
+            ---_start
+               __libc_start_main
+               main
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               vfs_write
+               __vfs_write
+               new_sync_write
+
+     0.52%  pipe     [kernel.vmlinux]  [k] trace_preempt_on
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.49%  pipe     [kernel.vmlinux]  [k] walk_stackframe
+     0.46%  pipe     [kernel.vmlinux]  [k] current_time
+     0.46%  pipe     [kernel.vmlinux]  [k] security_file_permission
+     0.46%  pipe     [kernel.vmlinux]  [k] __sb_end_write
+     0.45%  pipe     [kernel.vmlinux]  [k] copy_page_to_iter
+     0.43%  pipe     [kernel.vmlinux]  [k] __vfs_read
+     0.42%  pipe     [kernel.vmlinux]  [k] new_sync_write
+     0.36%  pipe     [kernel.vmlinux]  [k] vfs_read
+     0.35%  pipe     [kernel.vmlinux]  [k] timestamp_truncate
+     0.34%  pipe     [kernel.vmlinux]  [k] __wake_up_sync_key
+     0.32%  pipe     [kernel.vmlinux]  [k] save_return_addr
+     0.29%  pipe     [kernel.vmlinux]  [k] rw_verify_area
+     0.29%  pipe     [kernel.vmlinux]  [k] copy_page_from_iter
+     0.29%  pipe     [kernel.vmlinux]  [k] trace_preempt_off
+     0.27%  pipe     [kernel.vmlinux]  [k] mutex_lock
+     0.26%  pipe     [kernel.vmlinux]  [k] iov_iter_init
+     0.25%  pipe     [kernel.vmlinux]  [k] copyout
+     0.25%  pipe     [kernel.vmlinux]  [k] 0x00000000009b90c4
+     0.24%  pipe     [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.24%  pipe     [kernel.vmlinux]  [k] 0x00000000009b8f64
+     0.23%  pipe     [kernel.vmlinux]  [k] atime_needs_update
+     0.22%  pipe     [kernel.vmlinux]  [k] 0x000000000002171c
+     0.22%  pipe     [kernel.vmlinux]  [k] in_lock_functions
+     0.21%  pipe     [kernel.vmlinux]  [k] mutex_unlock
+     0.21%  pipe     [kernel.vmlinux]  [k] ksys_write
+     0.21%  pipe     [kernel.vmlinux]  [k] ksys_read
+     0.14%  pipe     [kernel.vmlinux]  [k] __vfs_write
+     0.14%  pipe     [kernel.vmlinux]  [k] generic_pipe_buf_confirm
+     0.11%  pipe     [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.11%  pipe     [kernel.vmlinux]  [k] 0x0000000000021718
+     0.10%  pipe     [kernel.vmlinux]  [k] __do_softirq
+     0.10%  pipe     [kernel.vmlinux]  [k] copyin
+     0.09%  pipe     [kernel.vmlinux]  [k] touch_atime
+     0.09%  pipe     [kernel.vmlinux]  [k] __arm64_sys_read
+     0.08%  pipe     [kernel.vmlinux]  [k] __arm64_sys_write
+     0.07%  pipe     [kernel.vmlinux]  [k] 0x00000000009b90d0
+     0.07%  pipe     [kernel.vmlinux]  [k] 0x00000000009b90c0
+     0.05%  pipe     [kernel.vmlinux]  [k] 0x00000000009b8f60
+     0.04%  pipe     [kernel.vmlinux]  [k] 0x00000000009b8f70
+     0.03%  pipe     [kernel.vmlinux]  [k] 0x0000000000021728
+     0.02%  pipe     [kernel.vmlinux]  [k] __mnt_drop_write
+     0.01%  pipe     [kernel.vmlinux]  [k] do_page_fault
+     0.01%  pipe     [kernel.vmlinux]  [k] load_balance
+     0.01%  pipe     [kernel.vmlinux]  [k] generic_update_time
+     0.01%  pipe     [kernel.vmlinux]  [k] __mnt_want_write_file
+     0.01%  pipe     [kernel.vmlinux]  [k] run_timer_softirq
+     0.01%  pipe     [kernel.vmlinux]  [k] __mark_inode_dirty
+     0.01%  pipe     [kernel.vmlinux]  [k] integrity_inode_free
+     0.00%  pipe     [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  perf_5.  [kernel.vmlinux]  [k] __pi_strrchr
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#

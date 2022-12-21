@@ -1,0 +1,127 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1974581740
+#
+# Overhead  Command  Shared Object     Symbol                         
+# ........  .......  ................  ...............................
+#
+    22.69%  dhry2    dhry2             [.] Proc_8
+            |
+            ---_start
+               __libc_start_main
+               Proc_8
+
+    13.93%  dhry2    dhry2             [.] Proc_1
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+
+    13.88%  dhry2    dhry2             [.] Func_1
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--7.19%--Func_1
+               |          
+                --6.69%--main
+                          Func_1
+
+    13.10%  dhry2    dhry2             [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     9.13%  dhry2    dhry2             [.] Func_2
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --8.73%--main
+                          Func_2
+
+     7.27%  dhry2    dhry2             [.] Proc_7
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--4.86%--main
+               |          |          
+               |          |--2.79%--Proc_1
+               |          |          Proc_7
+               |          |          
+               |           --2.07%--Proc_7
+               |          
+                --2.41%--Proc_7
+
+     5.01%  dhry2    dhry2             [.] Proc_2
+            |
+            ---_start
+               __libc_start_main
+               Proc_2
+
+     4.57%  dhry2    dhry2             [.] Proc_6
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+               Proc_6
+
+     3.98%  dhry2    dhry2             [.] Func_3
+            |
+            ---_start
+               __libc_start_main
+               main
+               Proc_1
+               Func_3
+
+     2.07%  dhry2    dhry2             [.] Proc_3
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.89%--Proc_1
+                          Proc_3
+
+     1.97%  dhry2    dhry2             [.] strcmp
+            |
+            ---_start
+               __libc_start_main
+               main
+               strcmp
+
+     1.44%  dhry2    dhry2             [.] Proc_4
+            |
+            ---_start
+               __libc_start_main
+               Proc_4
+
+     0.81%  dhry2    dhry2             [.] Proc_5
+            |
+            ---_start
+               __libc_start_main
+               Proc_5
+
+     0.05%  dhry2    [kernel.vmlinux]  [k] __do_softirq
+     0.04%  dhry2    [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.01%  dhry2    [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.01%  dhry2    dhry2             [.] _IO_new_file_xsputn
+     0.01%  dhry2    [kernel.vmlinux]  [k] finish_task_switch
+     0.01%  dhry2    [kernel.vmlinux]  [k] 0x00000000000b3b20
+     0.01%  dhry2    [kernel.vmlinux]  [k] do_mem_abort
+     0.00%  dhry2    [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  perf_5.  [kernel.vmlinux]  [k] __pi_strrchr
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: For hierarchical output, try: perf report --hierarchy)
+#

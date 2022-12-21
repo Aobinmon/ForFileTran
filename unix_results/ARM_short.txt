@@ -1,0 +1,35 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1980178201
+#
+# Overhead  Command  Shared Object     Symbol                     
+# ........  .......  ................  ...........................
+#
+    99.52%  short    short             [.] dumb_stuff
+            |
+            ---_start
+               __libc_start_main
+               dumb_stuff
+
+     0.38%  short    short             [.] main
+     0.01%  short    [kernel.vmlinux]  [k] rebalance_domains
+     0.01%  short    short             [.] _dl_lookup_symbol_x
+     0.01%  short    [kernel.vmlinux]  [k] find_busiest_group
+     0.01%  short    [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.01%  short    [kernel.vmlinux]  [k] free_unref_page
+     0.01%  short    [kernel.vmlinux]  [k] find_next_and_bit
+     0.01%  short    [kernel.vmlinux]  [k] preserve_fpsimd_context
+     0.01%  short    [kernel.vmlinux]  [k] __do_softirq
+     0.01%  short    [kernel.vmlinux]  [k] filemap_map_pages
+     0.00%  short    [kernel.vmlinux]  [k] clear_page
+     0.00%  perf_5.  [kernel.vmlinux]  [k] unwind_frame
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To show context switches in perf report sample context add --switch-events to perf record.)
+#

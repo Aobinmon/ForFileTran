@@ -1,0 +1,352 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1978511313
+#
+# Overhead  Command  Shared Object     Symbol                        
+# ........  .......  ................  ..............................
+#
+    19.00%  syscall  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--4.17%--__getuid
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--3.94%--syscall
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--3.90%--__umask
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--3.52%--__dup
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+                --3.46%--main
+                          __libc_close
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+    13.46%  syscall  syscall           [.] syscall
+            |
+            ---_start
+               __libc_start_main
+               syscall
+
+    12.67%  syscall  syscall           [.] __dup
+            |
+            ---_start
+               __libc_start_main
+               __dup
+
+    11.80%  syscall  syscall           [.] __getuid
+            |
+            ---_start
+               __libc_start_main
+               __getuid
+
+    11.22%  syscall  syscall           [.] __umask
+            |
+            ---_start
+               __libc_start_main
+               __umask
+
+    10.07%  syscall  syscall           [.] __libc_close
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --9.97%--main
+                          __libc_close
+
+     2.65%  syscall  [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--1.48%--__dup
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_dup
+               |          ksys_dup
+               |          __alloc_fd
+               |          |          
+               |          |--0.75%--_raw_spin_unlock
+               |          |          preempt_count_sub
+               |          |          return_address
+               |          |          |          
+               |          |           --0.74%--walk_stackframe
+               |          |                     unwind_frame
+               |          |          
+               |           --0.72%--_raw_spin_lock
+               |                     preempt_count_add
+               |                     return_address
+               |                     |          
+               |                      --0.61%--walk_stackframe
+               |                                unwind_frame
+               |          
+                --1.17%--main
+                          __libc_close
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_close
+                          __close_fd
+                          |          
+                          |--0.61%--_raw_spin_lock
+                          |          preempt_count_add
+                          |          return_address
+                          |          
+                           --0.56%--_raw_spin_unlock
+                                     preempt_count_sub
+                                     return_address
+                                     walk_stackframe
+                                     unwind_frame
+
+     1.57%  syscall  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--0.92%--__dup
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_dup
+               |          ksys_dup
+               |          __alloc_fd
+               |          |          
+               |           --0.51%--_raw_spin_unlock
+               |                     preempt_count_sub
+               |                     return_address
+               |                     walk_stackframe
+               |                     0xffffffc01009172c
+               |          
+                --0.65%--main
+                          __libc_close
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_close
+                          __close_fd
+
+     1.44%  syscall  [kernel.vmlinux]  [k] return_address
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--0.75%--main
+               |          __libc_close
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_close
+               |          __close_fd
+               |          |          
+               |           --0.55%--_raw_spin_unlock
+               |                     |          
+               |                      --0.54%--preempt_count_sub
+               |                                return_address
+               |          
+                --0.69%--__dup
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_dup
+                          ksys_dup
+                          __alloc_fd
+                          |          
+                           --0.51%--_raw_spin_unlock
+                                     preempt_count_sub
+                                     return_address
+
+     1.42%  syscall  [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --1.04%--__dup
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_dup
+                          ksys_dup
+                          |          
+                           --0.62%--__fd_install
+                                     preempt_count_add
+
+     1.07%  syscall  [kernel.vmlinux]  [k] walk_stackframe
+            |
+            ---_start
+               __libc_start_main
+               |          
+               |--0.55%--__dup
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_dup
+               |          ksys_dup
+               |          __alloc_fd
+               |          
+                --0.52%--main
+                          __libc_close
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_close
+                          __close_fd
+
+     1.01%  syscall  [kernel.vmlinux]  [k] __arm64_sys_umask
+            |
+            ---_start
+               __libc_start_main
+               __umask
+               el0_svc
+               el0_svc_handler
+               |          
+                --1.00%--el0_svc_common.constprop.0
+                          __arm64_sys_umask
+
+     0.89%  syscall  [kernel.vmlinux]  [k] 0x00000000009bcad4
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --0.54%--__dup
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_dup
+                          ksys_dup
+                          __alloc_fd
+                          0xffffffc010a2cad4
+
+     0.87%  syscall  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --0.62%--__dup
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_dup
+                          ksys_dup
+
+     0.76%  syscall  [kernel.vmlinux]  [k] save_return_addr
+            |
+            ---_start
+               __libc_start_main
+
+     0.67%  syscall  [kernel.vmlinux]  [k] __alloc_fd
+            |
+            ---_start
+               __libc_start_main
+               __dup
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_dup
+               ksys_dup
+               __alloc_fd
+
+     0.62%  syscall  [kernel.vmlinux]  [k] 0x000000000002171c
+            |
+            ---_start
+               __libc_start_main
+
+     0.58%  syscall  [kernel.vmlinux]  [k] 0x00000000002b3308
+            |
+            ---_start
+               __libc_start_main
+               __dup
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_dup
+               ksys_dup
+               0xffffffc010323308
+
+     0.56%  syscall  [kernel.vmlinux]  [k] __fget
+            |
+            ---_start
+               __libc_start_main
+               __dup
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_dup
+               |          
+                --0.54%--ksys_dup
+                          __fget
+
+     0.54%  syscall  [kernel.vmlinux]  [k] __fd_install
+            |
+            ---_start
+               __libc_start_main
+               __dup
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_dup
+               ksys_dup
+               __fd_install
+
+     0.50%  syscall  [kernel.vmlinux]  [k] 0x000000000028bb18
+     0.47%  syscall  [kernel.vmlinux]  [k] __task_pid_nr_ns
+     0.40%  syscall  [kernel.vmlinux]  [k] map_id_up
+     0.39%  syscall  [kernel.vmlinux]  [k] __arm64_sys_getuid
+     0.38%  syscall  [kernel.vmlinux]  [k] trace_preempt_on
+     0.36%  syscall  [kernel.vmlinux]  [k] locks_remove_posix
+     0.32%  syscall  [kernel.vmlinux]  [k] filp_close
+     0.30%  syscall  [kernel.vmlinux]  [k] find_next_zero_bit
+     0.29%  syscall  syscall           [.] main
+     0.28%  syscall  [kernel.vmlinux]  [k] trace_preempt_off
+     0.27%  syscall  [kernel.vmlinux]  [k] __close_fd
+     0.27%  syscall  [kernel.vmlinux]  [k] _raw_spin_unlock
+     0.25%  syscall  [kernel.vmlinux]  [k] in_lock_functions
+     0.24%  syscall  [kernel.vmlinux]  [k] ksys_dup
+     0.24%  syscall  [kernel.vmlinux]  [k] 0x0000000000021718
+     0.21%  syscall  [kernel.vmlinux]  [k] _raw_spin_lock
+     0.19%  syscall  [kernel.vmlinux]  [k] __arm64_sys_dup
+     0.17%  syscall  [kernel.vmlinux]  [k] 0x00000000009bcac0
+     0.16%  syscall  [kernel.vmlinux]  [k] expand_files
+     0.16%  syscall  [kernel.vmlinux]  [k] from_kuid_munged
+     0.16%  syscall  [kernel.vmlinux]  [k] 0x00000000009bcabc
+     0.15%  syscall  [kernel.vmlinux]  [k] __arm64_sys_close
+     0.13%  syscall  [kernel.vmlinux]  [k] 0x00000000009bcacc
+     0.12%  syscall  [kernel.vmlinux]  [k] dnotify_flush
+     0.11%  syscall  [kernel.vmlinux]  [k] __rcu_read_lock
+     0.10%  syscall  [kernel.vmlinux]  [k] __rcu_read_unlock
+     0.09%  syscall  [kernel.vmlinux]  [k] __arm64_sys_getpid
+     0.08%  syscall  [kernel.vmlinux]  [k] 0x00000000002b32f4
+     0.06%  syscall  [kernel.vmlinux]  [k] fput
+     0.06%  syscall  [kernel.vmlinux]  [k] 0x0000000000021728
+     0.06%  syscall  [kernel.vmlinux]  [k] 0x000000000028bb08
+     0.04%  syscall  [kernel.vmlinux]  [k] fput_many
+     0.04%  syscall  [kernel.vmlinux]  [k] 0x00000000002b3300
+     0.01%  syscall  [kernel.vmlinux]  [k] 0x00000000002b32f0
+     0.01%  syscall  [kernel.vmlinux]  [k] unmap_page_range
+     0.01%  syscall  syscall           [.] ptmalloc_init.part.0
+     0.01%  syscall  [kernel.vmlinux]  [k] mutex_lock
+     0.00%  syscall  [kernel.vmlinux]  [k] __vma_adjust
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Show user configuration overrides: perf config --user --list)
+#

@@ -1,0 +1,61 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 11  of event 'cpu-cycles'
+# Event count (approx.): 412600
+#
+# Overhead  Command  Shared Object     Symbol                    
+# ........  .......  ................  ..........................
+#
+    60.72%  execl    execl             [.] _dl_non_dynamic_init
+            |
+            ---_start
+               __libc_start_main
+               __libc_init_first
+               _dl_non_dynamic_init
+
+    31.83%  execl    [kernel.vmlinux]  [k] do_el0_ia_bp_hardening
+            |
+            ---_start
+               el0_ia
+               do_el0_ia_bp_hardening
+
+     6.36%  execl    [kernel.vmlinux]  [k] in_lock_functions
+            |
+            ---0x7fab7c3d88
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               setup_arg_pages
+               shift_arg_pages
+               move_page_tables
+               __pte_alloc
+               _raw_spin_lock
+               in_lock_functions
+
+     0.93%  perf_5.  [kernel.vmlinux]  [k] strlcpy
+            |
+            ---0x7fab7c3d88
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_execve
+               __do_execve_file
+               search_binary_handler.part.0
+               load_elf_binary
+               setup_new_exec
+               __set_task_comm
+               strlcpy
+
+     0.16%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To report cacheline events from previous recording: perf c2c report)
+#

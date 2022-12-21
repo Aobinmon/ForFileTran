@@ -1,0 +1,908 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 56K of event 'cpu-cycles'
+# Event count (approx.): 13762118325
+#
+# Overhead  Command  Shared Object     Symbol                                     
+# ........  .......  ................  ...........................................
+#
+    12.91%  fstime   fstime            [.] __libc_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--7.36%--c_test
+               |          __libc_read
+               |          
+                --5.53%--r_test
+                          __libc_read
+
+    10.41%  fstime   [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+             --10.41%--_start
+                       __libc_start_main
+                       main
+                       |          
+                       |--8.16%--c_test
+                       |          __libc_write
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          __arm64_sys_write
+                       |          ksys_write
+                       |          vfs_write
+                       |          __vfs_write
+                       |          new_sync_write
+                       |          ext4_file_write_iter
+                       |          __generic_file_write_iter
+                       |          |          
+                       |           --8.15%--generic_perform_write
+                       |                     |          
+                       |                      --8.15%--ext4_da_write_end
+                       |                                |          
+                       |                                 --8.14%--__ext4_journal_stop
+                       |                                           jbd2_journal_stop
+                       |                                           __wake_up
+                       |                                           __wake_up_common_lock
+                       |                                           _raw_spin_unlock_irqrestore
+                       |          
+                        --2.25%--w_test
+                                  __libc_write
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_write
+                                  ksys_write
+                                  vfs_write
+                                  __vfs_write
+                                  new_sync_write
+                                  ext4_file_write_iter
+                                  __generic_file_write_iter
+                                  |          
+                                   --2.25%--generic_perform_write
+                                             |          
+                                              --2.24%--ext4_da_write_end
+                                                        |          
+                                                         --2.24%--__ext4_journal_stop
+                                                                   jbd2_journal_stop
+                                                                   __wake_up
+                                                                   __wake_up_common_lock
+                                                                   _raw_spin_unlock_irqrestore
+
+     8.93%  fstime   fstime            [.] __libc_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--7.05%--c_test
+               |          __libc_write
+               |          
+                --1.88%--w_test
+                          __libc_write
+
+     7.28%  fstime   [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--4.73%--c_test
+               |          |          
+               |          |--2.70%--__libc_read
+               |          |          el0_svc
+               |          |          el0_svc_handler
+               |          |          el0_svc_common.constprop.0
+               |          |          
+               |           --2.04%--__libc_write
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |          
+               |--1.83%--r_test
+               |          __libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+                --0.71%--w_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+     6.93%  fstime   [kernel.vmlinux]  [k] __arch_copy_to_user
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--4.44%--c_test
+               |          __libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_read
+               |          ksys_read
+               |          vfs_read
+               |          __vfs_read
+               |          new_sync_read
+               |          ext4_file_read_iter
+               |          generic_file_read_iter
+               |          copy_page_to_iter
+               |          __arch_copy_to_user
+               |          
+                --2.49%--r_test
+                          __libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          ext4_file_read_iter
+                          generic_file_read_iter
+                          copy_page_to_iter
+                          __arch_copy_to_user
+
+     3.22%  fstime   [kernel.vmlinux]  [k] __arch_copy_from_user
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--2.57%--c_test
+               |          __libc_write
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_write
+               |          ksys_write
+               |          vfs_write
+               |          __vfs_write
+               |          new_sync_write
+               |          ext4_file_write_iter
+               |          __generic_file_write_iter
+               |          generic_perform_write
+               |          iov_iter_copy_from_user_atomic
+               |          __arch_copy_from_user
+               |          
+                --0.65%--w_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          iov_iter_copy_from_user_atomic
+                          __arch_copy_from_user
+
+     2.35%  fstime   [kernel.vmlinux]  [k] mark_buffer_dirty
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+               |--1.36%--c_test
+               |          __libc_write
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_write
+               |          ksys_write
+               |          vfs_write
+               |          __vfs_write
+               |          new_sync_write
+               |          ext4_file_write_iter
+               |          __generic_file_write_iter
+               |          generic_perform_write
+               |          ext4_da_write_end
+               |          generic_write_end
+               |          |          
+               |           --1.26%--__block_commit_write.constprop.0.isra.0
+               |                     mark_buffer_dirty
+               |          
+                --0.99%--w_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          ext4_da_write_end
+                          generic_write_end
+                          |          
+                           --0.98%--__block_commit_write.constprop.0.isra.0
+                                     mark_buffer_dirty
+
+     1.87%  fstime   [kernel.vmlinux]  [k] find_get_entry
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.28%--c_test
+                          |          
+                          |--0.66%--__libc_write
+                          |          el0_svc
+                          |          el0_svc_handler
+                          |          el0_svc_common.constprop.0
+                          |          __arm64_sys_write
+                          |          ksys_write
+                          |          vfs_write
+                          |          __vfs_write
+                          |          new_sync_write
+                          |          ext4_file_write_iter
+                          |          __generic_file_write_iter
+                          |          generic_perform_write
+                          |          ext4_da_write_begin
+                          |          grab_cache_page_write_begin
+                          |          |          
+                          |           --0.65%--pagecache_get_page
+                          |                     find_get_entry
+                          |          
+                           --0.62%--__libc_read
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     __vfs_read
+                                     new_sync_read
+                                     ext4_file_read_iter
+                                     generic_file_read_iter
+                                     |          
+                                      --0.61%--pagecache_get_page
+                                                find_get_entry
+
+     1.55%  fstime   [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.26%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          |          
+                           --1.26%--generic_perform_write
+                                     |          
+                                      --0.85%--ext4_da_write_begin
+                                                |          
+                                                 --0.84%--__ext4_journal_start_sb
+                                                           jbd2__journal_start
+                                                           start_this_handle
+                                                           |          
+                                                            --0.50%--_raw_read_lock
+                                                                      preempt_count_add
+                                                                      return_address
+
+     1.46%  fstime   [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.16%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          |          
+                           --0.75%--__vfs_write
+                                     new_sync_write
+                                     ext4_file_write_iter
+                                     __generic_file_write_iter
+                                     generic_perform_write
+
+     1.33%  fstime   [kernel.vmlinux]  [k] fsnotify
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.80%--c_test
+
+     1.33%  fstime   [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.04%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          |          
+                           --0.74%--__vfs_write
+                                     new_sync_write
+                                     ext4_file_write_iter
+                                     __generic_file_write_iter
+                                     generic_perform_write
+
+     1.19%  fstime   [kernel.vmlinux]  [k] ext4_block_write_begin
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.94%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          |          
+                           --0.92%--ext4_da_write_begin
+                                     ext4_block_write_begin
+
+     1.03%  fstime   [kernel.vmlinux]  [k] balance_dirty_pages_ratelimited
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.82%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          balance_dirty_pages_ratelimited
+
+     0.93%  fstime   [kernel.vmlinux]  [k] kmem_cache_alloc
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.73%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          ext4_da_write_begin
+                          |          
+                           --0.73%--__ext4_journal_start_sb
+                                     |          
+                                      --0.73%--jbd2__journal_start
+                                                kmem_cache_alloc
+
+     0.92%  fstime   [kernel.vmlinux]  [k] xas_load
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.65%--c_test
+
+     0.91%  fstime   [kernel.vmlinux]  [k] __fdget_pos
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.59%--c_test
+
+     0.81%  fstime   [kernel.vmlinux]  [k] __block_commit_write.constprop.0.isra.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.59%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          ext4_da_write_end
+                          generic_write_end
+                          __block_commit_write.constprop.0.isra.0
+
+     0.78%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcde4
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.76%  fstime   [kernel.vmlinux]  [k] ext4_da_write_begin
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.62%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          |          
+                           --0.61%--generic_perform_write
+                                     ext4_da_write_begin
+
+     0.76%  fstime   [kernel.vmlinux]  [k] start_this_handle
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.62%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          ext4_da_write_begin
+                          __ext4_journal_start_sb
+                          jbd2__journal_start
+                          start_this_handle
+
+     0.76%  fstime   [kernel.vmlinux]  [k] generic_file_read_iter
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.75%  fstime   [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.58%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+
+     0.75%  fstime   [kernel.vmlinux]  [k] generic_perform_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.65%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+
+     0.74%  fstime   [kernel.vmlinux]  [k] kmem_cache_free
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.57%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          generic_perform_write
+                          ext4_da_write_end
+                          __ext4_journal_stop
+                          |          
+                           --0.56%--jbd2_journal_stop
+                                     kmem_cache_free
+
+     0.72%  fstime   fstime            [.] c_test
+            |
+            ---_start
+               __libc_start_main
+               main
+               c_test
+
+     0.64%  fstime   [kernel.vmlinux]  [k] iov_iter_copy_from_user_atomic
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.55%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          |          
+                           --0.52%--generic_perform_write
+                                     iov_iter_copy_from_user_atomic
+
+     0.64%  fstime   [kernel.vmlinux]  [k] ext4_da_write_end
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.51%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+
+     0.63%  fstime   [kernel.vmlinux]  [k] __fsnotify_parent
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.60%  fstime   [kernel.vmlinux]  [k] new_sync_read
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.59%  fstime   [kernel.vmlinux]  [k] pagecache_get_page
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.59%  fstime   [kernel.vmlinux]  [k] jbd2_journal_stop
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.59%  fstime   [kernel.vmlinux]  [k] ktime_get_coarse_real_ts64
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --0.51%--c_test
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          new_sync_write
+                          ext4_file_write_iter
+                          __generic_file_write_iter
+                          file_update_time
+
+     0.58%  fstime   [kernel.vmlinux]  [k] 0x00000000001fd1d0
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.54%  fstime   [kernel.vmlinux]  [k] security_file_permission
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.53%  fstime   [kernel.vmlinux]  [k] walk_stackframe
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.51%  fstime   [kernel.vmlinux]  [k] return_address
+            |          
+             --0.51%--_start
+                       __libc_start_main
+                       main
+
+     0.50%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcb30
+     0.49%  fstime   [kernel.vmlinux]  [k] xas_start
+     0.47%  fstime   [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.46%  fstime   [kernel.vmlinux]  [k] new_sync_write
+     0.44%  fstime   [kernel.vmlinux]  [k] rw_verify_area
+     0.43%  fstime   [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.40%  fstime   [kernel.vmlinux]  [k] vfs_write
+     0.39%  fstime   [kernel.vmlinux]  [k] trace_preempt_on
+     0.39%  fstime   [kernel.vmlinux]  [k] vfs_read
+     0.38%  fstime   [kernel.vmlinux]  [k] __vfs_write
+     0.38%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdb70
+     0.37%  fstime   [kernel.vmlinux]  [k] ext4_file_read_iter
+     0.37%  fstime   [kernel.vmlinux]  [k] __sb_start_write
+     0.37%  fstime   [kernel.vmlinux]  [k] jbd2__journal_start
+     0.37%  fstime   [kernel.vmlinux]  [k] __generic_file_write_iter
+     0.37%  fstime   [kernel.vmlinux]  [k] file_update_time
+     0.36%  fstime   [kernel.vmlinux]  [k] add_transaction_credits
+     0.34%  fstime   [kernel.vmlinux]  [k] wait_for_stable_page
+     0.33%  fstime   [kernel.vmlinux]  [k] __sb_end_write
+     0.33%  fstime   [kernel.vmlinux]  [k] ext4_file_write_iter
+     0.32%  fstime   [kernel.vmlinux]  [k] generic_write_end
+     0.32%  fstime   [kernel.vmlinux]  [k] iov_iter_advance
+     0.32%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc9f0
+     0.31%  fstime   [kernel.vmlinux]  [k] 0x00000000000d6824
+     0.30%  fstime   [kernel.vmlinux]  [k] save_return_addr
+     0.30%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc94
+     0.29%  fstime   [kernel.vmlinux]  [k] generic_write_check_limits
+     0.29%  fstime   [kernel.vmlinux]  [k] 0x00000000002719dc
+     0.29%  fstime   [kernel.vmlinux]  [k] 0x00000000001fced8
+     0.29%  fstime   [kernel.vmlinux]  [k] copy_page_to_iter
+     0.28%  fstime   [kernel.vmlinux]  [k] trace_preempt_off
+     0.28%  fstime   [kernel.vmlinux]  [k] iov_iter_init
+     0.28%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc08
+     0.28%  fstime   [kernel.vmlinux]  [k] 0x00000000002718bc
+     0.27%  fstime   [kernel.vmlinux]  [k] __vfs_read
+     0.27%  fstime   [kernel.vmlinux]  [k] 0x000000000037c8c0
+     0.26%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdcb0
+     0.26%  fstime   fstime            [.] r_test
+     0.26%  fstime   [kernel.vmlinux]  [k] atime_needs_update
+     0.25%  fstime   [kernel.vmlinux]  [k] 0x00000000000d690c
+     0.25%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca44
+     0.25%  fstime   [kernel.vmlinux]  [k] ext4_nonda_switch
+     0.25%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca2c
+     0.24%  fstime   [kernel.vmlinux]  [k] __wake_up_common_lock
+     0.23%  fstime   [kernel.vmlinux]  [k] copyout
+     0.22%  fstime   [kernel.vmlinux]  [k] ksys_read
+     0.21%  fstime   [kernel.vmlinux]  [k] __rcu_read_unlock
+     0.21%  fstime   [kernel.vmlinux]  [k] __rcu_read_lock
+     0.21%  fstime   [kernel.vmlinux]  [k] 0x000000000002171c
+     0.21%  fstime   [kernel.vmlinux]  [k] fault_in_pages_readable
+     0.20%  fstime   [kernel.vmlinux]  [k] in_lock_functions
+     0.19%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc840
+     0.19%  fstime   [kernel.vmlinux]  [k] 0x000000000037c8ac
+     0.19%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbf0
+     0.19%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc870
+     0.17%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcdd0
+     0.16%  fstime   [kernel.vmlinux]  [k] 0x00000000000d68f8
+     0.16%  fstime   [kernel.vmlinux]  [k] iov_iter_fault_in_readable
+     0.14%  fstime   [kernel.vmlinux]  [k] ksys_write
+     0.14%  fstime   [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.14%  fstime   [kernel.vmlinux]  [k] __ext4_journal_start_sb
+     0.13%  fstime   [kernel.vmlinux]  [k] generic_write_checks
+     0.13%  fstime   [kernel.vmlinux]  [k] touch_atime
+     0.13%  fstime   [kernel.vmlinux]  [k] copyin
+     0.13%  fstime   [kernel.vmlinux]  [k] 0x00000000001fd1c0
+     0.12%  fstime   [kernel.vmlinux]  [k] file_remove_privs
+     0.11%  fstime   [kernel.vmlinux]  [k] __arm64_sys_read
+     0.11%  fstime   [kernel.vmlinux]  [k] up_write
+     0.11%  fstime   fstime            [.] w_test
+     0.11%  fstime   [kernel.vmlinux]  [k] _raw_read_unlock
+     0.11%  fstime   [kernel.vmlinux]  [k] 0x00000000002718a0
+     0.11%  fstime   [kernel.vmlinux]  [k] unlock_page
+     0.09%  fstime   [kernel.vmlinux]  [k] mark_page_accessed
+     0.09%  fstime   [kernel.vmlinux]  [k] flush_dcache_page
+     0.09%  fstime   [kernel.vmlinux]  [k] 0x00000000000d68fc
+     0.09%  fstime   [kernel.vmlinux]  [k] 0x00000000000d680c
+     0.09%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcb20
+     0.09%  fstime   [kernel.vmlinux]  [k] 0x0000000000021718
+     0.08%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdb60
+     0.08%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbf8
+     0.08%  fstime   [kernel.vmlinux]  [k] ext4_journal_check_start
+     0.08%  fstime   [kernel.vmlinux]  [k] __do_softirq
+     0.08%  fstime   [kernel.vmlinux]  [k] _raw_read_lock
+     0.08%  fstime   [kernel.vmlinux]  [k] __arm64_sys_write
+     0.08%  fstime   [kernel.vmlinux]  [k] current_time
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcddc
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca1c
+     0.07%  fstime   [kernel.vmlinux]  [k] should_failslab
+     0.07%  fstime   [kernel.vmlinux]  [k] __pi_memset
+     0.07%  fstime   [kernel.vmlinux]  [k] down_write_trylock
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc9e0
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdca0
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000000d6810
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc84
+     0.07%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdb5c
+     0.07%  fstime   [kernel.vmlinux]  [k] timestamp_truncate
+     0.06%  fstime   [kernel.vmlinux]  [k] 0x00000000002719c0
+     0.06%  fstime   [kernel.vmlinux]  [k] 0x00000000002719bc
+     0.06%  fstime   [kernel.vmlinux]  [k] grab_cache_page_write_begin
+     0.06%  fstime   [kernel.vmlinux]  [k] 0x000000000037c8b0
+     0.06%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc9dc
+     0.06%  fstime   [kernel.vmlinux]  [k] 0x00000000002719d4
+     0.06%  fstime   [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.05%  fstime   [kernel.vmlinux]  [k] __wake_up
+     0.05%  fstime   [kernel.vmlinux]  [k] __ext4_journal_stop
+     0.04%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbf4
+     0.04%  fstime   [kernel.vmlinux]  [k] 0x00000000002718b4
+     0.04%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc860
+     0.04%  fstime   [kernel.vmlinux]  [k] __find_get_block
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcdcc
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc80
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc82c
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca18
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000001fd1bc
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x0000000000021728
+     0.03%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcec8
+     0.02%  fstime   [kernel.vmlinux]  [k] 0x00000000000d681c
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x000000000027189c
+     0.01%  fstime   [kernel.vmlinux]  [k] run_timer_softirq
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbe0
+     0.01%  fstime   fstime            [.] __libc_lseek64
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc9c
+     0.01%  fstime   [kernel.vmlinux]  [k] ext4_mark_iloc_dirty
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdcac
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc86c
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdc04
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca28
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000009bca34
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbe8
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x000000000037c8bc
+     0.01%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbdc
+     0.01%  fstime   [kernel.vmlinux]  [k] get_page_from_freelist
+     0.01%  fstime   [kernel.vmlinux]  [k] __crc32c_le
+     0.01%  fstime   [kernel.vmlinux]  [k] __getblk_gfp
+     0.01%  fstime   [kernel.vmlinux]  [k] __mark_inode_dirty
+     0.00%  fstime   [kernel.vmlinux]  [k] percpu_counter_add_batch
+     0.00%  fstime   [kernel.vmlinux]  [k] chksum_update
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000037c694
+     0.00%  fstime   [kernel.vmlinux]  [k] generic_file_llseek_size
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000001fced4
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcec4
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000003bdbec
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc808
+     0.00%  fstime   [kernel.vmlinux]  [k] jbd2_write_access_granted.part.0
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc85c
+     0.00%  fstime   [kernel.vmlinux]  [k] mod_lruvec_page_state
+     0.00%  fstime   [kernel.vmlinux]  [k] _raw_spin_unlock
+     0.00%  fstime   fstime            [.] sync
+     0.00%  fstime   fstime            [.] __libc_calloc
+     0.00%  fstime   [kernel.vmlinux]  [k] __arm64_sys_clock_nanosleep
+     0.00%  fstime   [kernel.vmlinux]  [k] jbd2_journal_get_write_access
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000001fcb1c
+     0.00%  fstime   [kernel.vmlinux]  [k] __mnt_drop_write_file
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_llseek
+     0.00%  fstime   [kernel.vmlinux]  [k] note_gp_changes
+     0.00%  fstime   [kernel.vmlinux]  [k] find_get_pages_range_tag
+     0.00%  fstime   [kernel.vmlinux]  [k] jbd2_journal_cancel_revoke
+     0.00%  fstime   [kernel.vmlinux]  [k] exit_sem
+     0.00%  fstime   [kernel.vmlinux]  [k] find_get_entries
+     0.00%  fstime   fstime            [.] buffered_vfprintf
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc838
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_chksum.isra.0
+     0.00%  fstime   [kernel.vmlinux]  [k] alloc_buffer_head
+     0.00%  fstime   [kernel.vmlinux]  [k] crypto_shash_update
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000037c254
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000000d6900
+     0.00%  fstime   [kernel.vmlinux]  [k] alloc_page_buffers
+     0.00%  fstime   [kernel.vmlinux]  [k] try_to_release_page
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_es_insert_delayed_block
+     0.00%  fstime   [kernel.vmlinux]  [k] block_invalidatepage
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000020c340
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_inode_csum_set
+     0.00%  fstime   [kernel.vmlinux]  [k] __lru_cache_add
+     0.00%  fstime   [kernel.vmlinux]  [k] __es_remove_extent
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000009bcad4
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc924
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000037c644
+     0.00%  fstime   [kernel.vmlinux]  [k] __es_insert_extent
+     0.00%  fstime   [kernel.vmlinux]  [k] mod_zone_state
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc6c8
+     0.00%  fstime   [kernel.vmlinux]  [k] __cancel_dirty_page
+     0.00%  fstime   [kernel.vmlinux]  [k] from_kgid
+     0.00%  fstime   [kernel.vmlinux]  [k] finish_wait
+     0.00%  fstime   [kernel.vmlinux]  [k] jbd2_journal_dirty_metadata
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_mark_inode_dirty
+     0.00%  fstime   [kernel.vmlinux]  [k] ext4_da_get_block_prep
+     0.00%  fstime   [kernel.vmlinux]  [k] map_id_up
+     0.00%  fstime   [kernel.vmlinux]  [k] mem_cgroup_try_charge
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000037c614
+     0.00%  fstime   [kernel.vmlinux]  [k] free_unref_page_list
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x0000000000271748
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x000000000020dc30
+     0.00%  fstime   [kernel.vmlinux]  [k] 0x00000000002dc45c
+     0.00%  fstime   [kernel.vmlinux]  [k] mod_delayed_work_on
+     0.00%  fstime   [kernel.vmlinux]  [k] __call_rcu
+     0.00%  fstime   [kernel.vmlinux]  [k] clear_page
+     0.00%  perf_5.  [kernel.vmlinux]  [k] unwind_frame
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To report cacheline events from previous recording: perf c2c report)
+#

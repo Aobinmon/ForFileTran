@@ -1,0 +1,33 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 1980838746
+#
+# Overhead  Command  Shared Object     Symbol                  
+# ........  .......  ................  ........................
+#
+    98.88%  int      int               [.] dumb_stuff
+            |
+            ---_start
+               __libc_start_main
+               dumb_stuff
+
+     0.50%  int      int               [.] main
+     0.34%  int      [kernel.vmlinux]  [k] __do_softirq
+     0.21%  int      [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.02%  int      [kernel.vmlinux]  [k] rcu_core
+     0.01%  int      [kernel.vmlinux]  [k] 0x000000000025eb84
+     0.01%  int      [kernel.vmlinux]  [k] vm_area_free
+     0.01%  int      [kernel.vmlinux]  [k] kmem_cache_alloc
+     0.01%  int      [kernel.vmlinux]  [k] 0x00000000002719a8
+     0.00%  int      [kernel.vmlinux]  [k] mod_zone_state
+     0.00%  perf_5.  [kernel.vmlinux]  [k] 0x00000000009bcad4
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: For tracepoint events, try: perf report -s trace_fields)
+#
