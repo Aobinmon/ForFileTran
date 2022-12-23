@@ -1,0 +1,122 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu-cycles'
+# Event count (approx.): 2085168973
+#
+# Overhead  Command       Shared Object       Symbol                          
+# ........  ............  ..................  ................................
+#
+    93.46%  zip-test.exe  libc-2.31.so        [.] __strlen_generic
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_zip
+               gen_parse_buf
+               |          
+                --93.40%--th_strcat
+                          __strlen_generic
+
+     2.50%  zip-test.exe  zip-test.exe        [.] deflate_slow
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_zip
+               do_zip
+               compress
+               compress2
+               deflate
+               deflate_slow
+
+     0.69%  zip-test.exe  zip-test.exe        [.] longest_match
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_zip
+               do_zip
+               compress
+               compress2
+               deflate
+               longest_match
+
+     0.56%  zip-test.exe  zip-test.exe        [.] adler32
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_zip
+               do_zip
+               compress
+               compress2
+               deflate
+               deflate_slow
+               fill_window
+               adler32
+
+     0.49%  zip-test.exe  libc-2.31.so        [.] __vfprintf_internal
+     0.47%  zip-test.exe  zip-test.exe        [.] fill_window
+     0.26%  zip-test.exe  libc-2.31.so        [.] _IO_default_xsputn
+     0.21%  zip-test.exe  zip-test.exe        [.] Calc_crc8
+     0.18%  zip-test.exe  zip-test.exe        [.] gen_parse_buf
+     0.12%  zip-test.exe  libc-2.31.so        [.] strcpy
+     0.11%  zip-test.exe  zip-test.exe        [.] random_u32
+     0.09%  zip-test.exe  libc-2.31.so        [.] __strchrnul
+     0.08%  zip-test.exe  libc-2.31.so        [.] _IO_vsprintf
+     0.08%  zip-test.exe  libc-2.31.so        [.] __memcpy_generic
+     0.05%  zip-test.exe  zip-test.exe        [.] compress_block
+     0.05%  zip-test.exe  libc-2.31.so        [.] _IO_setb
+     0.04%  zip-test.exe  zip-test.exe        [.] th_vsprintf
+     0.04%  zip-test.exe  libc-2.31.so        [.] _IO_old_init
+     0.04%  zip-test.exe  zip-test.exe        [.] strlen@plt
+     0.04%  zip-test.exe  zip-test.exe        [.] strcat@plt
+     0.03%  zip-test.exe  [kernel.vmlinux]    [k] get_page_from_freelist
+     0.02%  zip-test.exe  zip-test.exe        [.] random_u32_inrange
+     0.02%  zip-test.exe  zip-test.exe        [.] th_sprintf
+     0.02%  zip-test.exe  libc-2.31.so        [.] strcat
+     0.02%  zip-test.exe  [kernel.vmlinux]    [k] _raw_spin_unlock_irq
+     0.02%  zip-test.exe  [kernel.vmlinux]    [k] load_balance
+     0.02%  zip-test.exe  libc-2.31.so        [.] _int_malloc
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] free_unref_page_list
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] follow_managed
+     0.01%  zip-test.exe  zip-test.exe        [.] pqdownheap
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] clear_page
+     0.01%  zip-test.exe  zip-test.exe        [.] th_crcbuffer
+     0.01%  zip-test.exe  libc-2.31.so        [.] _IO_str_init_static_internal
+     0.01%  zip-test.exe  zip-test.exe        [.] th_strlen
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] 0x000000000020c4e8
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] do_page_fault
+     0.01%  zip-test.exe  zip-test.exe        [.] th_strcat
+     0.01%  zip-test.exe  libc-2.31.so        [.] _itoa_word
+     0.01%  zip-test.exe  zip-test.exe        [.] vsprintf@plt
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] do_translation_fault
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] 0x000000000020c248
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] 0x000000000024a3e8
+     0.01%  zip-test.exe  libc-2.31.so        [.] __GI___printf_fp_l
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] armpmu_event_init
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] unmap_page_range
+     0.01%  zip-test.exe  libpthread-2.31.so  [.] _pthread_cleanup_push_defer
+     0.01%  zip-test.exe  libc-2.31.so        [.] _int_free
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] el0_da
+     0.01%  zip-test.exe  ld-2.31.so          [.] _dl_relocate_object
+     0.01%  zip-test.exe  libc-2.31.so        [.] _dl_addr
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] vma_interval_tree_remove
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] preempt_count_sub
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] path_init
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] vfs_getattr_nosec
+     0.01%  zip-test.exe  [kernel.vmlinux]    [k] handle_mm_fault
+     0.00%  zip-test.exe  [kernel.vmlinux]    [k] vma_interval_tree_insert
+     0.00%  zip-test.exe  [kernel.vmlinux]    [k] __vma_adjust
+     0.00%  zip-test.exe  [kernel.vmlinux]    [k] __call_rcu
+     0.00%  zip-test.exe  [kernel.vmlinux]    [k] randomize_stack_top
+     0.00%  zip-test.exe  [kernel.vmlinux]    [k] __this_cpu_preempt_check
+     0.00%  perf_5.4      [kernel.vmlinux]    [k] perf_event_exec
+
+
+#
+# (Tip: System-wide collection from all CPUs: perf record -a)
+#

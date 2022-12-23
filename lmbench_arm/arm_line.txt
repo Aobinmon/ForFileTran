@@ -1,0 +1,211 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 512  of event 'cpu-cycles'
+# Event count (approx.): 1306485842
+#
+# Overhead  Command  Shared Object     Symbol                         
+# ........  .......  ................  ...............................
+#
+    30.08%  line     line              [.] line_test
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+
+    22.74%  line     line              [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--15.47%--time_N
+               |          enough_duration
+               |          
+                --7.27%--find_N
+                          time_N
+                          enough_duration
+
+    16.42%  line     line              [.] line_initialize
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_initialize
+
+     6.28%  line     line              [.] mem_benchmark_0
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               mem_benchmark_0
+
+     4.74%  line     line              [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+     4.73%  line     line              [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+     2.90%  line     [kernel.vmlinux]  [k] clear_page
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_initialize
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               clear_page
+
+     2.15%  line     [kernel.vmlinux]  [k] get_page_from_freelist
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_initialize
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __alloc_pages_nodemask
+               get_page_from_freelist
+
+     1.90%  line     [vdso]            [.] 0x000000000000032c
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f96b3b32c
+
+     0.96%  line     [vdso]            [.] __kernel_gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               t_overhead
+               |          
+                --0.76%--__kernel_gettimeofday
+
+     0.83%  line     [kernel.vmlinux]  [k] 0x000000000020c354
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_initialize
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               lru_cache_add_active_or_unevictable
+               0xffffffc01027c354
+
+     0.76%  line     [vdso]            [.] 0x0000000000000324
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f96b3b324
+
+     0.58%  line     [kernel.vmlinux]  [k] el0_da
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_initialize
+               el0_da
+
+     0.57%  line     [vdso]            [.] 0x0000000000000314
+            |
+            ---_start
+               __libc_start_main
+               main
+               line_find
+               line_test
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f96b3b314
+
+     0.38%  line     [kernel.vmlinux]  [k] preempt_count_add
+     0.38%  line     [kernel.vmlinux]  [k] free_unref_page_list
+     0.38%  line     [kernel.vmlinux]  [k] __mod_node_page_state
+     0.38%  line     [kernel.vmlinux]  [k] __cpu_clear_user_page
+     0.38%  line     [kernel.vmlinux]  [k] __handle_mm_fault
+     0.19%  line     [vdso]            [.] 0x000000000000030c
+     0.19%  line     [kernel.vmlinux]  [k] unwind_frame
+     0.19%  line     [kernel.vmlinux]  [k] unmap_page_range
+     0.19%  line     [kernel.vmlinux]  [k] walk_stackframe
+     0.19%  line     [kernel.vmlinux]  [k] free_pages_and_swap_cache
+     0.19%  line     [kernel.vmlinux]  [k] page_add_new_anon_rmap
+     0.19%  line     [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.19%  line     [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.19%  line     line              [.] t_overhead
+     0.19%  line     [kernel.vmlinux]  [k] __do_softirq
+     0.19%  line     line              [.] __gettimeofday
+     0.18%  line     [kernel.vmlinux]  [k] 0x00000000009bcac0
+     0.17%  line     line              [.] permutation
+     0.00%  line     [kernel.vmlinux]  [k] percpu_counter_add_batch
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: List events using substring match: perf list <keyword>)
+#

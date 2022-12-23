@@ -1,0 +1,236 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 646  of event 'cpu-cycles'
+# Event count (approx.): 155416726
+#
+# Overhead  Command          Shared Object       Symbol                         
+# ........  ...............  ..................  ...............................
+#
+    28.95%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_add
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+               |          
+               |--18.77%--bignum_diff
+               |          |          
+               |          |--10.82%--bignum_sub
+               |          |          bignum_add
+               |          |          
+               |           --7.95%--bignum_add
+               |          
+                --10.18%--bignum_convert
+                          bignum_add
+
+    18.12%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_zero
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+               |          
+               |--8.43%--bignum_zero
+               |          
+               |--5.88%--bignum_convert
+               |          bignum_zero
+               |          
+                --3.82%--bignum_diff
+                          bignum_sub
+                          bignum_zero
+
+    12.04%  radix2-big-64k.  radix2-big-64k.exe  [.] FFT_transform_internal
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_radix2
+               FFT_transform_internal
+
+     8.43%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_neg
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+               |          
+               |--5.41%--bignum_diff
+               |          bignum_sub
+               |          bignum_neg
+               |          
+                --3.02%--bignum_convert
+                          bignum_neg
+
+     5.69%  radix2-big-64k.  radix2-big-64k.exe  [.] random_u32
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_radix2
+               fromint_f64_vector
+               precise_random_f64
+               |          
+               |--4.43%--random_u32
+               |          
+                --1.27%--random_u16
+                          random_u32
+
+     3.34%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_diff_dp
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+
+     2.86%  radix2-big-64k.  radix2-big-64k.exe  [.] count_msb
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+               bignum_diff
+               count_msb
+
+     2.53%  radix2-big-64k.  radix2-big-64k.exe  [.] precise_random_f64
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_radix2
+               |          
+                --2.38%--fromint_f64_vector
+                          precise_random_f64
+
+     2.07%  radix2-big-64k.  radix2-big-64k.exe  [.] svals
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               svals
+
+     2.07%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_msb
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               fp_iaccurate_bits_dp
+               bignum_diff_dp
+               bignum_diff
+               bignum_msb
+
+     1.91%  radix2-big-64k.  radix2-big-64k.exe  [.] load_dp
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+               load_dp
+
+     1.59%  radix2-big-64k.  radix2-big-64k.exe  [.] ee_iaccurate_bits_helper
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               bmark_verify_radix2
+               ee_ifpbits_buffer_dp
+               ee_iaccurate_bits_helper
+
+     1.40%  radix2-big-64k.  radix2-big-64k.exe  [.] FFT_bitreverse
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_radix2
+               FFT_bitreverse
+
+     1.26%  radix2-big-64k.  radix2-big-64k.exe  [.] store_dp
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_radix2
+               fromint_f64_vector
+               store_dp
+
+     1.11%  radix2-big-64k.  radix2-big-64k.exe  [.] t_run_test_radix2
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_radix2
+
+     0.95%  radix2-big-64k.  radix2-big-64k.exe  [.] calculate_twiddles
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_radix2
+               calculate_twiddles
+
+     0.63%  radix2-big-64k.  [kernel.vmlinux]    [k] _raw_spin_unlock_irqrestore
+     0.35%  radix2-big-64k.  [kernel.vmlinux]    [k] get_page_from_freelist
+     0.32%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_convert
+     0.32%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_sub
+     0.32%  radix2-big-64k.  radix2-big-64k.exe  [.] acc_summary_info
+     0.32%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_diff
+     0.32%  radix2-big-64k.  radix2-big-64k.exe  [.] fromint_f64_vector
+     0.31%  radix2-big-64k.  [kernel.vmlinux]    [k] mmap_region
+     0.25%  radix2-big-64k.  [kernel.vmlinux]    [k] clear_page
+     0.19%  radix2-big-64k.  [kernel.vmlinux]    [k] el0_da
+     0.18%  radix2-big-64k.  libc-2.31.so        [.] __memcpy_generic
+     0.16%  radix2-big-64k.  [kernel.vmlinux]    [k] 0x00000000001fcb30
+     0.16%  radix2-big-64k.  radix2-big-64k.exe  [.] bignum_abs
+     0.16%  radix2-big-64k.  radix2-big-64k.exe  [.] th_abs
+     0.16%  radix2-big-64k.  radix2-big-64k.exe  [.] fp_iaccurate_bits_dp
+     0.16%  radix2-big-64k.  libc-2.31.so        [.] _itoa_word
+     0.16%  radix2-big-64k.  [kernel.vmlinux]    [k] preempt_count_add
+     0.16%  radix2-big-64k.  [kernel.vmlinux]    [k] el0_svc_common.constprop.0
+     0.16%  radix2-big-64k.  radix2-big-64k.exe  [.] random_u16
+     0.16%  radix2-big-64k.  [kernel.vmlinux]    [k] unmap_page_range
+     0.16%  radix2-big-64k.  [kernel.vmlinux]    [k] 0x000000000020c354
+     0.16%  radix2-big-64k.  ld-2.31.so          [.] check_match
+     0.15%  radix2-big-64k.  [kernel.vmlinux]    [k] free_unref_page
+     0.15%  radix2-big-64k.  [kernel.vmlinux]    [k] copy_page
+     0.08%  radix2-big-64k.  [kernel.vmlinux]    [k] __arch_clear_user
+     0.02%  radix2-big-64k.  [kernel.vmlinux]    [k] move_page_tables
+     0.01%  radix2-big-64k.  [kernel.vmlinux]    [k] 0x00000000000d6910
+     0.00%  perf_5.4         [kernel.vmlinux]    [k] __pi_strrchr
+     0.00%  radix2-big-64k.  [kernel.vmlinux]    [k] _raw_spin_unlock_irq
+     0.00%  perf_5.4         [kernel.vmlinux]    [k] perf_event_exec
+
+
+#
+# (Tip: Search options using a keyword: perf report -h <keyword>)
+#

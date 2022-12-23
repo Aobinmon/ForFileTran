@@ -1,0 +1,217 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 9K of event 'cpu-cycles'
+# Event count (approx.): 2372215759
+#
+# Overhead  Command          Shared Object             Symbol                         
+# ........  ...............  ........................  ...............................
+#
+    36.57%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] matmul
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               matmul
+
+    12.29%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] reinit_vec
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               |          
+               |--6.01%--adi_integration
+               |          reinit_vec
+               |          
+               |--2.04%--casual
+               |          reinit_vec
+               |          
+               |--1.36%--MonteCarlo_integrate
+               |          reinit_vec
+               |          
+               |--0.76%--state_fragment
+               |          reinit_vec
+               |          
+               |--0.67%--planckian
+               |          reinit_vec
+               |          
+               |--0.66%--lin_recurrence
+               |          reinit_vec
+               |          
+                --0.60%--hydro_fragment
+                          reinit_vec
+
+    10.95%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] adi_integration
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               adi_integration
+
+     7.55%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] get_array_feedback
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               get_array_feedback
+
+     6.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] pic_1d
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               pic_1d
+
+     4.82%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] pic_2d
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               pic_2d
+
+     4.63%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] ordinate_transport
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               ordinate_transport
+
+     3.20%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] casual
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               casual
+
+     2.33%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] lin_recurrence
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               lin_recurrence
+
+     2.30%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] hydro_2d_implicit
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               hydro_2d_implicit
+
+     1.98%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] state_fragment
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               state_fragment
+
+     1.14%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] planckian
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               planckian
+
+     0.97%  loops-all-mid-1  libm-2.31.so              [.] expf@@GLIBC_2.27
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               expf@@GLIBC_2.27
+
+     0.80%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] hydro_fragment
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               hydro_fragment
+
+     0.61%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] MonteCarlo_integrate
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               MonteCarlo_integrate
+
+     0.59%  loops-all-mid-1  libm-2.31.so              [.] __sqrtf
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               __sqrtf
+
+     0.57%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] reinit_vec_const
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               |          
+                --0.53%--bmark_init_loops
+                          reset_all_data
+                          reinit_vec_const
+
+     0.52%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] cholesky
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_loops
+               cholesky
+
+     0.40%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] banded_linear
+     0.38%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] difference_predictors
+     0.33%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] reinit_ivec
+     0.28%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] sqrtf@plt
+     0.25%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] integrate_predictors
+     0.09%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] expf@plt
+     0.05%  loops-all-mid-1  [kernel.vmlinux]          [k] clear_page
+     0.05%  loops-all-mid-1  [kernel.vmlinux]          [k] get_page_from_freelist
+     0.04%  loops-all-mid-1  [kernel.vmlinux]          [k] _raw_spin_unlock_irqrestore
+     0.02%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] random_u32
+     0.02%  loops-all-mid-1  [kernel.vmlinux]          [k] unwind_frame
+     0.02%  loops-all-mid-1  [kernel.vmlinux]          [k] return_address
+     0.02%  loops-all-mid-1  [kernel.vmlinux]          [k] 0x000000000020c25c
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] vmacache_find
+     0.01%  loops-all-mid-1  libc-2.31.so              [.] _dl_addr
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] store_sp
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] precise_random_f32
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] define_params_loops
+     0.01%  loops-all-mid-1  ld-2.31.so                [.] mmap64
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] arch_vma_name
+     0.01%  loops-all-mid-1  libc-2.31.so              [.] __strlen_generic
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] 0x00000000002223f4
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] monte_carlo
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] reinit_ordinate_cvec
+     0.01%  loops-all-mid-1  loops-all-mid-10k-sp.exe  [.] reinit_vec_limited
+     0.01%  loops-all-mid-1  libm-2.31.so              [.] __sqrtf_finite@GLIBC_2.17
+     0.01%  loops-all-mid-1  libc-2.31.so              [.] __GI___libc_write
+     0.01%  loops-all-mid-1  libc-2.31.so              [.] __aarch64_cas4_acq
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] 0x000000000024a3e8
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] dput
+     0.01%  loops-all-mid-1  [kernel.vmlinux]          [k] _raw_spin_unlock
+     0.00%  loops-all-mid-1  [kernel.vmlinux]          [k] 0x000000000020c354
+     0.00%  perf_5.4         [kernel.vmlinux]          [k] perf_iterate_sb
+     0.00%  loops-all-mid-1  [kernel.vmlinux]          [k] _raw_spin_unlock_irq
+     0.00%  perf_5.4         [kernel.vmlinux]          [k] perf_event_exec
+
+
+#
+# (Tip: Limit to show entries above 5% only: perf report --percent-limit 5)
+#

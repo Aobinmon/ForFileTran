@@ -1,0 +1,114 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 368  of event 'cpu-cycles'
+# Event count (approx.): 87303793
+#
+# Overhead  Command       Shared Object       Symbol                         
+# ........  ............  ..................  ...............................
+#
+    38.51%  sha-test.exe  sha-test.exe        [.] sha256
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_sha
+               sha2
+               sha2_update
+               sha256
+
+    37.44%  sha-test.exe  sha-test.exe        [.] random_u32
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_sha
+               random_u8_vector
+               random_u8
+               random_u32
+
+     8.79%  sha-test.exe  sha-test.exe        [.] random_u8
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_sha
+               random_u8_vector
+               random_u8
+
+     4.93%  sha-test.exe  sha-test.exe        [.] byteswap
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_sha
+               sha2
+               sha2_update
+               byteswap
+
+     4.86%  sha-test.exe  sha-test.exe        [.] random_u8_vector
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_sha
+               random_u8_vector
+
+     0.57%  sha-test.exe  sha-test.exe        [.] sha2_update
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_sha
+               sha2
+               sha2_update
+
+     0.57%  sha-test.exe  [kernel.vmlinux]    [k] get_page_from_freelist
+            |
+            ---_start
+               __libc_start_main
+               main
+               define_params_sha
+               random_u8_vector
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __alloc_pages_nodemask
+               get_page_from_freelist
+
+     0.57%  sha-test.exe  ld-2.31.so          [.] do_lookup_x
+            |
+            ---_start
+               __libc_start_main
+               main
+               mith_main
+
+     0.32%  sha-test.exe  [kernel.vmlinux]    [k] vma_interval_tree_remove
+     0.32%  sha-test.exe  ld-2.31.so          [.] _dl_relocate_object
+     0.31%  sha-test.exe  libc-2.31.so        [.] _dl_addr
+     0.31%  sha-test.exe  [kernel.vmlinux]    [k] update_group_capacity
+     0.30%  sha-test.exe  [kernel.vmlinux]    [k] ext4_file_read_iter
+     0.28%  sha-test.exe  [kernel.vmlinux]    [k] clear_page
+     0.28%  sha-test.exe  sha-test.exe        [.] isaac
+     0.28%  sha-test.exe  [kernel.vmlinux]    [k] __lru_cache_add
+     0.28%  sha-test.exe  [kernel.vmlinux]    [k] _raw_spin_unlock_irqrestore
+     0.28%  sha-test.exe  [kernel.vmlinux]    [k] return_address
+     0.28%  sha-test.exe  ld-2.31.so          [.] _dl_lookup_symbol_x
+     0.28%  sha-test.exe  [kernel.vmlinux]    [k] free_unref_page_list
+     0.16%  sha-test.exe  [kernel.vmlinux]    [k] strnlen_user
+     0.03%  sha-test.exe  [kernel.vmlinux]    [k] move_page_tables
+     0.03%  sha-test.exe  libpthread-2.31.so  [.] __aarch64_swp4_acq
+     0.00%  perf_5.4      [kernel.vmlinux]    [k] __pi_strlen
+     0.00%  sha-test.exe  [kernel.vmlinux]    [k] in_lock_functions
+     0.00%  perf_5.4      [kernel.vmlinux]    [k] perf_event_exec
+     0.00%  sha-test.exe  [kernel.vmlinux]    [k] _raw_spin_unlock_irq
+
+
+#
+# (Tip: To show assembler sample contexts use perf record -b / perf script -F +brstackinsn --xed)
+#

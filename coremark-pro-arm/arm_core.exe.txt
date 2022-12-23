@@ -1,0 +1,217 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 47K of event 'cpu-cycles'
+# Event count (approx.): 11696818799
+#
+# Overhead  Command   Shared Object     Symbol                          
+# ........  ........  ................  ................................
+#
+    36.43%  core.exe  core.exe          [.] core_state_transition
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               |          
+                --36.41%--core_bench_state
+                          core_state_transition
+
+    19.02%  core.exe  core.exe          [.] ee_isdigit
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_state
+               ee_isdigit
+
+     9.44%  core.exe  core.exe          [.] matrix_mul_matrix_bitextract
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_mul_matrix_bitextract
+
+     8.68%  core.exe  core.exe          [.] core_list_reverse
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_list_reverse
+
+     7.56%  core.exe  core.exe          [.] matrix_mul_matrix
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_mul_matrix
+
+     5.86%  core.exe  core.exe          [.] core_list_find
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_list_find
+
+     3.78%  core.exe  core.exe          [.] core_bench_state
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_state
+
+     2.50%  core.exe  core.exe          [.] matrix_sum
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_sum
+
+     1.26%  core.exe  core.exe          [.] core_list_mergesort
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+
+     1.23%  core.exe  core.exe          [.] matrix_add_const
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_add_const
+
+     0.74%  core.exe  core.exe          [.] crcu8
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               |          
+                --0.73%--core_bench_list
+
+     0.59%  core.exe  core.exe          [.] crcu16
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               |          
+                --0.58%--core_bench_list
+
+     0.58%  core.exe  core.exe          [.] matrix_mul_vect
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_mul_vect
+
+     0.57%  core.exe  core.exe          [.] matrix_mul_const
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_core
+               iterate
+               core_bench_list
+               core_list_mergesort
+               cmp_complex
+               calc_func
+               core_bench_matrix
+               matrix_mul_const
+
+     0.49%  core.exe  core.exe          [.] core_bench_list
+     0.43%  core.exe  core.exe          [.] calc_func
+     0.42%  core.exe  core.exe          [.] cmp_idx
+     0.17%  core.exe  core.exe          [.] crc16
+     0.10%  core.exe  core.exe          [.] crcu32
+     0.08%  core.exe  core.exe          [.] cmp_complex
+     0.04%  core.exe  core.exe          [.] matrix_test
+     0.01%  core.exe  core.exe          [.] core_bench_matrix
+     0.00%  core.exe  core.exe          [.] core_list_remove
+     0.00%  core.exe  ld-2.31.so        [.] open_verify.constprop.0
+     0.00%  core.exe  ld-2.31.so        [.] do_lookup_x
+     0.00%  core.exe  libc-2.31.so      [.] _dl_addr
+     0.00%  core.exe  [kernel.vmlinux]  [k] __pi_memset
+     0.00%  core.exe  libc-2.31.so      [.] __GI___printf_fp_l
+     0.00%  core.exe  libc-2.31.so      [.] __strlen_generic
+     0.00%  core.exe  [kernel.vmlinux]  [k] sync_mm_rss
+     0.00%  core.exe  core.exe          [.] iterate
+     0.00%  core.exe  core.exe          [.] core_list_undo_remove
+     0.00%  core.exe  [kernel.vmlinux]  [k] lock_page_memcg
+     0.00%  core.exe  [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  core.exe  core.exe          [.] core_init_state
+     0.00%  core.exe  [kernel.vmlinux]  [k] __arch_clear_user
+     0.00%  core.exe  [kernel.vmlinux]  [k] clear_page
+     0.00%  core.exe  [kernel.vmlinux]  [k] find_vma
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] strlcpy
+     0.00%  core.exe  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To see list of saved events and attributes: perf evlist -v)
+#

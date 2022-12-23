@@ -1,0 +1,247 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 882  of event 'cpu-cycles'
+# Event count (approx.): 495151654
+#
+# Overhead  Command   Shared Object     Symbol                    
+# ........  ........  ................  ..........................
+#
+    59.10%  lat_proc  lat_proc          [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--39.95%--time_N
+               |          enough_duration
+               |          
+                --19.15%--find_N
+                          time_N
+                          enough_duration
+
+    14.15%  lat_proc  lat_proc          [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+    11.12%  lat_proc  lat_proc          [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+     4.55%  lat_proc  [vdso]            [.] 0x000000000000032c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f89bb732c
+
+     3.03%  lat_proc  [vdso]            [.] 0x0000000000000324
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f89bb7324
+
+     2.53%  lat_proc  [vdso]            [.] __kernel_gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               |          
+               |--2.02%--__kernel_gettimeofday
+               |          
+                --0.51%--__gettimeofday
+                          __kernel_gettimeofday
+
+     1.01%  lat_proc  [vdso]            [.] 0x0000000000000314
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f89bb7314
+
+     1.00%  lat_proc  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               do_fork
+               __libc_fork
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               dup_mm
+               copy_page_range
+               _raw_spin_unlock
+               preempt_count_sub
+               return_address
+               walk_stackframe
+               0xffffffc01009172c
+
+     0.51%  lat_proc  [kernel.vmlinux]  [k] _raw_spin_unlock
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               time_N
+               duration
+               __getrusage
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_getrusage
+               __do_sys_getrusage
+               getrusage
+               get_task_mm
+               _raw_spin_unlock
+
+     0.51%  lat_proc  [kernel.vmlinux]  [k] _raw_write_unlock_irq
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               __libc_fork
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               _raw_write_unlock_irq
+
+     0.51%  lat_proc  lat_proc          [.] t_overhead
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+
+     0.51%  lat_proc  lat_proc          [.] __gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+
+     0.51%  lat_proc  lat_proc          [.] __getrusage
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               time_N
+               duration
+               __getrusage
+
+     0.51%  lat_proc  [vdso]            [.] 0x000000000000030c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f89bb730c
+
+     0.06%  lat_proc  [kernel.vmlinux]  [k] free_unref_page_list
+     0.05%  lat_proc  [kernel.vmlinux]  [k] free_unref_page
+     0.05%  lat_proc  [kernel.vmlinux]  [k] unmap_page_range
+     0.05%  lat_proc  [kernel.vmlinux]  [k] 0x000000000024a420
+     0.04%  lat_proc  [kernel.vmlinux]  [k] copy_page
+     0.04%  lat_proc  [kernel.vmlinux]  [k] __tlb_remove_page_size
+     0.03%  lat_proc  [kernel.vmlinux]  [k] 0x000000000028bb18
+     0.03%  lat_proc  [kernel.vmlinux]  [k] release_pages
+     0.03%  lat_proc  [kernel.vmlinux]  [k] 0x000000000023d4f0
+     0.02%  lat_proc  [kernel.vmlinux]  [k] get_page_from_freelist
+     0.02%  lat_proc  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.01%  lat_proc  [kernel.vmlinux]  [k] d_path
+     0.01%  lat_proc  [kernel.vmlinux]  [k] preempt_count_sub
+     0.01%  lat_proc  [kernel.vmlinux]  [k] 0x00000000000b3b1c
+     0.01%  lat_proc  [kernel.vmlinux]  [k] 0x00000000000b3b30
+     0.00%  lat_proc  [kernel.vmlinux]  [k] 0x0000000000258660
+     0.00%  lat_proc  [kernel.vmlinux]  [k] schedule_tail
+     0.00%  lat_proc  [kernel.vmlinux]  [k] __task_pid_nr_ns
+     0.00%  lat_proc  [kernel.vmlinux]  [k] 0x0000000000258664
+     0.00%  lat_proc  [kernel.vmlinux]  [k] __free_pages
+     0.00%  lat_proc  [kernel.vmlinux]  [k] trace_preempt_on
+     0.00%  lat_proc  [kernel.vmlinux]  [k] 0x00000000000b3b20
+     0.00%  lat_proc  [kernel.vmlinux]  [k] finish_task_switch
+     0.00%  lat_proc  [kernel.vmlinux]  [k] do_notify_resume
+     0.00%  lat_proc  [kernel.vmlinux]  [k] 0x0000000000258674
+     0.00%  lat_proc  [kernel.vmlinux]  [k] free_pages
+     0.00%  lat_proc  [kernel.vmlinux]  [k] __mmdrop
+     0.00%  lat_proc  [kernel.vmlinux]  [k] __do_softirq
+     0.00%  lat_proc  [kernel.vmlinux]  [k] free_pcp_prepare
+     0.00%  lat_proc  [kernel.vmlinux]  [k] unwind_frame
+     0.00%  lat_proc  [kernel.vmlinux]  [k] __rcu_read_lock
+     0.00%  lat_proc  [kernel.vmlinux]  [k] in_lock_functions
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Customize output of perf script with: perf script -F event,ip,sym)
+#

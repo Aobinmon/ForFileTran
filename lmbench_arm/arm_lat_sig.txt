@@ -1,0 +1,259 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 209  of event 'cpu-cycles'
+# Event count (approx.): 609027399
+#
+# Overhead  Command  Shared Object     Symbol                         
+# ........  .......  ................  ...............................
+#
+    48.70%  lat_sig  lat_sig           [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--33.20%--time_N
+               |          enough_duration
+               |          
+                --15.50%--find_N
+                          time_N
+                          enough_duration
+
+    10.68%  lat_sig  lat_sig           [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+    10.27%  lat_sig  lat_sig           [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+     6.60%  lat_sig  lat_sig           [.] __kill
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+
+     5.34%  lat_sig  [vdso]            [.] 0x000000000000032c
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fbe5e832c
+
+     3.02%  lat_sig  [kernel.vmlinux]  [k] fpsimd_save_state
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               work_pending
+               do_notify_resume
+               fpsimd_signal_preserve_current_state
+               fpsimd_save_state
+
+     2.34%  lat_sig  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_kill
+               kill_pid_info
+               do_send_sig_info
+               _raw_spin_unlock_irqrestore
+
+     1.64%  lat_sig  [kernel.vmlinux]  [k] __arm64_sys_rt_sigreturn
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               do_catch
+               0x7fbe5e85ec
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_rt_sigreturn
+
+     1.63%  lat_sig  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+
+     1.36%  lat_sig  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --1.36%--_start
+                       __libc_start_main
+                       main
+                       bench_catch
+                       benchmp
+                       benchmp_child
+                       __kill
+                       work_pending
+                       do_notify_resume
+                       get_signal
+                       _raw_spin_unlock_irq
+
+     1.35%  lat_sig  [kernel.vmlinux]  [k] __radix_tree_lookup
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_kill
+               find_vpid
+               idr_find
+               __radix_tree_lookup
+
+     1.13%  lat_sig  [kernel.vmlinux]  [k] find_vpid
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_kill
+               find_vpid
+
+     0.97%  lat_sig  [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               benchmp_child
+               __kill
+               work_pending
+               do_notify_resume
+               preempt_count_add
+
+     0.82%  lat_sig  [vdso]            [.] 0x0000000000000314
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fbe5e8314
+
+     0.82%  lat_sig  lat_sig           [.] __gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+
+     0.82%  lat_sig  [vdso]            [.] 0x0000000000000324
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fbe5e8324
+
+     0.82%  lat_sig  [vdso]            [.] 0x0000000000000300
+            |
+            ---_start
+               __libc_start_main
+               main
+               bench_catch
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fbe5e8300
+
+     0.41%  lat_sig  [vdso]            [.] __kernel_gettimeofday
+     0.41%  lat_sig  [vdso]            [.] 0x0000000000000344
+     0.41%  lat_sig  lat_sig           [.] t_overhead
+     0.41%  lat_sig  [vdso]            [.] 0x000000000000039c
+     0.01%  lat_sig  [kernel.vmlinux]  [k] return_address
+     0.01%  lat_sig  lat_sig           [.] benchmp_child
+     0.01%  lat_sig  [kernel.vmlinux]  [k] ext4_file_mmap
+     0.00%  perf_5.  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Generate a script for your data: perf script -g <lang>)
+#

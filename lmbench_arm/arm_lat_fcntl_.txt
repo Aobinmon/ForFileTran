@@ -1,0 +1,288 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 212  of event 'cpu-cycles'
+# Event count (approx.): 587082393
+#
+# Overhead  Command     Shared Object     Symbol                         
+# ........  ..........  ................  ...............................
+#
+    49.86%  lat_fcntl_  lat_fcntl_        [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--34.02%--time_N
+               |          enough_duration
+               |          
+                --15.84%--find_N
+                          time_N
+                          enough_duration
+
+    14.06%  lat_fcntl_  lat_fcntl_        [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+    10.23%  lat_fcntl_  lat_fcntl_        [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+     4.26%  lat_fcntl_  [vdso]            [.] 0x000000000000032c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f825dc32c
+
+     2.91%  lat_fcntl_  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               __fcntl64_nocancel_adjusted
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+
+     2.71%  lat_fcntl_  [kernel.vmlinux]  [k] 0x00000000002719dc
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               initialize
+               procB
+               __libc_fcntl64
+               __fcntl64_nocancel_adjusted
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               do_lock_file_wait
+               posix_lock_inode
+               0xffffffc0102e19dc
+
+     2.13%  lat_fcntl_  lat_fcntl_        [.] __gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+
+     2.05%  lat_fcntl_  [kernel.vmlinux]  [k] trace_preempt_on
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               _raw_spin_unlock
+               trace_preempt_on
+
+     1.50%  lat_fcntl_  [kernel.vmlinux]  [k] 0x00000000009bcabc
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               __fcntl64_nocancel_adjusted
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               do_lock_file_wait
+               posix_lock_inode
+               locks_unlink_lock_ctx
+               0xffffffc010a2cabc
+
+     1.28%  lat_fcntl_  [vdso]            [.] __kernel_gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               __kernel_gettimeofday
+
+     1.24%  lat_fcntl_  [kernel.vmlinux]  [k] 0x00000000002718bc
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               __fcntl64_nocancel_adjusted
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               do_lock_file_wait
+               posix_lock_inode
+               0xffffffc0102e18bc
+
+     1.08%  lat_fcntl_  lat_fcntl_        [.] __fcntl64_nocancel_adjusted
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               __fcntl64_nocancel_adjusted
+
+     0.85%  lat_fcntl_  [vdso]            [.] 0x0000000000000344
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f825dc344
+
+     0.85%  lat_fcntl_  [vdso]            [.] 0x0000000000000314
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f825dc314
+
+     0.85%  lat_fcntl_  [vdso]            [.] 0x0000000000000324
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7f825dc324
+
+     0.82%  lat_fcntl_  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               initialize
+               procB
+               __libc_fcntl64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               do_lock_file_wait
+               finish_wait
+               _raw_spin_unlock_irqrestore
+
+     0.72%  lat_fcntl_  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               procA
+               __libc_fcntl64
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_fcntl
+               do_fcntl
+               fcntl_setlk
+               do_lock_file_wait
+               posix_lock_inode
+               __this_cpu_preempt_check
+
+     0.43%  lat_fcntl_  [vdso]            [.] 0x0000000000000338
+     0.43%  lat_fcntl_  [vdso]            [.] 0x0000000000000340
+     0.43%  lat_fcntl_  lat_fcntl_        [.] t_overhead
+     0.43%  lat_fcntl_  [vdso]            [.] 0x000000000000033c
+     0.43%  lat_fcntl_  [kernel.vmlinux]  [k] __do_softirq
+     0.43%  lat_fcntl_  [vdso]            [.] 0x0000000000000354
+     0.02%  lat_fcntl_  [kernel.vmlinux]  [k] fcntl_setlk
+     0.01%  lat_fcntl_  lat_fcntl_        [.] __libc_close
+     0.01%  lat_fcntl_  [kernel.vmlinux]  [k] 0x00000000000d690c
+     0.00%  lat_fcntl_  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To set sample time separation other than 100ms with --sort time use --time-quantum)
+#

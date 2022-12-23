@@ -1,0 +1,239 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 201  of event 'cpu-cycles'
+# Event count (approx.): 548290876
+#
+# Overhead  Command   Shared Object     Symbol                         
+# ........  ........  ................  ...............................
+#
+    53.96%  lat_unix  lat_unix          [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--36.97%--time_N
+               |          enough_duration
+               |          
+                --16.98%--find_N
+                          time_N
+                          enough_duration
+
+    11.41%  lat_unix  lat_unix          [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+    10.49%  lat_unix  lat_unix          [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+     5.93%  lat_unix  [vdso]            [.] 0x000000000000032c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fb72c932c
+
+     4.05%  lat_unix  [kernel.vmlinux]  [k] unix_stream_read_actor
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               initialize
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               __vfs_read
+               new_sync_read
+               sock_read_iter
+               unix_stream_recvmsg
+               unix_stream_read_generic
+               unix_stream_read_actor
+
+     3.02%  lat_unix  [kernel.vmlinux]  [k] __kmalloc_track_caller
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               vfs_write
+               __vfs_write
+               new_sync_write
+               sock_write_iter
+               sock_sendmsg
+               unix_stream_sendmsg
+               sock_alloc_send_pskb
+               alloc_skb_with_frags
+               __alloc_skb
+               __kmalloc_track_caller
+
+     2.80%  lat_unix  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               |          
+                --2.34%--benchmp_child
+                          |          
+                          |--1.39%--initialize
+                          |          __libc_read
+                          |          el0_svc
+                          |          el0_svc_handler
+                          |          el0_svc_common.constprop.0
+                          |          __arm64_sys_read
+                          |          ksys_read
+                          |          vfs_read
+                          |          __vfs_read
+                          |          new_sync_read
+                          |          sock_read_iter
+                          |          unix_stream_recvmsg
+                          |          unix_stream_read_generic
+                          |          skb_unlink
+                          |          _raw_spin_unlock_irqrestore
+                          |          
+                           --0.95%--benchmark
+                                     __libc_read
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     __vfs_read
+                                     new_sync_read
+                                     sock_read_iter
+                                     unix_stream_recvmsg
+                                     unix_stream_read_generic
+                                     consume_skb
+                                     skb_release_head_state
+                                     unix_destruct_scm
+                                     sock_wfree
+                                     unix_write_space
+                                     __wake_up_sync_key
+                                     __wake_up_common_lock
+                                     _raw_spin_unlock_irqrestore
+
+     1.91%  lat_unix  [kernel.vmlinux]  [k] security_socket_recvmsg
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               benchmark
+               __libc_read
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_read
+               ksys_read
+               vfs_read
+               __vfs_read
+               new_sync_read
+               sock_read_iter
+               security_socket_recvmsg
+
+     1.37%  lat_unix  [vdso]            [.] 0x0000000000000324
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fb72c9324
+
+     0.91%  lat_unix  [vdso]            [.] 0x0000000000000314
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fb72c9314
+
+     0.91%  lat_unix  [vdso]            [.] __kernel_gettimeofday
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               __kernel_gettimeofday
+
+     0.91%  lat_unix  [vdso]            [.] 0x0000000000000338
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               t_overhead
+               __gettimeofday
+               0x7fb72c9338
+
+     0.46%  lat_unix  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.46%  lat_unix  lat_unix          [.] __gettimeofday
+     0.46%  lat_unix  [vdso]            [.] 0x0000000000000374
+     0.46%  lat_unix  [vdso]            [.] 0x000000000000030c
+     0.46%  lat_unix  [vdso]            [.] 0x000000000000039c
+     0.02%  lat_unix  [kernel.vmlinux]  [k] unix_stream_read_generic
+     0.02%  lat_unix  lat_unix          [.] benchmp_child
+     0.01%  lat_unix  [kernel.vmlinux]  [k] 0x00000000000d690c
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: System-wide collection from all CPUs: perf record -a)
+#

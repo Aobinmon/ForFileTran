@@ -1,0 +1,195 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 284  of event 'cpu-cycles'
+# Event count (approx.): 65074117
+#
+# Overhead  Command          Shared Object           Symbol                         
+# ........  ...............  ......................  ...............................
+#
+    20.48%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] Calc_crc8
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               Calc_crc8
+
+    17.54%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] jpeg_fdct_islow
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               compress_data
+               jpeg_fdct_islow
+
+    17.13%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] forward_DCT
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               compress_data
+               forward_DCT
+
+    12.23%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] rgb_ycc_convert
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               rgb_ycc_convert
+
+     9.11%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] encode_one_block
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               compress_data
+               encode_mcu_huff
+               encode_one_block
+
+     4.55%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] get_8bit_row
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               get_8bit_row
+
+     4.17%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] emit_bits
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               compress_data
+               encode_mcu_huff
+               encode_one_block
+               emit_bits
+
+     2.66%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] h2v2_downsample
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_write_scanlines
+               process_data_simple_main
+               pre_process_data
+               sep_downsample
+               h2v2_downsample
+
+     2.07%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               |          
+                --1.74%--mith_main
+                          |          
+                           --1.41%--mith_report_results
+                                     |          
+                                      --1.05%--mith_log_tcdef
+                                                |          
+                                                 --0.69%--mith_log_sci
+                                                           th_printf
+                                                           al_printf
+                                                           vprintf
+                                                           __vfprintf_internal
+                                                           _IO_file_xsputn@@GLIBC_2.17
+                                                           _IO_do_write@@GLIBC_2.17
+                                                           new_do_write
+                                                           _IO_file_write@@GLIBC_2.17
+                                                           __GI___libc_write
+                                                           el0_svc
+                                                           el0_svc_handler
+                                                           el0_svc_common.constprop.0
+                                                           __arm64_sys_write
+                                                           ksys_write
+                                                           vfs_write
+                                                           __vfs_write
+                                                           tty_write
+                                                           n_tty_write
+                                                           tty_write_room
+                                                           uart_write_room
+                                                           _raw_spin_unlock_irqrestore
+
+     0.96%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] read_byte
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               start_input_bmp
+               read_colormap
+               read_byte
+
+     0.76%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] jpeg_make_c_derived_tbl
+            |
+            ---thread_start
+               start_thread
+               bench_thread
+               t_run_test_cjpeg
+               cjpeg_main
+               jpeg_start_compress
+               prepare_for_pass
+               start_pass_huff
+               jpeg_make_c_derived_tbl
+
+     0.40%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] emit_dht
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] expand_right_edge
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] pre_process_data
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] compress_data
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] emit_byte
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] bmark_verify_cjpeg
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] encode_mcu_huff
+     0.38%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] jpeg_write_scanlines
+     0.38%  cjpeg-rose7-pre  libc-2.31.so            [.] _int_free
+     0.36%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] unwind_frame
+     0.36%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] __vfs_write
+     0.35%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] 0x0000000000639fa4
+     0.34%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] 0x000000000063a3dc
+     0.34%  cjpeg-rose7-pre  libc-2.31.so            [.] __GI___libc_write
+     0.33%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] 0x0000000000639f2c
+     0.33%  cjpeg-rose7-pre  libc-2.31.so            [.] __vfprintf_internal
+     0.32%  cjpeg-rose7-pre  libc-2.31.so            [.] strstr
+     0.31%  cjpeg-rose7-pre  cjpeg-rose7-preset.exe  [.] th_get_flag
+     0.30%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] preempt_count_sub
+     0.28%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] xas_find
+     0.26%  cjpeg-rose7-pre  ld-2.31.so              [.] _dl_map_object_deps
+     0.24%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] copy_page
+     0.21%  cjpeg-rose7-pre  ld-2.31.so              [.] _dl_new_object
+     0.19%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] 0x000000000024a3cc
+     0.17%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] __lru_cache_add
+     0.17%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] evict
+     0.04%  cjpeg-rose7-pre  ld-2.31.so              [.] _dl_fixup
+     0.01%  perf_5.4         [kernel.vmlinux]        [k] preempt_count_add
+     0.01%  cjpeg-rose7-pre  [kernel.vmlinux]        [k] _raw_spin_unlock_irq
+     0.00%  perf_5.4         [kernel.vmlinux]        [k] perf_event_exec
+
+
+#
+# (Tip: Treat branches as callchains: perf report --branch-history)
+#

@@ -1,0 +1,744 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu-cycles'
+# Event count (approx.): 7575064681
+#
+# Overhead  Command   Shared Object     Symbol                         
+# ........  ........  ................  ...............................
+#
+    31.88%  lat_pipe  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--16.08%--initialize
+               |          writer
+               |          |          
+               |          |--8.15%--__libc_read
+               |          |          el0_svc
+               |          |          el0_svc_handler
+               |          |          el0_svc_common.constprop.0
+               |          |          __arm64_sys_read
+               |          |          ksys_read
+               |          |          vfs_read
+               |          |          |          
+               |          |           --8.13%--__vfs_read
+               |          |                     |          
+               |          |                      --8.11%--new_sync_read
+               |          |                                pipe_read
+               |          |                                |          
+               |          |                                |--4.55%--__wake_up_sync_key
+               |          |                                |          __wake_up_common_lock
+               |          |                                |          _raw_spin_unlock_irqrestore
+               |          |                                |          
+               |          |                                 --3.56%--pipe_wait
+               |          |                                           |          
+               |          |                                            --3.53%--prepare_to_wait
+               |          |                                                      _raw_spin_unlock_irqrestore
+               |          |          
+               |           --7.93%--__libc_write
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |                     __arm64_sys_write
+               |                     ksys_write
+               |                     vfs_write
+               |                     __vfs_write
+               |                     new_sync_write
+               |                     pipe_write
+               |                     __wake_up_sync_key
+               |                     __wake_up_common_lock
+               |                     _raw_spin_unlock_irqrestore
+               |          
+                --15.81%--doit
+                          |          
+                          |--8.24%--__libc_read
+                          |          el0_svc
+                          |          el0_svc_handler
+                          |          el0_svc_common.constprop.0
+                          |          __arm64_sys_read
+                          |          ksys_read
+                          |          vfs_read
+                          |          __vfs_read
+                          |          new_sync_read
+                          |          pipe_read
+                          |          |          
+                          |          |--4.57%--__wake_up_sync_key
+                          |          |          __wake_up_common_lock
+                          |          |          _raw_spin_unlock_irqrestore
+                          |          |          
+                          |           --3.67%--pipe_wait
+                          |                     |          
+                          |                      --3.65%--prepare_to_wait
+                          |                                _raw_spin_unlock_irqrestore
+                          |          
+                           --7.56%--__libc_write
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_write
+                                     ksys_write
+                                     vfs_write
+                                     __vfs_write
+                                     new_sync_write
+                                     pipe_write
+                                     __wake_up_sync_key
+                                     __wake_up_common_lock
+                                     _raw_spin_unlock_irqrestore
+
+     7.78%  lat_pipe  lat_pipe          [.] __libc_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--4.14%--initialize
+               |          |          
+               |           --4.10%--writer
+               |                     __libc_read
+               |          
+                --3.65%--doit
+                          __libc_read
+
+     6.88%  lat_pipe  lat_pipe          [.] __libc_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--3.56%--doit
+               |          __libc_write
+               |          
+                --3.30%--initialize
+                          writer
+                          __libc_write
+
+     5.58%  lat_pipe  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --5.58%--_start
+                       __libc_start_main
+                       main
+                       benchmp
+                       benchmp_child
+                       |          
+                       |--2.90%--doit
+                       |          __libc_read
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          __arm64_sys_read
+                       |          ksys_read
+                       |          vfs_read
+                       |          __vfs_read
+                       |          new_sync_read
+                       |          pipe_read
+                       |          pipe_wait
+                       |          schedule
+                       |          __schedule
+                       |          finish_task_switch
+                       |          _raw_spin_unlock_irq
+                       |          
+                        --2.69%--initialize
+                                  writer
+                                  |          
+                                   --2.64%--__libc_read
+                                             el0_svc
+                                             el0_svc_handler
+                                             el0_svc_common.constprop.0
+                                             __arm64_sys_read
+                                             ksys_read
+                                             vfs_read
+                                             __vfs_read
+                                             new_sync_read
+                                             pipe_read
+                                             pipe_wait
+                                             schedule
+                                             __schedule
+                                             finish_task_switch
+                                             _raw_spin_unlock_irq
+
+     4.31%  lat_pipe  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--2.33%--doit
+               |          |          
+               |          |--1.39%--__libc_read
+               |          |          el0_svc
+               |          |          el0_svc_handler
+               |          |          el0_svc_common.constprop.0
+               |          |          
+               |           --0.94%--__libc_write
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |          
+                --1.98%--initialize
+                          writer
+                          |          
+                          |--1.03%--__libc_read
+                          |          el0_svc
+                          |          el0_svc_handler
+                          |          el0_svc_common.constprop.0
+                          |          
+                           --0.95%--__libc_write
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+
+     3.95%  lat_pipe  lat_pipe          [.] enough_duration
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               compute_enough
+               test_time
+               |          
+               |--2.71%--time_N
+               |          enough_duration
+               |          
+                --1.24%--find_N
+                          time_N
+                          enough_duration
+
+     2.10%  lat_pipe  [kernel.vmlinux]  [k] pipe_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--1.08%--doit
+               |          __libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_read
+               |          ksys_read
+               |          vfs_read
+               |          __vfs_read
+               |          |          
+               |           --1.01%--new_sync_read
+               |                     pipe_read
+               |          
+                --1.02%--initialize
+                          writer
+                          __libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+
+     1.75%  lat_pipe  [kernel.vmlinux]  [k] fsnotify
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.90%--initialize
+               |          writer
+               |          |          
+               |           --0.69%--__libc_read
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |                     __arm64_sys_read
+               |                     ksys_read
+               |                     |          
+               |                      --0.58%--vfs_read
+               |                                |          
+               |                                 --0.51%--fsnotify
+               |          
+                --0.85%--doit
+                          |          
+                           --0.58%--__libc_read
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_read
+                                     ksys_read
+
+     1.49%  lat_pipe  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.77%--initialize
+               |          writer
+               |          
+                --0.72%--doit
+                          |          
+                           --0.52%--__libc_read
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     __vfs_read
+                                     new_sync_read
+                                     pipe_read
+
+     1.43%  lat_pipe  [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.73%--doit
+               |          |          
+               |           --0.61%--__libc_read
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |                     __arm64_sys_read
+               |                     ksys_read
+               |                     vfs_read
+               |                     __vfs_read
+               |                     new_sync_read
+               |                     pipe_read
+               |          
+                --0.70%--initialize
+                          writer
+
+     1.39%  lat_pipe  [kernel.vmlinux]  [k] pipe_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.79%--doit
+               |          __libc_write
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_write
+               |          ksys_write
+               |          vfs_write
+               |          __vfs_write
+               |          |          
+               |           --0.69%--new_sync_write
+               |                     pipe_write
+               |          
+                --0.59%--initialize
+                          writer
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+                          __vfs_write
+                          |          
+                           --0.54%--new_sync_write
+                                     pipe_write
+
+     1.22%  lat_pipe  [kernel.vmlinux]  [k] new_sync_read
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.62%--initialize
+               |          writer
+               |          __libc_read
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_read
+               |          ksys_read
+               |          vfs_read
+               |          |          
+               |           --0.59%--__vfs_read
+               |                     new_sync_read
+               |          
+                --0.61%--doit
+                          __libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          |          
+                           --0.58%--__vfs_read
+                                     new_sync_read
+
+     1.14%  lat_pipe  [kernel.vmlinux]  [k] new_sync_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+               |--0.63%--initialize
+               |          writer
+               |          __libc_write
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_write
+               |          ksys_write
+               |          vfs_write
+               |          |          
+               |           --0.55%--__vfs_write
+               |                     new_sync_write
+               |          
+                --0.52%--doit
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+
+     1.05%  lat_pipe  [kernel.vmlinux]  [k] vfs_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.58%--doit
+                          __libc_write
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_write
+                          ksys_write
+                          vfs_write
+
+     0.98%  lat_pipe  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.61%--doit
+                          |          
+                           --0.53%--__libc_read
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     __vfs_read
+                                     new_sync_read
+                                     pipe_read
+
+     0.96%  lat_pipe  [kernel.vmlinux]  [k] __arch_copy_to_user
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.53%--doit
+                          __libc_read
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_read
+                          ksys_read
+                          vfs_read
+                          __vfs_read
+                          new_sync_read
+                          pipe_read
+                          copy_page_to_iter
+                          __arch_copy_to_user
+
+     0.95%  lat_pipe  [kernel.vmlinux]  [k] __fsnotify_parent
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.68%--initialize
+                          writer
+
+     0.89%  lat_pipe  lat_pipe          [.] one_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               one_op
+
+     0.84%  lat_pipe  [kernel.vmlinux]  [k] __fdget_pos
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.53%--initialize
+                          writer
+
+     0.81%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b90c4
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+               |          
+                --0.56%--doit
+
+     0.81%  lat_pipe  [kernel.vmlinux]  [k] ktime_get_coarse_real_ts64
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.79%  lat_pipe  lat_pipe          [.] two_op
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               get_enough
+               init_timing
+               l_overhead
+               two_op
+
+     0.78%  lat_pipe  [kernel.vmlinux]  [k] atime_needs_update
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.77%  lat_pipe  [kernel.vmlinux]  [k] __wake_up_common_lock
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.74%  lat_pipe  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.71%  lat_pipe  [kernel.vmlinux]  [k] finish_wait
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.67%  lat_pipe  [kernel.vmlinux]  [k] pipe_wait
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.67%  lat_pipe  [kernel.vmlinux]  [k] trace_preempt_on
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.66%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b90d8
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.59%  lat_pipe  [kernel.vmlinux]  [k] __sb_end_write
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.59%  lat_pipe  [kernel.vmlinux]  [k] schedule
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.58%  lat_pipe  [kernel.vmlinux]  [k] anon_pipe_buf_release
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.58%  lat_pipe  [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.58%  lat_pipe  [kernel.vmlinux]  [k] mutex_unlock
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.57%  lat_pipe  [kernel.vmlinux]  [k] rw_verify_area
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.56%  lat_pipe  [kernel.vmlinux]  [k] return_address
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.53%  lat_pipe  [kernel.vmlinux]  [k] file_update_time
+            |
+            ---_start
+               __libc_start_main
+               main
+               benchmp
+               benchmp_child
+
+     0.50%  lat_pipe  [kernel.vmlinux]  [k] __schedule
+     0.46%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b8f78
+     0.44%  lat_pipe  [kernel.vmlinux]  [k] vfs_read
+     0.44%  lat_pipe  [kernel.vmlinux]  [k] mutex_lock
+     0.43%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b8f60
+     0.43%  lat_pipe  [kernel.vmlinux]  [k] __vfs_read
+     0.42%  lat_pipe  [kernel.vmlinux]  [k] kill_fasync
+     0.42%  lat_pipe  [kernel.vmlinux]  [k] __wake_up_sync_key
+     0.42%  lat_pipe  [kernel.vmlinux]  [k] __sb_start_write
+     0.39%  lat_pipe  [kernel.vmlinux]  [k] __vfs_write
+     0.37%  lat_pipe  [kernel.vmlinux]  [k] touch_atime
+     0.35%  lat_pipe  [kernel.vmlinux]  [k] walk_stackframe
+     0.35%  lat_pipe  [kernel.vmlinux]  [k] __arch_copy_from_user
+     0.32%  lat_pipe  [kernel.vmlinux]  [k] security_file_permission
+     0.31%  lat_pipe  [kernel.vmlinux]  [k] prepare_to_wait
+     0.29%  lat_pipe  [kernel.vmlinux]  [k] iov_iter_init
+     0.29%  lat_pipe  [kernel.vmlinux]  [k] copy_page_from_iter
+     0.28%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000000b3b30
+     0.28%  lat_pipe  [kernel.vmlinux]  [k] save_return_addr
+     0.26%  lat_pipe  [vdso]            [.] 0x000000000000032c
+     0.26%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b90c0
+     0.25%  lat_pipe  [kernel.vmlinux]  [k] current_time
+     0.25%  lat_pipe  [kernel.vmlinux]  [k] in_lock_functions
+     0.23%  lat_pipe  [kernel.vmlinux]  [k] finish_task_switch
+     0.23%  lat_pipe  [kernel.vmlinux]  [k] ksys_write
+     0.21%  lat_pipe  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.20%  lat_pipe  [vdso]            [.] 0x0000000000000324
+     0.18%  lat_pipe  [kernel.vmlinux]  [k] 0x000000000002171c
+     0.18%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b8f64
+     0.17%  lat_pipe  [kernel.vmlinux]  [k] copyin
+     0.16%  lat_pipe  [kernel.vmlinux]  [k] timestamp_truncate
+     0.16%  lat_pipe  [kernel.vmlinux]  [k] copy_page_to_iter
+     0.13%  lat_pipe  [kernel.vmlinux]  [k] trace_preempt_off
+     0.11%  lat_pipe  [kernel.vmlinux]  [k] 0x0000000000021718
+     0.10%  lat_pipe  [vdso]            [.] __kernel_gettimeofday
+     0.09%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b90d0
+     0.08%  lat_pipe  lat_pipe          [.] doit
+     0.08%  lat_pipe  [kernel.vmlinux]  [k] __arm64_sys_write
+     0.07%  lat_pipe  [kernel.vmlinux]  [k] ksys_read
+     0.07%  lat_pipe  lat_pipe          [.] t_overhead
+     0.07%  lat_pipe  [kernel.vmlinux]  [k] __mnt_want_write
+     0.06%  lat_pipe  [kernel.vmlinux]  [k] __do_softirq
+     0.06%  lat_pipe  [kernel.vmlinux]  [k] copyout
+     0.05%  lat_pipe  [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.05%  lat_pipe  [kernel.vmlinux]  [k] __mark_inode_dirty
+     0.05%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000009b8f70
+     0.04%  lat_pipe  [kernel.vmlinux]  [k] generic_pipe_buf_confirm
+     0.04%  lat_pipe  [kernel.vmlinux]  [k] __arm64_sys_read
+     0.03%  lat_pipe  [vdso]            [.] 0x0000000000000354
+     0.03%  lat_pipe  [vdso]            [.] 0x0000000000000344
+     0.03%  lat_pipe  [vdso]            [.] 0x000000000000033c
+     0.03%  lat_pipe  [vdso]            [.] 0x0000000000000328
+     0.03%  lat_pipe  lat_pipe          [.] __gettimeofday
+     0.03%  lat_pipe  [vdso]            [.] 0x0000000000000314
+     0.02%  lat_pipe  [kernel.vmlinux]  [k] rebalance_domains
+     0.02%  lat_pipe  [kernel.vmlinux]  [k] generic_update_time
+     0.02%  lat_pipe  [kernel.vmlinux]  [k] run_timer_softirq
+     0.02%  lat_pipe  [kernel.vmlinux]  [k] do_notify_resume
+     0.02%  lat_pipe  lat_pipe          [.] writer
+     0.02%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000000b3b1c
+     0.01%  lat_pipe  [kernel.vmlinux]  [k] 0x00000000000b3b20
+     0.01%  lat_pipe  [kernel.vmlinux]  [k] run_rebalance_domains
+     0.01%  lat_pipe  [kernel.vmlinux]  [k] __mnt_drop_write
+     0.00%  lat_pipe  [kernel.vmlinux]  [k] do_page_fault
+     0.00%  lat_pipe  [kernel.vmlinux]  [k] perf_event_mmap
+     0.00%  perf_5.4  [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: For hierarchical output, try: perf report --hierarchy)
+#
