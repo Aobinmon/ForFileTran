@@ -1,0 +1,404 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 51K of event 'cpu-cycles:u'
+# Event count (approx.): 1288212351
+#
+# Overhead  Command     Shared Object     Symbol                             
+# ........  ..........  ................  ...................................
+#
+    16.61%  libc-bench  libc-bench        [.] __gconv_transform_utf8_internal
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+               |--11.31%--b_utf8_onebyone
+               |          |          
+               |           --11.01%--__mbrtowc
+               |                     __gconv_transform_utf8_internal
+               |          
+                --5.30%--b_utf8_bigbuf
+                          mbstowcs
+                          __mbsrtowcs_l
+                          __gconv_transform_utf8_internal
+
+     9.45%  libc-bench  libc-bench        [.] __mbrtowc
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --9.44%--b_utf8_onebyone
+                          __mbrtowc
+
+     8.59%  libc-bench  libc-bench        [.] re_search_internal
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_regex_search
+               __regexec
+               re_search_internal
+
+     6.73%  libc-bench  libc-bench        [.] b_stdio_putcgetc
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_stdio_putcgetc
+
+     6.16%  libc-bench  libc-bench        [.] b_stdio_putcgetc_unlocked
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_stdio_putcgetc_unlocked
+
+     5.74%  libc-bench  libc-bench        [.] __aarch64_cas4_acq
+            |          
+            |--5.04%--thread_start
+            |          |          
+            |           --5.04%--start_thread
+            |                     |          
+            |                     |--2.80%--lockunlock
+            |                     |          __aarch64_cas4_acq
+            |                     |          
+            |                      --2.24%--stress
+            |                                __aarch64_cas4_acq
+            |          
+             --0.70%--_start
+                       __libc_start_main
+                       main
+                       run_bench
+                       |          
+                        --0.53%--print_stats
+
+     5.37%  libc-bench  libc-bench        [.] __aarch64_swp4_rel
+            |          
+             --4.93%--thread_start
+                       start_thread
+                       |          
+                       |--3.17%--lockunlock
+                       |          __aarch64_swp4_rel
+                       |          
+                        --1.75%--stress
+                                  __aarch64_swp4_rel
+
+     4.15%  libc-bench  libc-bench        [.] b_utf8_onebyone
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_utf8_onebyone
+
+     3.75%  libc-bench  libc-bench        [.] strstr
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --3.67%--b_string_strstr
+                          strstr
+
+     3.71%  libc-bench  libc-bench        [.] __vfscanf_internal
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               print_stats
+               |          
+                --3.49%--__isoc99_sscanf
+                          __vfscanf_internal
+
+     3.00%  libc-bench  libc-bench        [.] __memset_generic
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --2.99%--main
+                          run_bench
+                          |          
+                           --2.87%--__memset_generic
+
+     2.37%  libc-bench  libc-bench        [.] __pthread_mutex_lock
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--1.18%--stress
+               |          __pthread_mutex_lock
+               |          
+                --1.15%--lockunlock
+                          __pthread_mutex_lock
+
+     2.33%  libc-bench  libc-bench        [.] _IO_putc
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_stdio_putcgetc
+               _IO_putc
+
+     1.84%  libc-bench  libc-bench        [.] _IO_getc
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_stdio_putcgetc
+               _IO_getc
+
+     1.65%  libc-bench  libc-bench        [.] __strnlen
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --1.33%--b_string_strstr
+                          __strnlen
+
+     1.54%  libc-bench  libc-bench        [.] strchr
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --1.50%--strchr
+
+     1.20%  libc-bench  libc-bench        [.] __getc_unlocked
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               __getc_unlocked
+
+     1.14%  libc-bench  libc-bench        [.] __pthread_mutex_unlock_usercnt
+            |
+            ---thread_start
+               start_thread
+               |          
+                --0.66%--lockunlock
+                          __pthread_mutex_unlock_usercnt
+
+     1.04%  libc-bench  libc-bench        [.] __strlen_generic
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --0.63%--__strlen_generic
+
+     1.01%  libc-bench  libc-bench        [.] __isoc99_sscanf
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               |          
+                --0.96%--print_stats
+                          __isoc99_sscanf
+
+     0.99%  libc-bench  libc-bench        [.] _int_free
+            |          
+             --0.66%--_start
+                       __libc_start_main
+                       main
+                       run_bench
+
+     0.82%  libc-bench  libc-bench        [.] stress
+            |
+            ---thread_start
+               |          
+                --0.82%--start_thread
+                          stress
+
+     0.76%  libc-bench  libc-bench        [.] __putc_unlocked
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               __putc_unlocked
+
+     0.73%  libc-bench  libc-bench        [.] _int_malloc
+            |          
+             --0.56%--_start
+                       __libc_start_main
+                       main
+                       run_bench
+
+     0.56%  libc-bench  libc-bench        [.] rng
+            |
+            ---thread_start
+               start_thread
+               rng
+
+     0.51%  libc-bench  libc-bench        [.] malloc
+     0.51%  libc-bench  libc-bench        [.] free
+     0.51%  libc-bench  libc-bench        [.] _dl_mcount_wrapper_check
+            |
+            ---_start
+               __libc_start_main
+               main
+               run_bench
+               b_utf8_onebyone
+               _dl_mcount_wrapper_check
+
+     0.45%  libc-bench  libc-bench        [.] re_string_reconstruct
+     0.45%  libc-bench  libc-bench        [.] __pthread_create_2_1
+     0.43%  libc-bench  [unknown]         [k] 0xffffffc01009a58c
+     0.41%  libc-bench  libc-bench        [.] _IO_no_init
+     0.40%  libc-bench  libc-bench        [.] lockunlock
+     0.32%  libc-bench  libc-bench        [.] _IO_str_init_static_internal
+     0.31%  libc-bench  libc-bench        [.] __memchr_generic
+     0.27%  libc-bench  libc-bench        [.] _IO_fgets
+     0.27%  libc-bench  libc-bench        [.] _IO_sputbackc
+     0.26%  libc-bench  libc-bench        [.] re_string_context_at
+     0.26%  libc-bench  [unknown]         [k] 0xffffffc01008439c
+     0.24%  libc-bench  libc-bench        [.] ____strtoull_l_internal
+     0.23%  libc-bench  libc-bench        [.] _IO_getline_info
+     0.19%  libc-bench  libc-bench        [.] re_compile_internal
+     0.17%  libc-bench  libc-bench        [.] _IO_setb
+     0.15%  libc-bench  libc-bench        [.] _dl_allocate_tls_init
+     0.13%  libc-bench  libc-bench        [.] __memcpy_generic
+     0.13%  libc-bench  libc-bench        [.] _init
+     0.11%  libc-bench  libc-bench        [.] __deallocate_stack
+     0.11%  libc-bench  libc-bench        [.] b_utf8_bigbuf
+     0.11%  libc-bench  libc-bench        [.] __libc_calloc
+     0.08%  libc-bench  libc-bench        [.] print_stats
+     0.08%  libc-bench  libc-bench        [.] match_ctx_clean
+     0.07%  libc-bench  libc-bench        [.] __pthread_clockjoin_ex
+     0.07%  libc-bench  libc-bench        [.] create_thread
+     0.07%  libc-bench  libc-bench        [.] calc_eclosure_iter
+     0.07%  libc-bench  libc-bench        [.] create_token_tree
+     0.06%  libc-bench  libc-bench        [.] b_string_strstr
+     0.05%  libc-bench  libc-bench        [.] realloc
+     0.05%  libc-bench  libc-bench        [.] peek_token
+     0.05%  libc-bench  libc-bench        [.] re_node_set_insert_last
+     0.05%  libc-bench  libc-bench        [.] unlink_chunk.constprop.0
+     0.04%  libc-bench  libc-bench        [.] __getpagesize
+     0.04%  libc-bench  libc-bench        [.] __libc_thread_freeres
+     0.04%  libc-bench  libc-bench        [.] __uflow
+     0.04%  libc-bench  libc-bench        [.] __rawmemchr
+     0.04%  libc-bench  libc-bench        [.] _dl_deallocate_tls
+     0.04%  libc-bench  libc-bench        [.] _IO_new_file_overflow
+     0.04%  libc-bench  libc-bench        [.] parse_expression
+     0.04%  libc-bench  libc-bench        [.] malloc_consolidate
+     0.04%  libc-bench  libc-bench        [.] __resolv_context_freeres
+     0.04%  libc-bench  libc-bench        [.] __aarch64_ldadd4_acq
+     0.03%  libc-bench  libc-bench        [.] free_dfa_content
+     0.03%  libc-bench  libc-bench        [.] start_thread
+     0.03%  libc-bench  libc-bench        [.] __nptl_deallocate_tsd
+     0.03%  libc-bench  libc-bench        [.] __free_tcb
+     0.03%  libc-bench  libc-bench        [.] b_malloc_bubble
+     0.03%  libc-bench  libc-bench        [.] __aarch64_cas8_acq
+     0.03%  libc-bench  libc-bench        [.] sysmalloc
+     0.02%  libc-bench  libc-bench        [.] __ctype_init
+     0.02%  libc-bench  libc-bench        [.] re_node_set_merge
+     0.02%  libc-bench  libc-bench        [.] re_dfa_add_node
+     0.02%  libc-bench  libc-bench        [.] __iswalnum
+     0.02%  libc-bench  libc-bench        [.] __pthread_mutex_unlock
+     0.02%  libc-bench  libc-bench        [.] re_acquire_state_context
+     0.02%  libc-bench  libc-bench        [.] b_malloc_sparse
+     0.02%  libc-bench  libc-bench        [.] _IO_enable_locks
+     0.02%  libc-bench  libc-bench        [.] b_malloc_tiny2
+     0.02%  libc-bench  libc-bench        [.] free_stacks
+     0.02%  libc-bench  libc-bench        [.] _pthread_cleanup_push
+     0.02%  libc-bench  libc-bench        [.] __sbrk
+     0.02%  libc-bench  libc-bench        [.] __res_thread_freeres
+     0.01%  libc-bench  libc-bench        [.] __aarch64_swp4_acq
+     0.01%  libc-bench  libc-bench        [.] alloc_perturb
+     0.01%  libc-bench  libc-bench        [.] __clone
+     0.01%  libc-bench  libc-bench        [.] new_do_write
+     0.01%  libc-bench  libc-bench        [.] _IO_switch_to_get_mode
+     0.01%  libc-bench  libc-bench        [.] parse_reg_exp
+     0.01%  libc-bench  libc-bench        [.] _IO_new_file_underflow
+     0.01%  libc-bench  libc-bench        [.] __vfprintf_internal
+     0.01%  libc-bench  libc-bench        [.] __libc_read
+     0.01%  libc-bench  libc-bench        [.] memcmp
+     0.01%  libc-bench  libc-bench        [.] __strtoull_internal
+     0.01%  libc-bench  libc-bench        [.] __libc_write
+     0.01%  libc-bench  libc-bench        [.] __overflow
+     0.01%  libc-bench  libc-bench        [.] _IO_link_in
+     0.01%  libc-bench  libc-bench        [.] b_pthread_createjoin_serial2
+     0.01%  libc-bench  libc-bench        [.] emptyfunc
+     0.01%  libc-bench  libc-bench        [.] __pthread_enable_asynccancel
+     0.01%  libc-bench  libc-bench        [.] re_node_set_insert
+     0.01%  libc-bench  libc-bench        [.] __malloc_arena_thread_freeres
+     0.01%  libc-bench  libc-bench        [.] __mprotect
+     0.01%  libc-bench  libc-bench        [.] __sigjmp_save
+     0.00%  libc-bench  libc-bench        [.] __mmap64
+     0.00%  libc-bench  libc-bench        [.] _dl_allocate_tls
+     0.00%  libc-bench  libc-bench        [.] __reclaim_stacks
+     0.00%  libc-bench  libc-bench        [.] _pthread_cleanup_pop
+     0.00%  libc-bench  libc-bench        [.] __wait4
+     0.00%  libc-bench  libc-bench        [.] __pthread_once
+     0.00%  libc-bench  libc-bench        [.] __madvise
+     0.00%  libc-bench  libc-bench        [.] __pthread_join
+     0.00%  libc-bench  libc-bench        [.] __gconv_read_conf
+     0.00%  libc-bench  libc-bench        [.] b_pthread_createjoin_serial1
+     0.00%  libc-bench  libc-bench        [.] register_state
+     0.00%  libc-bench  libc-bench        [.] __gconv_lookup_cache
+     0.00%  libc-bench  libc-bench        [.] _nl_intern_locale_data
+     0.00%  libc-bench  libc-bench        [.] __pthread_disable_asynccancel
+     0.00%  libc-bench  libc-bench        [.] msort_with_tmp.part.0
+     0.00%  libc-bench  libc-bench        [.] __qsort_r
+     0.00%  libc-bench  libc-bench        [.] build_wcs_buffer
+     0.00%  libc-bench  libc-bench        [.] __munmap
+     0.00%  libc-bench  libc-bench        [.] read_alias_file
+     0.00%  libc-bench  libc-bench        [.] b_pthread_create_serial1
+     0.00%  libc-bench  libc-bench        [.] _IO_default_uflow
+     0.00%  libc-bench  libc-bench        [.] _IO_file_doallocate
+     0.00%  libc-bench  libc-bench        [.] b_malloc_big2
+     0.00%  libc-bench  libc-bench        [.] _IO_doallocbuf
+     0.00%  libc-bench  libc-bench        [.] b_malloc_big1
+     0.00%  libc-bench  libc-bench        [.] getenv
+     0.00%  libc-bench  libc-bench        [.] __libc_fork
+     0.00%  libc-bench  libc-bench        [.] _nl_normalize_codeset
+     0.00%  libc-bench  libc-bench        [.] __sysconf
+     0.00%  libc-bench  libc-bench        [.] __memmem
+     0.00%  libc-bench  libc-bench        [.] _dl_tls_static_surplus_init
+     0.00%  libc-bench  libc-bench        [.] _IO_new_file_xsputn
+     0.00%  libc-bench  [vdso]            [.] 0x0000000000000300
+     0.00%  libc-bench  libc-bench        [.] __fcntl64_nocancel_adjusted
+     0.00%  libc-bench  libc-bench        [.] __tcgetattr
+     0.00%  libc-bench  [unknown]         [k] 0xffffffc01008184c
+     0.00%  libc-bench  libc-bench        [.] __tunables_init
+     0.00%  libc-bench  libc-bench        [.] arena_get2.part.0
+     0.00%  libc-bench  libc-bench        [.] __nptl_set_robust
+     0.00%  libc-bench  libc-bench        [.] __libc_open64
+     0.00%  libc-bench  libc-bench        [.] __isatty
+     0.00%  libc-bench  libc-bench        [.] __default_morecore
+     0.00%  libc-bench  libc-bench        [.] __run_fork_handlers
+     0.00%  libc-bench  [vdso]            [.] __kernel_clock_gettime
+     0.00%  libc-bench  libc-bench        [.] _IO_puts
+     0.00%  libc-bench  libc-bench        [.] _dl_aux_init
+     0.00%  libc-bench  libc-bench        [.] __sigsetjmp
+     0.00%  libc-bench  libc-bench        [.] thread_start
+     0.00%  libc-bench  libc-bench        [.] __libc_start_main
+     0.00%  libc-bench  libc-bench        [.] _start
+     0.00%  libc-bench  [unknown]         [k] 0xffffffc0100816d0
+     0.00%  libc-bench  [unknown]         [k] 0xffffffc0100816c4
+     0.00%  libc-bench  [unknown]         [k] 0xffffffc010081710
+     0.00%  libc-bench  [unknown]         [k] 0xffffffc0100843a0
+
+
+#
+# (Tip: check path of tips.txt or get more memory! ;-p)
+#
