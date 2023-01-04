@@ -1,0 +1,289 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 218  of event 'cpu-cycles'
+# Event count (approx.): 111525197
+#
+# Overhead  Command     Shared Object     Symbol                         
+# ........  ..........  ................  ...............................
+#
+    31.06%  signaltest  signaltest        [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+    22.47%  signaltest  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --22.17%--thread_start
+                       start_thread
+                       signalthread
+                       |          
+                        --21.77%--__libc_sigwait
+                                  __sigtimedwait
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_rt_sigtimedwait
+                                  do_sigtimedwait
+                                  |          
+                                  |--11.24%--schedule_hrtimeout_range
+                                  |          schedule_hrtimeout_range_clock
+                                  |          schedule
+                                  |          __schedule
+                                  |          finish_task_switch
+                                  |          _raw_spin_unlock_irq
+                                  |          
+                                   --10.53%--_raw_spin_unlock_irq
+
+    12.67%  signaltest  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               pthread_kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_tgkill
+               do_tkill
+               do_send_specific
+               do_send_sig_info
+               _raw_spin_unlock_irqrestore
+
+     6.87%  signaltest  [kernel.vmlinux]  [k] do_notify_resume
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               |          
+               |--6.33%--__libc_sigwait
+               |          __sigtimedwait
+               |          work_pending
+               |          do_notify_resume
+               |          
+                --0.53%--usleep
+                          __nanosleep
+                          __clock_nanosleep
+                          work_pending
+                          do_notify_resume
+
+     5.53%  signaltest  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               |          
+               |--3.05%--__libc_sigwait
+               |          __sigtimedwait
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--1.94%--__getpid
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+                --0.53%--pthread_kill
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+     4.12%  signaltest  signaltest        [.] pthread_kill
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               pthread_kill
+
+     3.49%  signaltest  signaltest        [.] __sigtimedwait
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __libc_sigwait
+               __sigtimedwait
+
+     1.36%  signaltest  signaltest        [.] __getpid
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __getpid
+
+     1.21%  signaltest  [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               |          
+               |--0.68%--pthread_kill
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          __arm64_sys_tgkill
+               |          do_tkill
+               |          do_send_specific
+               |          do_send_sig_info
+               |          _raw_spin_unlock_irqrestore
+               |          preempt_count_sub
+               |          return_address
+               |          walk_stackframe
+               |          unwind_frame
+               |          
+                --0.53%--__libc_sigwait
+                          __sigtimedwait
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_rt_sigtimedwait
+                          do_sigtimedwait
+                          _raw_spin_unlock_irq
+                          preempt_count_sub
+                          return_address
+                          walk_stackframe
+                          unwind_frame
+
+     0.89%  signaltest  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---thread_start
+               start_thread
+               signalthread
+
+     0.65%  signaltest  [kernel.vmlinux]  [k] in_lock_functions
+            |
+            ---_start
+               __libc_start_main
+               main
+               __pthread_create_2_1
+               __clone
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               __vmalloc_node_range
+               __get_vm_area_node.isra.0
+               alloc_vmap_area.constprop.0
+               _raw_spin_unlock
+               in_lock_functions
+
+     0.64%  signaltest  [kernel.vmlinux]  [k] __arm64_sys_rt_sigtimedwait
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __libc_sigwait
+               __sigtimedwait
+               el0_svc
+               el0_svc_handler
+               __arm64_sys_rt_sigtimedwait
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] __task_pid_nr_ns
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __getpid
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_getpid
+               __task_pid_nr_ns
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               pthread_kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_tgkill
+               do_tkill
+               do_send_specific
+               do_send_sig_info
+               _raw_spin_lock_irqsave
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] copy_siginfo_to_user
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __libc_sigwait
+               __sigtimedwait
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_rt_sigtimedwait
+               copy_siginfo_to_user
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] do_send_sig_info
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               pthread_kill
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_tgkill
+               do_tkill
+               do_send_sig_info
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] get_cpu_fpsimd_context
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __libc_sigwait
+               __sigtimedwait
+               work_pending
+               do_notify_resume
+               fpsimd_restore_current_state
+               get_cpu_fpsimd_context
+
+     0.53%  signaltest  signaltest        [.] __libc_sigwait
+            |
+            ---thread_start
+               start_thread
+               __libc_sigwait
+
+     0.53%  signaltest  [kernel.vmlinux]  [k] fpsimd_load_state
+            |
+            ---thread_start
+               start_thread
+               signalthread
+               __libc_sigwait
+               __sigtimedwait
+               work_pending
+               do_notify_resume
+               fpsimd_restore_current_state
+               fpsimd_load_state
+
+     0.49%  signaltest  [kernel.vmlinux]  [k] radix_tree_lookup
+     0.49%  signaltest  [kernel.vmlinux]  [k] preempt_count_add
+     0.44%  signaltest  [kernel.vmlinux]  [k] process_echoes
+     0.40%  signaltest  [kernel.vmlinux]  [k] __mod_node_page_state
+     0.40%  signaltest  [kernel.vmlinux]  [k] free_unref_page
+     0.40%  signaltest  signaltest        [.] start_thread
+     0.40%  signaltest  [kernel.vmlinux]  [k] do_send_specific
+     0.40%  signaltest  [vdso]            [.] 0x000000000000032c
+     0.40%  signaltest  [kernel.vmlinux]  [k] audit_signal_info
+     0.37%  signaltest  [kernel.vmlinux]  [k] schedule
+     0.36%  signaltest  [kernel.vmlinux]  [k] do_tkill
+     0.36%  signaltest  [vdso]            [.] 0x0000000000000324
+     0.35%  signaltest  [kernel.vmlinux]  [k] __radix_tree_lookup
+     0.04%  signaltest  [kernel.vmlinux]  [k] move_page_tables
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] __pi_strrchr
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To add Node.js USDT(User-Level Statically Defined Tracing): perf buildid-cache --add `which node`)
+#

@@ -1,0 +1,196 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 42  of event 'cpu-cycles'
+# Event count (approx.): 24091117
+#
+# Overhead  Command     Shared Object     Symbol                         
+# ........  ..........  ................  ...............................
+#
+    23.80%  cyclictest  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_start_range_ns
+               _raw_spin_unlock_irqrestore
+
+    20.83%  cyclictest  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __schedule
+               finish_task_switch
+               _raw_spin_unlock_irq
+
+    17.85%  cyclictest  [kernel.vmlinux]  [k] do_notify_resume
+            |          
+            |--11.90%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          work_pending
+            |          do_notify_resume
+            |          
+             --5.95%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       work_pending
+                       do_notify_resume
+
+     8.93%  cyclictest  cyclictest        [.] __clock_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+
+     5.95%  cyclictest  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+
+     3.08%  cyclictest  [kernel.vmlinux]  [k] alloc_perf_context
+            |
+            ---_start
+               __libc_start_main
+               main
+               __pthread_create_2_1
+               __clone
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clone
+               _do_fork
+               copy_process
+               perf_event_init_task
+               alloc_perf_context
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] _copy_from_user
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               get_timespec64
+               _copy_from_user
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] do_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] hrtimer_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               hrtimer_nanosleep
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] in_lock_functions
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               in_lock_functions
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_start_range_ns
+               _raw_spin_unlock_irqrestore
+               preempt_count_sub
+
+     2.98%  cyclictest  [kernel.vmlinux]  [k] 0x0000000000019374
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               work_pending
+               do_notify_resume
+               0xffffffc010089374
+
+     1.51%  cyclictest  [kernel.vmlinux]  [k] refcount_inc_checked
+            |
+            ---_start
+               __libc_start_main
+               __GI___getrlimit
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               refcount_inc_checked
+
+     0.18%  cyclictest  [kernel.vmlinux]  [k] __vma_adjust
+     0.02%  perf_5.4    [kernel.vmlinux]  [k] __pi_strrchr
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: For memory address profiling, try: perf mem record / perf mem report)
+#
