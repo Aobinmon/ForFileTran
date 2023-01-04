@@ -1,0 +1,546 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 14K of event 'cpu-cycles'
+# Event count (approx.): 928661298
+#
+# Overhead  Command     Shared Object     Symbol                                 
+# ........  ..........  ................  .......................................
+#
+    20.99%  svsematest  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --20.29%--thread_start
+                       start_thread
+                       |          
+                       |--18.30%--__semtimedop
+                       |          |          
+                       |           --18.28%--el0_svc
+                       |                     el0_svc_handler
+                       |                     el0_svc_common.constprop.0
+                       |                     __arm64_sys_semtimedop
+                       |                     do_semtimedop
+                       |                     |          
+                       |                      --18.26%--schedule
+                       |                                __schedule
+                       |                                finish_task_switch
+                       |                                _raw_spin_unlock_irq
+                       |          
+                        --1.99%--semathread
+                                  __nanosleep
+                                  __clock_nanosleep
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_clock_nanosleep
+                                  common_nsleep
+                                  hrtimer_nanosleep
+                                  do_nanosleep
+                                  schedule
+                                  __schedule
+                                  finish_task_switch
+                                  _raw_spin_unlock_irq
+
+    15.48%  svsematest  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+            |--12.17%--thread_start
+            |          start_thread
+            |          |          
+            |          |--9.14%--__semtimedop
+            |          |          |          
+            |          |           --9.13%--el0_svc
+            |          |                     el0_svc_handler
+            |          |                     el0_svc_common.constprop.0
+            |          |                     __arm64_sys_semtimedop
+            |          |                     do_semtimedop
+            |          |                     |          
+            |          |                      --9.12%--wake_up_q
+            |          |                                try_to_wake_up
+            |          |                                _raw_spin_unlock_irqrestore
+            |          |          
+            |           --3.04%--semathread
+            |                     __nanosleep
+            |                     __clock_nanosleep
+            |                     |          
+            |                      --3.03%--el0_svc
+            |                                el0_svc_handler
+            |                                el0_svc_common.constprop.0
+            |                                __arm64_sys_clock_nanosleep
+            |                                common_nsleep
+            |                                hrtimer_nanosleep
+            |                                do_nanosleep
+            |                                |          
+            |                                 --3.02%--hrtimer_start_range_ns
+            |                                           _raw_spin_unlock_irqrestore
+            |          
+            |--2.32%--_start
+            |          __libc_start_main
+            |          |          
+            |           --2.23%--main
+            |                     |          
+            |                      --2.12%--__mprotect
+            |                                el0_svc
+            |                                el0_svc_handler
+            |                                el0_svc_common.constprop.0
+            |                                __arm64_sys_mprotect
+            |                                mprotect_fixup
+            |                                populate_vma_page_range
+            |                                __get_user_pages
+            |                                |          
+            |                                 --2.10%--follow_pmd_mask
+            |                                           lru_add_drain
+            |                                           lru_add_drain_cpu
+            |                                           _raw_spin_unlock_irqrestore
+            |          
+             --1.00%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       |          
+                        --0.99%--0xffffffc0100eb508
+                                  do_group_exit
+                                  do_exit
+                                  mmput
+                                  exit_mmap
+                                  |          
+                                   --0.51%--munlock_vma_pages_range
+                                             __munlock_pagevec
+                                             __pagevec_lru_add
+                                             _raw_spin_unlock_irqrestore
+
+    10.86%  svsematest  [kernel.vmlinux]  [k] do_notify_resume
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--8.03%--__semtimedop
+               |          work_pending
+               |          do_notify_resume
+               |          
+                --2.83%--semathread
+                          __nanosleep
+                          __clock_nanosleep
+                          work_pending
+                          do_notify_resume
+
+     9.02%  svsematest  svsematest        [.] __semtimedop
+            |
+            ---thread_start
+               start_thread
+               __semtimedop
+
+     3.83%  svsematest  [kernel.vmlinux]  [k] clear_page
+            |
+            ---_start
+               |          
+                --3.81%--__libc_start_main
+                          main
+                          __mprotect
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_mprotect
+                          mprotect_fixup
+                          populate_vma_page_range
+                          __get_user_pages
+                          handle_mm_fault
+                          __handle_mm_fault
+                          clear_page
+
+     3.80%  svsematest  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |          
+             --3.78%--thread_start
+                       start_thread
+                       |          
+                       |--3.23%--__semtimedop
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          
+                        --0.55%--semathread
+                                  __nanosleep
+                                  __clock_nanosleep
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+
+     2.22%  svsematest  [kernel.vmlinux]  [k] free_unref_page_list
+            |          
+            |--1.42%--_start
+            |          __libc_start_main
+            |          main
+            |          __mprotect
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_mprotect
+            |          mprotect_fixup
+            |          populate_vma_page_range
+            |          __get_user_pages
+            |          follow_pmd_mask
+            |          lru_add_drain
+            |          lru_add_drain_cpu
+            |          release_pages
+            |          free_unref_page_list
+            |          
+             --0.80%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       0xffffffc0100eb508
+                       do_group_exit
+                       do_exit
+                       mmput
+                       exit_mmap
+
+     1.99%  svsematest  [kernel.vmlinux]  [k] get_page_from_freelist
+            |
+            ---_start
+               __libc_start_main
+               main
+               __mprotect
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mprotect
+               mprotect_fixup
+               populate_vma_page_range
+               __get_user_pages
+               handle_mm_fault
+               __handle_mm_fault
+               __alloc_pages_nodemask
+               get_page_from_freelist
+
+     1.94%  svsematest  [kernel.vmlinux]  [k] do_semtimedop
+            |
+            ---thread_start
+               start_thread
+               __semtimedop
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               |          
+                --1.83%--__arm64_sys_semtimedop
+                          do_semtimedop
+
+     1.80%  svsematest  [kernel.vmlinux]  [k] preempt_count_add
+            |          
+            |--1.06%--thread_start
+            |          start_thread
+            |          |          
+            |           --0.92%--__semtimedop
+            |                     |          
+            |                      --0.72%--el0_svc
+            |                                el0_svc_handler
+            |                                el0_svc_common.constprop.0
+            |                                __arm64_sys_semtimedop
+            |                                do_semtimedop
+            |          
+             --0.73%--_start
+                       __libc_start_main
+                       main
+                       __mprotect
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       __arm64_sys_mprotect
+                       mprotect_fixup
+                       populate_vma_page_range
+                       __get_user_pages
+                       |          
+                        --0.52%--handle_mm_fault
+                                  __handle_mm_fault
+
+     1.73%  svsematest  svsematest        [.] __clock_nanosleep
+            |          
+             --1.72%--thread_start
+                       start_thread
+                       semathread
+                       |          
+                        --1.68%--__nanosleep
+                                  __clock_nanosleep
+
+     1.69%  svsematest  [kernel.vmlinux]  [k] unwind_frame
+            |          
+             --1.19%--thread_start
+                       start_thread
+                       |          
+                        --1.07%--__semtimedop
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_semtimedop
+                                  do_semtimedop
+                                  |          
+                                   --0.65%--_raw_spin_lock
+                                             preempt_count_add
+                                             return_address
+                                             |          
+                                              --0.55%--walk_stackframe
+                                                        unwind_frame
+
+     1.41%  svsematest  [kernel.vmlinux]  [k] preempt_count_sub
+            |          
+             --1.21%--thread_start
+                       start_thread
+                       |          
+                        --0.94%--__semtimedop
+                                  |          
+                                   --0.88%--el0_svc
+                                             el0_svc_handler
+                                             el0_svc_common.constprop.0
+                                             __arm64_sys_semtimedop
+                                             do_semtimedop
+
+     0.95%  svsematest  [kernel.vmlinux]  [k] return_address
+            |          
+             --0.56%--thread_start
+                       start_thread
+                       |          
+                        --0.53%--__semtimedop
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_semtimedop
+                                  do_semtimedop
+
+     0.89%  svsematest  [kernel.vmlinux]  [k] perform_atomic_semop
+            |
+            ---thread_start
+               start_thread
+               __semtimedop
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_semtimedop
+               |          
+                --0.86%--do_semtimedop
+                          |          
+                           --0.70%--perform_atomic_semop
+
+     0.86%  svsematest  [kernel.vmlinux]  [k] 0x000000000002172c
+            |          
+             --0.70%--thread_start
+                       start_thread
+                       |          
+                        --0.64%--__semtimedop
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_semtimedop
+                                  do_semtimedop
+
+     0.66%  svsematest  [kernel.vmlinux]  [k] walk_stackframe
+     0.64%  svsematest  [kernel.vmlinux]  [k] do_smart_wakeup_zero
+            |
+            ---thread_start
+               start_thread
+               __semtimedop
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_semtimedop
+               |          
+                --0.56%--do_semtimedop
+
+     0.62%  svsematest  [kernel.vmlinux]  [k] __cpu_clear_user_page
+            |
+            ---_start
+               __libc_start_main
+               main
+               __mprotect
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mprotect
+               mprotect_fixup
+               populate_vma_page_range
+               __get_user_pages
+               handle_mm_fault
+               |          
+                --0.57%--__handle_mm_fault
+                          __cpu_clear_user_page
+
+     0.61%  svsematest  [kernel.vmlinux]  [k] __radix_tree_lookup
+            |
+            ---thread_start
+               start_thread
+               __semtimedop
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_semtimedop
+               do_semtimedop
+               ipc_obtain_object_check
+               idr_find
+               __radix_tree_lookup
+
+     0.60%  svsematest  svsematest        [.] semathread
+            |
+            ---thread_start
+               start_thread
+               semathread
+
+     0.49%  svsematest  [kernel.vmlinux]  [k] 0x00000000009bcad4
+     0.48%  svsematest  [kernel.vmlinux]  [k] trace_preempt_on
+     0.47%  svsematest  [kernel.vmlinux]  [k] schedule
+     0.46%  svsematest  [kernel.vmlinux]  [k] fpsimd_load_state
+     0.45%  svsematest  [kernel.vmlinux]  [k] update_queue
+     0.44%  svsematest  [kernel.vmlinux]  [k] ipc_obtain_object_check
+     0.41%  svsematest  [kernel.vmlinux]  [k] save_return_addr
+     0.39%  svsematest  [kernel.vmlinux]  [k] __schedule
+     0.38%  svsematest  [kernel.vmlinux]  [k] ipcperms
+     0.37%  svsematest  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.36%  svsematest  [kernel.vmlinux]  [k] do_nanosleep
+     0.34%  svsematest  [kernel.vmlinux]  [k] try_to_wake_up
+     0.32%  svsematest  svsematest        [.] __gettimeofday
+     0.32%  svsematest  [kernel.vmlinux]  [k] 0x000000000002171c
+     0.32%  svsematest  [kernel.vmlinux]  [k] security_ipc_permission
+     0.32%  svsematest  [kernel.vmlinux]  [k] __get_user_pages
+     0.31%  svsematest  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.29%  svsematest  [kernel.vmlinux]  [k] _raw_spin_unlock
+     0.28%  svsematest  [kernel.vmlinux]  [k] __arm64_sys_semtimedop
+     0.27%  svsematest  [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.27%  svsematest  [kernel.vmlinux]  [k] wake_q_add
+     0.27%  svsematest  [kernel.vmlinux]  [k] __handle_mm_fault
+     0.26%  svsematest  [kernel.vmlinux]  [k] trace_preempt_off
+     0.25%  svsematest  [kernel.vmlinux]  [k] wake_const_ops
+     0.24%  svsematest  [kernel.vmlinux]  [k] 0x0000000000019374
+     0.22%  svsematest  [kernel.vmlinux]  [k] __rcu_read_unlock
+     0.21%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c25c
+     0.21%  svsematest  [kernel.vmlinux]  [k] in_lock_functions
+     0.20%  svsematest  [kernel.vmlinux]  [k] idr_find
+     0.19%  svsematest  [kernel.vmlinux]  [k] hrtimer_nanosleep
+     0.19%  svsematest  [kernel.vmlinux]  [k] __arm64_sys_clock_nanosleep
+     0.18%  svsematest  svsematest        [.] __aarch64_cas4_acq
+     0.18%  svsematest  [kernel.vmlinux]  [k] handle_mm_fault
+     0.18%  svsematest  [kernel.vmlinux]  [k] get_cpu_fpsimd_context
+     0.18%  svsematest  [vdso]            [.] __kernel_gettimeofday
+     0.18%  svsematest  [kernel.vmlinux]  [k] ktime_get_real_seconds
+     0.17%  svsematest  [vdso]            [.] 0x000000000000032c
+     0.16%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fbb0
+     0.16%  svsematest  [kernel.vmlinux]  [k] wake_up_q
+     0.16%  svsematest  [kernel.vmlinux]  [k] 0x000000000023f7f4
+     0.16%  svsematest  [kernel.vmlinux]  [k] 0x0000000000021718
+     0.15%  svsematest  [kernel.vmlinux]  [k] __arch_copy_from_user
+     0.15%  svsematest  [kernel.vmlinux]  [k] _copy_from_user
+     0.14%  svsematest  [kernel.vmlinux]  [k] 0x00000000009bcac0
+     0.14%  svsematest  [kernel.vmlinux]  [k] fpsimd_restore_current_state
+     0.13%  svsematest  [kernel.vmlinux]  [k] 0x00000000000b3b30
+     0.13%  svsematest  [kernel.vmlinux]  [k] __rcu_read_lock
+     0.13%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fbe8
+     0.12%  svsematest  [kernel.vmlinux]  [k] finish_task_switch
+     0.11%  svsematest  [kernel.vmlinux]  [k] common_nsleep
+     0.11%  svsematest  [kernel.vmlinux]  [k] _raw_spin_lock
+     0.11%  svsematest  [kernel.vmlinux]  [k] security_sem_semop
+     0.11%  svsematest  [kernel.vmlinux]  [k] refcount_sub_and_test_checked
+     0.11%  svsematest  [kernel.vmlinux]  [k] 0x00000000009bcabc
+     0.11%  svsematest  [kernel.vmlinux]  [k] unmap_page_range
+     0.11%  svsematest  [kernel.vmlinux]  [k] 0x000000000024a3e8
+     0.10%  svsematest  [kernel.vmlinux]  [k] 0x00000000000b3b58
+     0.10%  svsematest  [kernel.vmlinux]  [k] lru_cache_add_active_or_unevictable
+     0.10%  svsematest  [kernel.vmlinux]  [k] follow_pmd_mask
+     0.10%  svsematest  [kernel.vmlinux]  [k] __alloc_pages_nodemask
+     0.10%  svsematest  svsematest        [.] __libc_enable_asynccancel
+     0.09%  svsematest  [kernel.vmlinux]  [k] 0x00000000001fcb30
+     0.09%  svsematest  svsematest        [.] __libc_disable_asynccancel
+     0.09%  svsematest  [kernel.vmlinux]  [k] __hrtimer_init
+     0.09%  svsematest  [vdso]            [.] 0x000000000000030c
+     0.08%  svsematest  [kernel.vmlinux]  [k] refcount_inc_not_zero_checked
+     0.08%  svsematest  [vdso]            [.] 0x0000000000000324
+     0.08%  svsematest  [kernel.vmlinux]  [k] radix_tree_lookup
+     0.08%  svsematest  [kernel.vmlinux]  [k] mem_cgroup_uncharge_list
+     0.08%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c49c
+     0.08%  svsematest  [kernel.vmlinux]  [k] __mod_node_page_state
+     0.07%  svsematest  [kernel.vmlinux]  [k] __munlock_pagevec
+     0.07%  svsematest  [kernel.vmlinux]  [k] 0x0000000000237100
+     0.07%  svsematest  [kernel.vmlinux]  [k] __do_softirq
+     0.07%  svsematest  [kernel.vmlinux]  [k] hrtimer_start_range_ns
+     0.07%  svsematest  [kernel.vmlinux]  [k] fpsimd_bind_task_to_cpu
+     0.06%  svsematest  [kernel.vmlinux]  [k] 0x000000000023f780
+     0.06%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fb98
+     0.06%  svsematest  [kernel.vmlinux]  [k] __put_cpu_fpsimd_context
+     0.06%  svsematest  [kernel.vmlinux]  [k] hrtimer_active
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x000000000023f8a0
+     0.05%  svsematest  [kernel.vmlinux]  [k] munlock_vma_pages_range
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c528
+     0.05%  svsematest  [kernel.vmlinux]  [k] mem_cgroup_commit_charge
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c24c
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c248
+     0.05%  svsematest  [kernel.vmlinux]  [k] vm_normal_page
+     0.05%  svsematest  [kernel.vmlinux]  [k] release_pages
+     0.05%  svsematest  [kernel.vmlinux]  [k] mark_page_accessed
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c354
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x0000000000019364
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x00000000009bcacc
+     0.05%  svsematest  [kernel.vmlinux]  [k] 0x0000000000019360
+     0.05%  svsematest  svsematest        [.] _itoa_word
+     0.04%  svsematest  [kernel.vmlinux]  [k] get_timespec64
+     0.04%  svsematest  [kernel.vmlinux]  [k] 0x00000000000b3b40
+     0.04%  svsematest  [vdso]            [.] 0x00000000000003a0
+     0.04%  svsematest  [kernel.vmlinux]  [k] 0x00000000000b3b44
+     0.04%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fbd0
+     0.03%  svsematest  [vdso]            [.] 0x0000000000000300
+     0.03%  svsematest  [kernel.vmlinux]  [k] have_cpu_fpsimd_context
+     0.03%  svsematest  [kernel.vmlinux]  [k] 0x0000000000021728
+     0.03%  svsematest  svsematest        [.] __mprotect
+     0.03%  svsematest  [kernel.vmlinux]  [k] __fsnotify_parent
+     0.03%  svsematest  [kernel.vmlinux]  [k] tlb_flush_mmu
+     0.03%  svsematest  [kernel.vmlinux]  [k] __dec_node_page_state
+     0.03%  svsematest  [kernel.vmlinux]  [k] hrtimer_init
+     0.03%  svsematest  [kernel.vmlinux]  [k] __tlb_remove_page_size
+     0.03%  svsematest  [kernel.vmlinux]  [k] __pagevec_lru_add
+     0.03%  svsematest  [kernel.vmlinux]  [k] 0x000000000020c48c
+     0.03%  svsematest  [kernel.vmlinux]  [k] __mod_zone_page_state
+     0.03%  svsematest  [kernel.vmlinux]  [k] __lru_cache_add
+     0.03%  svsematest  [kernel.vmlinux]  [k] vma_merge
+     0.03%  svsematest  [kernel.vmlinux]  [k] prep_new_page
+     0.03%  svsematest  [kernel.vmlinux]  [k] kmem_cache_alloc_trace
+     0.03%  svsematest  [kernel.vmlinux]  [k] sync_mm_rss
+     0.03%  svsematest  [kernel.vmlinux]  [k] mem_cgroup_try_charge
+     0.03%  svsematest  svsematest        [.] semop
+     0.03%  svsematest  [kernel.vmlinux]  [k] get_random_u64
+     0.03%  svsematest  [kernel.vmlinux]  [k] 0x00000000001fcb20
+     0.03%  svsematest  [kernel.vmlinux]  [k] page_mapping
+     0.03%  svsematest  [kernel.vmlinux]  [k] mod_zone_state
+     0.03%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fbd4
+     0.02%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fb9c
+     0.02%  svsematest  [vdso]            [.] 0x0000000000000314
+     0.02%  svsematest  [vdso]            [.] 0x000000000000039c
+     0.02%  svsematest  [kernel.vmlinux]  [k] _copy_from_user
+     0.02%  svsematest  svsematest        [.] __nanosleep
+     0.02%  svsematest  svsematest        [.] __strchrnul
+     0.02%  svsematest  [kernel.vmlinux]  [k] lru_add_drain_cpu
+     0.02%  svsematest  svsematest        [.] pthread_kill
+     0.02%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fba8
+     0.02%  svsematest  [vdso]            [.] 0x0000000000000338
+     0.02%  svsematest  svsematest        [.] __vfprintf_internal
+     0.02%  svsematest  svsematest        [.] __libc_write
+     0.02%  svsematest  [kernel.vmlinux]  [k] refcount_dec_and_test_checked
+     0.02%  svsematest  [kernel.vmlinux]  [k] tty_write
+     0.01%  svsematest  [kernel.vmlinux]  [k] 0x000000000055fbe0
+     0.01%  svsematest  [kernel.vmlinux]  [k] __set_current_blocked
+     0.01%  svsematest  [kernel.vmlinux]  [k] hrtimer_try_to_cancel
+     0.01%  svsematest  [vdso]            [.] 0x0000000000000320
+     0.01%  svsematest  [kernel.vmlinux]  [k] 0x00000000000b3b50
+     0.01%  svsematest  [kernel.vmlinux]  [k] ldsem_up_read
+     0.01%  svsematest  [vdso]            [.] 0x0000000000000340
+     0.01%  svsematest  [vdso]            [.] 0x0000000000000344
+     0.01%  svsematest  [vdso]            [.] 0x0000000000000354
+     0.01%  svsematest  [kernel.vmlinux]  [k] run_rebalance_domains
+     0.01%  svsematest  [kernel.vmlinux]  [k] futex_wake
+     0.01%  svsematest  svsematest        [.] main
+     0.00%  svsematest  [kernel.vmlinux]  [k] find_mergeable_anon_vma
+     0.00%  svsematest  [kernel.vmlinux]  [k] kmem_cache_alloc
+     0.00%  svsematest  [kernel.vmlinux]  [k] path_noexec
+     0.00%  svsematest  [kernel.vmlinux]  [k] task_fpsimd_load
+     0.00%  svsematest  [kernel.vmlinux]  [k] restore_fpsimd_context
+     0.00%  svsematest  [kernel.vmlinux]  [k] refcount_inc_checked
+     0.00%  svsematest  svsematest        [.] syscall
+     0.00%  svsematest  [kernel.vmlinux]  [k] wait_for_completion
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_iterate_sb
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To set sample time separation other than 100ms with --sort time use --time-quantum)
+#

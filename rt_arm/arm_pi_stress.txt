@@ -1,0 +1,417 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu-cycles'
+# Event count (approx.): 894606056
+#
+# Overhead  Command    Shared Object     Symbol                            
+# ........  .........  ................  ..................................
+#
+    42.62%  pi_stress  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --42.62%--thread_start
+                       start_thread
+                       |          
+                       |--20.99%--low_priority
+                       |          |          
+                       |          |--16.05%--__pthread_barrier_wait
+                       |          |          el0_svc
+                       |          |          el0_svc_handler
+                       |          |          el0_svc_common.constprop.0
+                       |          |          __arm64_sys_futex
+                       |          |          do_futex
+                       |          |          |          
+                       |          |           --16.04%--futex_wake
+                       |          |                     wake_up_q
+                       |          |                     try_to_wake_up
+                       |          |                     preempt_schedule
+                       |          |                     preempt_schedule_common
+                       |          |                     __schedule
+                       |          |                     finish_task_switch
+                       |          |                     _raw_spin_unlock_irq
+                       |          |          
+                       |           --4.94%--__pthread_mutex_unlock_full
+                       |                     el0_svc
+                       |                     el0_svc_handler
+                       |                     el0_svc_common.constprop.0
+                       |                     __arm64_sys_futex
+                       |                     do_futex
+                       |                     |          
+                       |                     |--2.47%--rt_mutex_postunlock
+                       |                     |          preempt_schedule
+                       |                     |          preempt_schedule_common
+                       |                     |          __schedule
+                       |                     |          finish_task_switch
+                       |                     |          _raw_spin_unlock_irq
+                       |                     |          
+                       |                      --2.47%--_raw_spin_unlock_irq
+                       |          
+                       |--14.29%--high_priority
+                       |          |          
+                       |          |--7.94%--__pthread_barrier_wait
+                       |          |          el0_svc
+                       |          |          el0_svc_handler
+                       |          |          el0_svc_common.constprop.0
+                       |          |          __arm64_sys_futex
+                       |          |          do_futex
+                       |          |          futex_wait
+                       |          |          futex_wait_queue_me
+                       |          |          schedule
+                       |          |          __schedule
+                       |          |          finish_task_switch
+                       |          |          _raw_spin_unlock_irq
+                       |          |          
+                       |           --6.35%--__pthread_mutex_lock_full
+                       |                     el0_svc
+                       |                     el0_svc_handler
+                       |                     el0_svc_common.constprop.0
+                       |                     __arm64_sys_futex
+                       |                     do_futex
+                       |                     futex_lock_pi
+                       |                     |          
+                       |                     |--3.74%--rt_mutex_wait_proxy_lock
+                       |                     |          |          
+                       |                     |          |--2.97%--__rt_mutex_slowlock
+                       |                     |          |          |          
+                       |                     |          |          |--2.28%--schedule
+                       |                     |          |          |          __schedule
+                       |                     |          |          |          finish_task_switch
+                       |                     |          |          |          _raw_spin_unlock_irq
+                       |                     |          |          |          
+                       |                     |          |           --0.69%--_raw_spin_unlock_irq
+                       |                     |          |          
+                       |                     |           --0.77%--_raw_spin_unlock_irq
+                       |                     |          
+                       |                     |--2.06%--_raw_spin_unlock_irq
+                       |                     |          
+                       |                      --0.55%--futex_lock_pi_atomic
+                       |                                attach_to_pi_owner
+                       |                                _raw_spin_unlock_irq
+                       |          
+                        --7.34%--med_priority
+                                  __pthread_barrier_wait
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_futex
+                                  do_futex
+                                  futex_wait
+                                  futex_wait_queue_me
+                                  schedule
+                                  __schedule
+                                  finish_task_switch
+                                  _raw_spin_unlock_irq
+
+    12.09%  pi_stress  [kernel.vmlinux]  [k] do_notify_resume
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--4.48%--low_priority
+               |          |          
+               |          |--3.88%--__pthread_barrier_wait
+               |          |          work_pending
+               |          |          do_notify_resume
+               |          |          
+               |           --0.60%--__pthread_mutex_unlock_full
+               |                     work_pending
+               |                     do_notify_resume
+               |          
+               |--4.31%--high_priority
+               |          |          
+               |          |--3.27%--__pthread_barrier_wait
+               |          |          work_pending
+               |          |          do_notify_resume
+               |          |          
+               |           --1.04%--__pthread_mutex_lock_full
+               |                     work_pending
+               |                     do_notify_resume
+               |          
+                --3.30%--med_priority
+                          __pthread_barrier_wait
+                          work_pending
+                          do_notify_resume
+
+    11.84%  pi_stress  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+             --11.82%--thread_start
+                       start_thread
+                       low_priority
+                       |          
+                       |--10.19%--__pthread_barrier_wait
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          __arm64_sys_futex
+                       |          do_futex
+                       |          futex_wake
+                       |          wake_up_q
+                       |          try_to_wake_up
+                       |          _raw_spin_unlock_irqrestore
+                       |          
+                        --1.62%--__pthread_mutex_unlock_full
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_futex
+                                  do_futex
+                                  |          
+                                  |--0.88%--rt_mutex_postunlock
+                                  |          wake_up_q
+                                  |          try_to_wake_up
+                                  |          _raw_spin_unlock_irqrestore
+                                  |          
+                                   --0.74%--put_pi_state.part.0
+                                             _raw_spin_unlock_irqrestore
+
+     6.78%  pi_stress  pi_stress         [.] __pthread_barrier_wait
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--2.75%--low_priority
+               |          __pthread_barrier_wait
+               |          
+               |--2.17%--high_priority
+               |          __pthread_barrier_wait
+               |          
+                --1.87%--med_priority
+                          __pthread_barrier_wait
+
+     2.88%  pi_stress  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--1.18%--low_priority
+               |          |          
+               |           --0.91%--__pthread_barrier_wait
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |          
+               |--1.15%--high_priority
+               |          |          
+               |           --0.77%--__pthread_barrier_wait
+               |                     el0_svc
+               |                     el0_svc_handler
+               |                     el0_svc_common.constprop.0
+               |          
+                --0.55%--med_priority
+                          __pthread_barrier_wait
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+     1.27%  pi_stress  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---thread_start
+               start_thread
+               |          
+                --0.86%--low_priority
+                          |          
+                           --0.75%--__pthread_barrier_wait
+                                     el0_svc
+                                     el0_svc_handler
+                                     el0_svc_common.constprop.0
+                                     __arm64_sys_futex
+                                     do_futex
+                                     |          
+                                      --0.74%--futex_wake
+                                                |          
+                                                 --0.66%--wake_up_q
+                                                           try_to_wake_up
+
+     1.23%  pi_stress  [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---thread_start
+               start_thread
+               |          
+                --0.58%--high_priority
+
+     1.18%  pi_stress  pi_stress         [.] __pthread_mutex_unlock_full
+            |
+            ---thread_start
+               start_thread
+               |          
+               |--0.63%--low_priority
+               |          __pthread_mutex_unlock_full
+               |          
+                --0.55%--high_priority
+                          __pthread_mutex_unlock_full
+
+     1.13%  pi_stress  [kernel.vmlinux]  [k] preempt_count_add
+            |
+            ---thread_start
+               start_thread
+
+     0.69%  pi_stress  [kernel.vmlinux]  [k] fpsimd_load_state
+            |          
+             --0.69%--thread_start
+                       start_thread
+
+     0.69%  pi_stress  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---thread_start
+               start_thread
+
+     0.63%  pi_stress  [kernel.vmlinux]  [k] 0x00000000009bcad4
+            |
+            ---thread_start
+               start_thread
+
+     0.63%  pi_stress  [kernel.vmlinux]  [k] __schedule
+            |
+            ---thread_start
+               start_thread
+
+     0.60%  pi_stress  pi_stress         [.] __pthread_mutex_lock_full
+            |
+            ---thread_start
+               start_thread
+               |          
+                --0.57%--high_priority
+                          __pthread_mutex_lock_full
+
+     0.58%  pi_stress  [kernel.vmlinux]  [k] walk_stackframe
+            |
+            ---thread_start
+               start_thread
+
+     0.55%  pi_stress  [kernel.vmlinux]  [k] try_to_wake_up
+            |
+            ---thread_start
+               start_thread
+               low_priority
+               |          
+                --0.52%--__pthread_barrier_wait
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_futex
+                          do_futex
+                          futex_wake
+
+     0.52%  pi_stress  [kernel.vmlinux]  [k] return_address
+            |
+            ---thread_start
+               start_thread
+
+     0.52%  pi_stress  [kernel.vmlinux]  [k] futex_wait_queue_me
+            |
+            ---thread_start
+               start_thread
+
+     0.44%  pi_stress  [kernel.vmlinux]  [k] get_futex_key
+     0.41%  pi_stress  [kernel.vmlinux]  [k] futex_wake
+     0.41%  pi_stress  pi_stress         [.] __aarch64_ldadd4_rel
+     0.41%  pi_stress  [kernel.vmlinux]  [k] __arm64_sys_futex
+     0.41%  pi_stress  pi_stress         [.] __aarch64_ldadd4_acq_rel
+     0.39%  pi_stress  [kernel.vmlinux]  [k] do_futex
+     0.38%  pi_stress  [kernel.vmlinux]  [k] save_return_addr
+     0.36%  pi_stress  [kernel.vmlinux]  [k] preempt_schedule_common
+     0.36%  pi_stress  [kernel.vmlinux]  [k] wake_q_add_safe
+     0.33%  pi_stress  [kernel.vmlinux]  [k] trace_preempt_on
+     0.30%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000019374
+     0.30%  pi_stress  [kernel.vmlinux]  [k] futex_wait
+     0.30%  pi_stress  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.30%  pi_stress  [kernel.vmlinux]  [k] __task_pid_nr_ns
+     0.30%  pi_stress  [kernel.vmlinux]  [k] fpsimd_restore_current_state
+     0.28%  pi_stress  [kernel.vmlinux]  [k] schedule
+     0.27%  pi_stress  [kernel.vmlinux]  [k] hash_futex
+     0.25%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011d0dc
+     0.25%  pi_stress  pi_stress         [.] __aarch64_swp4_rel
+     0.25%  pi_stress  [kernel.vmlinux]  [k] preempt_schedule
+     0.25%  pi_stress  [kernel.vmlinux]  [k] 0x000000000055fbb0
+     0.25%  pi_stress  [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.22%  pi_stress  pi_stress         [.] high_priority
+     0.22%  pi_stress  [kernel.vmlinux]  [k] get_futex_key_refs
+     0.22%  pi_stress  [kernel.vmlinux]  [k] refcount_sub_and_test_checked
+     0.22%  pi_stress  [kernel.vmlinux]  [k] plist_add
+     0.19%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011cfbc
+     0.19%  pi_stress  pi_stress         [.] low_priority
+     0.19%  pi_stress  [kernel.vmlinux]  [k] _raw_spin_unlock
+     0.19%  pi_stress  [kernel.vmlinux]  [k] kmem_cache_alloc_trace
+     0.19%  pi_stress  pi_stress         [.] __pthread_mutex_lock
+     0.17%  pi_stress  [kernel.vmlinux]  [k] drop_futex_key_refs
+     0.17%  pi_stress  [kernel.vmlinux]  [k] 0x000000000055fbe8
+     0.17%  pi_stress  [kernel.vmlinux]  [k] fpsimd_bind_task_to_cpu
+     0.17%  pi_stress  [kernel.vmlinux]  [k] get_cpu_fpsimd_context
+     0.16%  pi_stress  [kernel.vmlinux]  [k] futex_wait_setup
+     0.16%  pi_stress  [kernel.vmlinux]  [k] trace_preempt_off
+     0.14%  pi_stress  [kernel.vmlinux]  [k] futex_lock_pi
+     0.14%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011d0f0
+     0.14%  pi_stress  pi_stress         [.] __aarch64_cas4_acq
+     0.12%  pi_stress  pi_stress         [.] med_priority
+     0.11%  pi_stress  [kernel.vmlinux]  [k] refill_pi_state_cache.part.0
+     0.11%  pi_stress  [kernel.vmlinux]  [k] 0x000000000055fbd4
+     0.11%  pi_stress  [kernel.vmlinux]  [k] 0x000000000002171c
+     0.11%  pi_stress  [kernel.vmlinux]  [k] in_lock_functions
+     0.11%  pi_stress  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.11%  pi_stress  [kernel.vmlinux]  [k] 0x000000000055fbd0
+     0.11%  pi_stress  [kernel.vmlinux]  [k] cmpxchg_futex_value_locked
+     0.09%  pi_stress  [kernel.vmlinux]  [k] 0x00000000009bcac0
+     0.08%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000019364
+     0.08%  pi_stress  pi_stress         [.] __pthread_mutex_unlock_usercnt
+     0.08%  pi_stress  [kernel.vmlinux]  [k] 0x00000000009bcabc
+     0.08%  pi_stress  [kernel.vmlinux]  [k] __unqueue_futex
+     0.08%  pi_stress  [kernel.vmlinux]  [k] refcount_inc_not_zero_checked
+     0.08%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011d0e0
+     0.08%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000021718
+     0.08%  pi_stress  [kernel.vmlinux]  [k] wake_up_q
+     0.06%  pi_stress  [kernel.vmlinux]  [k] finish_task_switch
+     0.06%  pi_stress  [kernel.vmlinux]  [k] 0x00000000009bcacc
+     0.06%  pi_stress  [kernel.vmlinux]  [k] __pi_memset
+     0.06%  pi_stress  [kernel.vmlinux]  [k] mark_wake_futex
+     0.06%  pi_stress  [kernel.vmlinux]  [k] plist_del
+     0.06%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011cfac
+     0.06%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000271888
+     0.06%  pi_stress  [kernel.vmlinux]  [k] _raw_spin_lock_irq
+     0.05%  pi_stress  [kernel.vmlinux]  [k] __put_cpu_fpsimd_context
+     0.05%  pi_stress  pi_stress         [.] __aarch64_cas4_rel
+     0.05%  pi_stress  [kernel.vmlinux]  [k] rt_mutex_init_waiter
+     0.05%  pi_stress  [kernel.vmlinux]  [k] futex_top_waiter
+     0.05%  pi_stress  [kernel.vmlinux]  [k] __pi_memcpy
+     0.03%  pi_stress  [kernel.vmlinux]  [k] have_cpu_fpsimd_context
+     0.03%  pi_stress  [kernel.vmlinux]  [k] __do_softirq
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x00000000002719a8
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000019360
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x00000000000b3b6c
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x00000000000b3b5c
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011d138
+     0.03%  pi_stress  [kernel.vmlinux]  [k] refcount_dec_and_test_checked
+     0.03%  pi_stress  [kernel.vmlinux]  [k] should_failslab
+     0.03%  pi_stress  [kernel.vmlinux]  [k] acct_update_integrals
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x00000000000b3b60
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x000000000011cfa8
+     0.03%  pi_stress  [kernel.vmlinux]  [k] task_fpsimd_load
+     0.03%  pi_stress  [kernel.vmlinux]  [k] get_futex_value_locked
+     0.03%  pi_stress  [kernel.vmlinux]  [k] attach_to_pi_owner
+     0.03%  pi_stress  [kernel.vmlinux]  [k] refcount_inc_checked
+     0.03%  pi_stress  [kernel.vmlinux]  [k] __radix_tree_lookup
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x00000000000b3b74
+     0.03%  pi_stress  [kernel.vmlinux]  [k] 0x0000000000021728
+     0.03%  pi_stress  [kernel.vmlinux]  [k] kfree
+     0.03%  pi_stress  pi_stress         [.] __strchrnul
+     0.02%  pi_stress  [kernel.vmlinux]  [k] perf_event_alloc
+     0.02%  pi_stress  [kernel.vmlinux]  [k] generic_file_read_iter
+     0.02%  pi_stress  [kernel.vmlinux]  [k] _do_fork
+     0.02%  pi_stress  [kernel.vmlinux]  [k] copy_process
+     0.02%  pi_stress  [kernel.vmlinux]  [k] __slab_alloc.constprop.0
+     0.02%  pi_stress  [kernel.vmlinux]  [k] clear_page
+     0.02%  pi_stress  [kernel.vmlinux]  [k] __alloc_pages_nodemask
+     0.01%  pi_stress  [kernel.vmlinux]  [k] ____fput
+     0.01%  pi_stress  [kernel.vmlinux]  [k] unmap_page_range
+     0.00%  pi_stress  pi_stress         [.] verify_cpu
+     0.00%  pi_stress  pi_stress         [.] pthread_sigmask
+     0.00%  pi_stress  pi_stress         [.] __clone
+     0.00%  perf_5.4   [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.00%  pi_stress  [kernel.vmlinux]  [k] 0x00000000000b3b20
+     0.00%  perf_5.4   [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
+#

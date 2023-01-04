@@ -1,0 +1,455 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu-cycles'
+# Event count (approx.): 272109648
+#
+# Overhead  Command      Shared Object     Symbol                            
+# ........  ...........  ................  ..................................
+#
+    28.48%  sigwaittest  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+             --27.94%--thread_start
+                       start_thread
+                       semathread
+                       |          
+                       |--26.25%--__libc_sigwait
+                       |          __sigtimedwait
+                       |          el0_svc
+                       |          el0_svc_handler
+                       |          el0_svc_common.constprop.0
+                       |          __arm64_sys_rt_sigtimedwait
+                       |          do_sigtimedwait
+                       |          |          
+                       |          |--14.70%--schedule_hrtimeout_range
+                       |          |          schedule_hrtimeout_range_clock
+                       |          |          schedule
+                       |          |          __schedule
+                       |          |          finish_task_switch
+                       |          |          _raw_spin_unlock_irq
+                       |          |          
+                       |           --11.55%--_raw_spin_unlock_irq
+                       |          
+                        --1.67%--__nanosleep
+                                  __clock_nanosleep
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_clock_nanosleep
+                                  common_nsleep
+                                  hrtimer_nanosleep
+                                  do_nanosleep
+                                  schedule
+                                  __schedule
+                                  finish_task_switch
+                                  _raw_spin_unlock_irq
+
+    18.32%  sigwaittest  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+            |--15.48%--thread_start
+            |          start_thread
+            |          semathread
+            |          |          
+            |          |--12.67%--pthread_kill
+            |          |          |          
+            |          |           --12.64%--el0_svc
+            |          |                     el0_svc_handler
+            |          |                     el0_svc_common.constprop.0
+            |          |                     __arm64_sys_tgkill
+            |          |                     do_tkill
+            |          |                     do_send_specific
+            |          |                     do_send_sig_info
+            |          |                     _raw_spin_unlock_irqrestore
+            |          |          
+            |           --2.75%--__nanosleep
+            |                     __clock_nanosleep
+            |                     el0_svc
+            |                     el0_svc_handler
+            |                     el0_svc_common.constprop.0
+            |                     __arm64_sys_clock_nanosleep
+            |                     common_nsleep
+            |                     hrtimer_nanosleep
+            |                     do_nanosleep
+            |                     hrtimer_start_range_ns
+            |                     _raw_spin_unlock_irqrestore
+            |          
+            |--1.81%--_start
+            |          __libc_start_main
+            |          |          
+            |           --1.67%--main
+            |                     |          
+            |                      --1.60%--__mprotect
+            |                                el0_svc
+            |                                el0_svc_handler
+            |                                el0_svc_common.constprop.0
+            |                                __arm64_sys_mprotect
+            |                                mprotect_fixup
+            |                                populate_vma_page_range
+            |                                __get_user_pages
+            |                                follow_pmd_mask
+            |                                lru_add_drain
+            |                                lru_add_drain_cpu
+            |                                _raw_spin_unlock_irqrestore
+            |          
+             --1.03%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       0xffffffc0100eb508
+                       do_group_exit
+                       do_exit
+                       mmput
+                       exit_mmap
+                       |          
+                        --0.67%--munlock_vma_pages_range
+                                  __munlock_pagevec
+                                  __pagevec_lru_add
+                                  _raw_spin_unlock_irqrestore
+
+     6.22%  sigwaittest  [kernel.vmlinux]  [k] do_notify_resume
+            |
+            ---thread_start
+               start_thread
+               semathread
+               |          
+                --6.19%--__libc_sigwait
+                          __sigtimedwait
+                          work_pending
+                          do_notify_resume
+
+     4.42%  sigwaittest  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |
+            ---thread_start
+               start_thread
+               semathread
+               |          
+               |--1.13%--__libc_sigwait
+               |          __sigtimedwait
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--1.11%--pthread_kill
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--0.82%--__getpid
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+               |--0.78%--pthread_sigmask
+               |          el0_svc
+               |          el0_svc_handler
+               |          el0_svc_common.constprop.0
+               |          
+                --0.57%--__nanosleep
+                          __clock_nanosleep
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+
+     3.73%  sigwaittest  sigwaittest       [.] pthread_kill
+            |
+            ---thread_start
+               start_thread
+               semathread
+               pthread_kill
+
+     3.22%  sigwaittest  [kernel.vmlinux]  [k] clear_page
+            |
+            ---_start
+               __libc_start_main
+               main
+               __mprotect
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_mprotect
+               mprotect_fixup
+               populate_vma_page_range
+               __get_user_pages
+               handle_mm_fault
+               __handle_mm_fault
+               clear_page
+
+     3.16%  sigwaittest  sigwaittest       [.] __getpid
+            |
+            ---thread_start
+               start_thread
+               semathread
+               __getpid
+
+     2.64%  sigwaittest  sigwaittest       [.] pthread_sigmask
+            |
+            ---thread_start
+               start_thread
+               semathread
+               pthread_sigmask
+
+     2.48%  sigwaittest  [kernel.vmlinux]  [k] unwind_frame
+            |          
+            |--1.25%--_start
+            |          __libc_start_main
+            |          main
+            |          __mprotect
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_mprotect
+            |          mprotect_fixup
+            |          populate_vma_page_range
+            |          __get_user_pages
+            |          |          
+            |           --0.98%--follow_pmd_mask
+            |                     |          
+            |                      --0.53%--_raw_spin_unlock
+            |                                preempt_count_sub
+            |                                return_address
+            |                                walk_stackframe
+            |                                unwind_frame
+            |          
+             --1.15%--thread_start
+                       start_thread
+                       semathread
+                       |          
+                        --0.79%--__libc_sigwait
+                                  __sigtimedwait
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_rt_sigtimedwait
+                                  do_sigtimedwait
+                                  _raw_spin_unlock_irq
+                                  preempt_count_sub
+                                  return_address
+                                  |          
+                                   --0.63%--walk_stackframe
+                                             unwind_frame
+
+     2.28%  sigwaittest  sigwaittest       [.] __clock_nanosleep
+            |          
+             --2.25%--thread_start
+                       start_thread
+                       semathread
+                       |          
+                        --2.22%--__nanosleep
+                                  __clock_nanosleep
+
+     2.15%  sigwaittest  sigwaittest       [.] __sigtimedwait
+            |
+            ---thread_start
+               start_thread
+               semathread
+               __libc_sigwait
+               __sigtimedwait
+
+     2.00%  sigwaittest  [kernel.vmlinux]  [k] free_unref_page_list
+            |          
+            |--1.37%--_start
+            |          __libc_start_main
+            |          |          
+            |           --1.23%--main
+            |                     __mprotect
+            |                     el0_svc
+            |                     el0_svc_handler
+            |                     el0_svc_common.constprop.0
+            |                     __arm64_sys_mprotect
+            |                     mprotect_fixup
+            |                     populate_vma_page_range
+            |                     __get_user_pages
+            |                     follow_pmd_mask
+            |                     lru_add_drain
+            |                     lru_add_drain_cpu
+            |                     release_pages
+            |                     free_unref_page_list
+            |          
+             --0.63%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       0xffffffc0100eb508
+                       do_group_exit
+                       do_exit
+                       mmput
+                       exit_mmap
+                       tlb_finish_mmu
+                       tlb_flush_mmu
+                       free_pages_and_swap_cache
+                       release_pages
+                       free_unref_page_list
+
+     1.49%  sigwaittest  [kernel.vmlinux]  [k] preempt_count_add
+            |          
+             --1.21%--_start
+                       __libc_start_main
+                       |          
+                        --1.16%--main
+                                  __mprotect
+                                  el0_svc
+                                  el0_svc_handler
+                                  el0_svc_common.constprop.0
+                                  __arm64_sys_mprotect
+                                  mprotect_fixup
+                                  populate_vma_page_range
+                                  __get_user_pages
+                                  |          
+                                   --0.89%--handle_mm_fault
+                                             __handle_mm_fault
+                                             |          
+                                              --0.62%--_raw_spin_lock
+                                                        preempt_count_add
+
+     1.09%  sigwaittest  [kernel.vmlinux]  [k] preempt_count_sub
+            |          
+             --0.91%--thread_start
+                       start_thread
+                       semathread
+                       |          
+                        --0.54%--__libc_sigwait
+                                  __sigtimedwait
+
+     0.59%  sigwaittest  [kernel.vmlinux]  [k] __schedule
+            |
+            ---thread_start
+               start_thread
+               semathread
+               |          
+                --0.51%--__libc_sigwait
+                          __sigtimedwait
+                          el0_svc
+                          el0_svc_handler
+                          el0_svc_common.constprop.0
+                          __arm64_sys_rt_sigtimedwait
+                          do_sigtimedwait
+                          schedule_hrtimeout_range
+                          schedule_hrtimeout_range_clock
+
+     0.57%  sigwaittest  [kernel.vmlinux]  [k] __task_pid_nr_ns
+            |
+            ---thread_start
+               start_thread
+               semathread
+
+     0.56%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000002172c
+     0.53%  sigwaittest  [kernel.vmlinux]  [k] get_page_from_freelist
+            |
+            ---_start
+               __libc_start_main
+
+     0.47%  sigwaittest  [kernel.vmlinux]  [k] __arch_clear_user
+     0.46%  sigwaittest  [kernel.vmlinux]  [k] copy_siginfo_to_user
+     0.45%  sigwaittest  [kernel.vmlinux]  [k] trace_preempt_on
+     0.43%  sigwaittest  [kernel.vmlinux]  [k] do_nanosleep
+     0.43%  sigwaittest  sigwaittest       [.] __libc_disable_asynccancel
+     0.39%  sigwaittest  [kernel.vmlinux]  [k] schedule_hrtimeout_range_clock
+     0.38%  sigwaittest  [kernel.vmlinux]  [k] __radix_tree_lookup
+     0.34%  sigwaittest  [kernel.vmlinux]  [k] __cpu_clear_user_page
+     0.34%  sigwaittest  [kernel.vmlinux]  [k] schedule
+     0.33%  sigwaittest  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.31%  sigwaittest  [kernel.vmlinux]  [k] return_address
+     0.31%  sigwaittest  sigwaittest       [.] __aarch64_cas4_acq
+     0.28%  sigwaittest  [kernel.vmlinux]  [k] __this_cpu_preempt_check
+     0.28%  sigwaittest  sigwaittest       [.] semathread
+     0.27%  sigwaittest  [kernel.vmlinux]  [k] follow_pmd_mask
+     0.27%  sigwaittest  [kernel.vmlinux]  [k] __get_user_pages
+     0.27%  sigwaittest  [kernel.vmlinux]  [k] fpsimd_load_state
+     0.26%  sigwaittest  [kernel.vmlinux]  [k] __arch_copy_from_user
+     0.26%  sigwaittest  [kernel.vmlinux]  [k] do_tkill
+     0.24%  sigwaittest  [kernel.vmlinux]  [k] walk_stackframe
+     0.23%  sigwaittest  [kernel.vmlinux]  [k] __arch_copy_to_user
+     0.23%  sigwaittest  [kernel.vmlinux]  [k] __hrtimer_init
+     0.23%  sigwaittest  [kernel.vmlinux]  [k] do_sigtimedwait
+     0.22%  sigwaittest  [kernel.vmlinux]  [k] _raw_spin_lock_irq
+     0.21%  sigwaittest  [kernel.vmlinux]  [k] hrtimer_nanosleep
+     0.20%  sigwaittest  [vdso]            [.] 0x000000000000032c
+     0.20%  sigwaittest  [kernel.vmlinux]  [k] in_lock_functions
+     0.20%  sigwaittest  [kernel.vmlinux]  [k] __arm64_sys_rt_sigtimedwait
+     0.19%  sigwaittest  [kernel.vmlinux]  [k] __rcu_read_lock
+     0.19%  sigwaittest  [kernel.vmlinux]  [k] 0x00000000000b3b30
+     0.19%  sigwaittest  [kernel.vmlinux]  [k] find_task_by_vpid
+     0.18%  sigwaittest  [kernel.vmlinux]  [k] audit_signal_info_syscall
+     0.18%  sigwaittest  [kernel.vmlinux]  [k] __arm64_sys_clock_nanosleep
+     0.18%  sigwaittest  [kernel.vmlinux]  [k] handle_mm_fault
+     0.18%  sigwaittest  [kernel.vmlinux]  [k] unmap_page_range
+     0.17%  sigwaittest  sigwaittest       [.] __libc_enable_asynccancel
+     0.17%  sigwaittest  [kernel.vmlinux]  [k] finish_task_switch
+     0.17%  sigwaittest  [kernel.vmlinux]  [k] 0x00000000009bcad4
+     0.16%  sigwaittest  [kernel.vmlinux]  [k] __set_current_blocked
+     0.16%  sigwaittest  sigwaittest       [.] __libc_sigwait
+     0.16%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000002171c
+     0.16%  sigwaittest  [kernel.vmlinux]  [k] hrtimer_active
+     0.15%  sigwaittest  [kernel.vmlinux]  [k] save_return_addr
+     0.15%  sigwaittest  [kernel.vmlinux]  [k] __rcu_read_unlock
+     0.15%  sigwaittest  [kernel.vmlinux]  [k] _copy_from_user
+     0.14%  sigwaittest  [kernel.vmlinux]  [k] sigprocmask
+     0.13%  sigwaittest  [kernel.vmlinux]  [k] 0x0000000000019374
+     0.13%  sigwaittest  [kernel.vmlinux]  [k] 0x0000000000021718
+     0.12%  sigwaittest  [kernel.vmlinux]  [k] do_send_specific
+     0.12%  sigwaittest  [kernel.vmlinux]  [k] 0x00000000001fcb30
+     0.12%  sigwaittest  [vdso]            [.] __kernel_gettimeofday
+     0.12%  sigwaittest  [kernel.vmlinux]  [k] do_send_sig_info
+     0.12%  sigwaittest  [vdso]            [.] 0x0000000000000300
+     0.12%  sigwaittest  [kernel.vmlinux]  [k] schedule_hrtimeout_range
+     0.12%  sigwaittest  [kernel.vmlinux]  [k] __arm64_sys_rt_sigprocmask
+     0.11%  sigwaittest  [kernel.vmlinux]  [k] debug_smp_processor_id
+     0.11%  sigwaittest  [kernel.vmlinux]  [k] map_id_up
+     0.10%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000020c25c
+     0.10%  sigwaittest  [vdso]            [.] 0x0000000000000324
+     0.09%  sigwaittest  sigwaittest       [.] __gettimeofday
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] mem_cgroup_try_charge
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] __mod_zone_page_state
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] lru_add_drain
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] mlock_vma_page
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] insert_vmap_area.constprop.0
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] vmap_page_range_noflush
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] mark_page_accessed
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] release_pages
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] mem_cgroup_commit_charge
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000020c354
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] __handle_mm_fault
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000020c49c
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000024a3e8
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000023f770
+     0.09%  sigwaittest  [vdso]            [.] 0x000000000000030c
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] get_timespec64
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000023f7f4
+     0.09%  sigwaittest  [kernel.vmlinux]  [k] hrtimer_start_range_ns
+     0.08%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000023f8a0
+     0.08%  sigwaittest  [kernel.vmlinux]  [k] security_task_kill
+     0.08%  sigwaittest  sigwaittest       [.] _IO_new_file_xsputn
+     0.08%  sigwaittest  [kernel.vmlinux]  [k] 0x000000000023f890
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] idr_find
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] __efistub_memchr
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] trace_preempt_off
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] _copy_from_user
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] 0x0000000000021728
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] fpsimd_bind_task_to_cpu
+     0.06%  sigwaittest  [kernel.vmlinux]  [k] common_nsleep
+     0.05%  sigwaittest  [kernel.vmlinux]  [k] __arm64_sys_tgkill
+     0.05%  sigwaittest  [kernel.vmlinux]  [k] audit_signal_info
+     0.04%  sigwaittest  [kernel.vmlinux]  [k] munlock_vma_pages_range
+     0.04%  sigwaittest  [kernel.vmlinux]  [k] copy_page
+     0.04%  sigwaittest  [kernel.vmlinux]  [k] 0x0000000000019360
+     0.04%  sigwaittest  [kernel.vmlinux]  [k] get_cpu_fpsimd_context
+     0.03%  sigwaittest  sigwaittest       [.] __vfprintf_internal
+     0.03%  sigwaittest  sigwaittest       [.] __nanosleep
+     0.03%  sigwaittest  sigwaittest       [.] sigemptyset
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] radix_tree_lookup
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] hrtimer_try_to_cancel
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] __do_softirq
+     0.03%  sigwaittest  sigwaittest       [.] malloc
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] check_kill_permission
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] n_tty_write
+     0.03%  sigwaittest  sigwaittest       [.] sigaddset
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] do_exit
+     0.03%  sigwaittest  [kernel.vmlinux]  [k] 0x00000000000b3b20
+     0.02%  sigwaittest  [kernel.vmlinux]  [k] kfree
+     0.01%  sigwaittest  [kernel.vmlinux]  [k] vmacache_update
+     0.00%  perf_5.4     [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: To report cacheline events from previous recording: perf c2c report)
+#

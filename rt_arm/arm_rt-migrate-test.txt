@@ -1,0 +1,186 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 12K of event 'cpu-cycles'
+# Event count (approx.): 3080055992
+#
+# Overhead  Command          Shared Object     Symbol                           
+# ........  ...............  ................  .................................
+#
+    32.71%  rt-migrate-test  [vdso]            [.] 0x000000000000032c
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b632c
+
+    20.56%  rt-migrate-test  [vdso]            [.] 0x0000000000000324
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6324
+
+    15.57%  rt-migrate-test  rt-migrate-test   [.] start_task
+            |
+            ---thread_start
+               start_thread
+               start_task
+
+     7.41%  rt-migrate-test  [vdso]            [.] 0x0000000000000314
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6314
+
+     6.36%  rt-migrate-test  [vdso]            [.] __kernel_gettimeofday
+            |
+            ---thread_start
+               start_thread
+               start_task
+               |          
+               |--4.18%--__gettimeofday
+               |          __kernel_gettimeofday
+               |          
+                --2.18%--__kernel_gettimeofday
+
+     5.54%  rt-migrate-test  rt-migrate-test   [.] __gettimeofday
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+
+     3.79%  rt-migrate-test  [vdso]            [.] 0x0000000000000344
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6344
+
+     0.84%  rt-migrate-test  [vdso]            [.] 0x0000000000000374
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6374
+
+     0.83%  rt-migrate-test  [vdso]            [.] 0x0000000000000340
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6340
+
+     0.81%  rt-migrate-test  [vdso]            [.] 0x0000000000000300
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6300
+
+     0.77%  rt-migrate-test  [vdso]            [.] 0x0000000000000320
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6320
+
+     0.73%  rt-migrate-test  [vdso]            [.] 0x0000000000000328
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6328
+
+     0.71%  rt-migrate-test  [vdso]            [.] 0x000000000000033c
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b633c
+
+     0.67%  rt-migrate-test  [vdso]            [.] 0x000000000000039c
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b639c
+
+     0.65%  rt-migrate-test  [vdso]            [.] 0x0000000000000338
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6338
+
+     0.61%  rt-migrate-test  [vdso]            [.] 0x0000000000000354
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6354
+
+     0.54%  rt-migrate-test  [vdso]            [.] 0x0000000000000330
+            |
+            ---thread_start
+               start_thread
+               start_task
+               __gettimeofday
+               0x7f8f4b6330
+
+     0.38%  rt-migrate-test  [vdso]            [.] 0x000000000000030c
+     0.10%  rt-migrate-test  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+     0.10%  rt-migrate-test  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+     0.03%  rt-migrate-test  [kernel.vmlinux]  [k] __do_softirq
+     0.03%  rt-migrate-test  [kernel.vmlinux]  [k] do_notify_resume
+     0.02%  rt-migrate-test  rt-migrate-test   [.] __pthread_barrier_wait
+     0.02%  rt-migrate-test  rt-migrate-test   [.] __vfprintf_internal
+     0.02%  rt-migrate-test  rt-migrate-test   [.] __libc_write
+     0.02%  rt-migrate-test  [vdso]            [.] 0x0000000000000388
+     0.02%  rt-migrate-test  [kernel.vmlinux]  [k] n_tty_write
+     0.02%  rt-migrate-test  rt-migrate-test   [.] __aarch64_cas4_acq
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] alloc_vmap_area.constprop.0
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] kmem_cache_alloc_trace
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] mmap_region
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] __fsnotify_parent
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] filemap_map_pages
+     0.01%  rt-migrate-test  [vdso]            [.] 0x00000000000003a0
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] put_task_stack
+     0.01%  rt-migrate-test  rt-migrate-test   [.] _IO_new_file_xsputn
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] walk_stackframe
+     0.01%  rt-migrate-test  rt-migrate-test   [.] __pthread_disable_asynccancel
+     0.01%  rt-migrate-test  rt-migrate-test   [.] __strchrnul
+     0.01%  rt-migrate-test  rt-migrate-test   [.] __aarch64_swp4_rel
+     0.01%  rt-migrate-test  rt-migrate-test   [.] __do_global_dtors_aux
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] __bitmap_and
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] do_futex
+     0.01%  rt-migrate-test  rt-migrate-test   [.] _IO_str_init_static_internal
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] free_unref_page_list
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] return_address
+     0.01%  rt-migrate-test  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+     0.00%  rt-migrate-test  [kernel.vmlinux]  [k] get_page_from_freelist
+     0.00%  rt-migrate-test  [kernel.vmlinux]  [k] __pi_strlen
+     0.00%  perf_5.4         [kernel.vmlinux]  [k] preempt_count_add
+     0.00%  perf_5.4         [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Search options using a keyword: perf report -h <keyword>)
+#

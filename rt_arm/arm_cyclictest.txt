@@ -1,0 +1,570 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 115  of event 'cpu-cycles'
+# Event count (approx.): 27384518
+#
+# Overhead  Command     Shared Object     Symbol                            
+# ........  ..........  ................  ..................................
+#
+    20.75%  cyclictest  [kernel.vmlinux]  [k] _raw_spin_unlock_irqrestore
+            |          
+            |--18.87%--thread_start
+            |          start_thread
+            |          |          
+            |          |--17.92%--timerthread
+            |          |          __clock_nanosleep
+            |          |          el0_svc
+            |          |          el0_svc_handler
+            |          |          el0_svc_common.constprop.0
+            |          |          __arm64_sys_clock_nanosleep
+            |          |          common_nsleep
+            |          |          hrtimer_nanosleep
+            |          |          do_nanosleep
+            |          |          hrtimer_start_range_ns
+            |          |          _raw_spin_unlock_irqrestore
+            |          |          
+            |           --0.95%--__sched_setscheduler
+            |                     el0_svc
+            |                     el0_svc_handler
+            |                     el0_svc_common.constprop.0
+            |                     __arm64_sys_sched_setscheduler
+            |                     do_sched_setscheduler
+            |                     __sched_setscheduler
+            |                     _raw_spin_unlock_irqrestore
+            |          
+            |--0.95%--_start
+            |          __libc_start_main
+            |          main
+            |          usleep
+            |          __nanosleep
+            |          __clock_nanosleep
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_clock_nanosleep
+            |          common_nsleep
+            |          hrtimer_nanosleep
+            |          do_nanosleep
+            |          hrtimer_start_range_ns
+            |          _raw_spin_unlock_irqrestore
+            |          
+             --0.94%--el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       0xffffffc0100eb508
+                       do_group_exit
+                       do_exit
+                       mmput
+                       exit_mmap
+                       tlb_finish_mmu
+                       tlb_flush_mmu
+                       free_pages_and_swap_cache
+                       release_pages
+                       _raw_spin_unlock_irqrestore
+
+    15.09%  cyclictest  cyclictest        [.] __clock_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+
+    10.40%  cyclictest  [kernel.vmlinux]  [k] _raw_spin_unlock_irq
+            |          
+            |--8.51%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_clock_nanosleep
+            |          common_nsleep
+            |          hrtimer_nanosleep
+            |          do_nanosleep
+            |          schedule
+            |          __schedule
+            |          finish_task_switch
+            |          _raw_spin_unlock_irq
+            |          
+             --1.89%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       __arm64_sys_clock_nanosleep
+                       common_nsleep
+                       hrtimer_nanosleep
+                       do_nanosleep
+                       schedule
+                       __schedule
+                       finish_task_switch
+                       _raw_spin_unlock_irq
+
+     6.64%  cyclictest  [kernel.vmlinux]  [k] el0_svc_common.constprop.0
+            |          
+            |--5.70%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          
+             --0.94%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+
+     4.70%  cyclictest  [kernel.vmlinux]  [k] do_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+
+     3.80%  cyclictest  [kernel.vmlinux]  [k] do_notify_resume
+            |          
+            |--1.90%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          work_pending
+            |          do_notify_resume
+            |          
+             --1.90%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       work_pending
+                       do_notify_resume
+
+     3.80%  cyclictest  cyclictest        [.] timerthread
+            |
+            ---thread_start
+               start_thread
+               timerthread
+
+     3.79%  cyclictest  [kernel.vmlinux]  [k] preempt_count_sub
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               |          
+               |--1.89%--hrtimer_start_range_ns
+               |          _raw_spin_unlock_irqrestore
+               |          preempt_count_sub
+               |          
+               |--0.95%--schedule
+               |          preempt_count_sub
+               |          
+                --0.95%--preempt_count_sub
+
+     2.84%  cyclictest  [vdso]            [.] 0x000000000000032c
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_gettime
+               0x7fbac3632c
+
+     1.90%  cyclictest  [kernel.vmlinux]  [k] _copy_from_user
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               _copy_from_user
+
+     1.90%  cyclictest  [kernel.vmlinux]  [k] common_nsleep
+            |          
+            |--0.95%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_clock_nanosleep
+            |          common_nsleep
+            |          
+             --0.95%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       __arm64_sys_clock_nanosleep
+                       common_nsleep
+
+     1.90%  cyclictest  [kernel.vmlinux]  [k] hrtimer_nanosleep
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               |          
+               |--0.95%--common_nsleep
+               |          hrtimer_nanosleep
+               |          
+                --0.95%--hrtimer_nanosleep
+
+     1.88%  cyclictest  [kernel.vmlinux]  [k] get_timespec64
+            |          
+            |--0.94%--thread_start
+            |          start_thread
+            |          timerthread
+            |          __clock_nanosleep
+            |          el0_svc
+            |          el0_svc_handler
+            |          el0_svc_common.constprop.0
+            |          __arm64_sys_clock_nanosleep
+            |          get_timespec64
+            |          
+             --0.94%--_start
+                       __libc_start_main
+                       main
+                       usleep
+                       __nanosleep
+                       __clock_nanosleep
+                       el0_svc
+                       el0_svc_handler
+                       el0_svc_common.constprop.0
+                       __arm64_sys_clock_nanosleep
+                       get_timespec64
+
+     1.88%  cyclictest  [kernel.vmlinux]  [k] schedule
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+
+     1.00%  cyclictest  [kernel.vmlinux]  [k] tty_mode_ioctl
+            |
+            ---_start
+               __libc_start_main
+               main
+               printf
+               __vfprintf_internal
+               _IO_new_file_xsputn
+               _IO_new_file_overflow
+               _IO_doallocbuf
+               _IO_file_doallocate
+               __isatty
+               __tcgetattr
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_ioctl
+               ksys_ioctl
+               do_vfs_ioctl
+               tty_ioctl
+               n_tty_ioctl
+               n_tty_ioctl_helper
+               tty_mode_ioctl
+
+     0.99%  cyclictest  [kernel.vmlinux]  [k] clear_page
+            |
+            ---start_thread
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               clear_page
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] __hrtimer_init
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               __hrtimer_init
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] _raw_spin_lock_irqsave
+            |
+            ---_start
+               __libc_start_main
+               main
+               usleep
+               __nanosleep
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_start_range_ns
+               _raw_spin_lock_irqsave
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] fpsimd_load_state
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               work_pending
+               do_notify_resume
+               fpsimd_restore_current_state
+               fpsimd_load_state
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] hrtimer_active
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_try_to_cancel
+               hrtimer_active
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] hrtimer_try_to_cancel
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_try_to_cancel
+
+     0.95%  cyclictest  [kernel.vmlinux]  [k] trace_preempt_on
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               trace_preempt_on
+
+     0.95%  cyclictest  cyclictest        [.] __clock_gettime
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_gettime
+
+     0.95%  cyclictest  cyclictest        [.] print_stat
+            |
+            ---_start
+               __libc_start_main
+               print_stat
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] __arch_copy_from_user
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               get_timespec64
+               __arch_copy_from_user
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] __fdget_pos
+            |
+            ---_start
+               __libc_start_main
+               main
+               fputc
+               _IO_new_file_overflow
+               _IO_new_do_write
+               new_do_write
+               _IO_new_file_write
+               __libc_write
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_write
+               ksys_write
+               __fdget_pos
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] __put_cpu_fpsimd_context
+            |
+            ---_start
+               __libc_start_main
+               main
+               usleep
+               __nanosleep
+               __clock_nanosleep
+               work_pending
+               do_notify_resume
+               fpsimd_restore_current_state
+               __put_cpu_fpsimd_context
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] unwind_frame
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_start_range_ns
+               _raw_spin_unlock_irqrestore
+               preempt_count_sub
+               return_address
+               walk_stackframe
+               unwind_frame
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] 0x000000000002172c
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               hrtimer_start_range_ns
+               _raw_spin_unlock_irqrestore
+               preempt_count_sub
+               return_address
+               walk_stackframe
+               0xffffffc01009172c
+
+     0.94%  cyclictest  [kernel.vmlinux]  [k] 0x00000000000b3b30
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               el0_svc
+               el0_svc_handler
+               el0_svc_common.constprop.0
+               __arm64_sys_clock_nanosleep
+               common_nsleep
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __schedule
+               0xffffffc010123b30
+
+     0.94%  cyclictest  cyclictest        [.] __aarch64_cas4_acq
+            |
+            ---thread_start
+               start_thread
+               timerthread
+               __clock_nanosleep
+               __aarch64_cas4_acq
+
+     0.94%  cyclictest  cyclictest        [.] main
+            |
+            ---_start
+               __libc_start_main
+               main
+
+     0.93%  cyclictest  cyclictest        [.] __pthread_mutex_unlock_usercnt
+            |
+            ---_start
+               __libc_start_main
+               __libc_init_first
+               __pthread_mutex_unlock_usercnt
+
+     0.57%  cyclictest  [kernel.vmlinux]  [k] get_page_from_freelist
+            |
+            ---_start
+               __libc_start_main
+               el0_da
+               do_mem_abort
+               do_translation_fault
+               do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __alloc_pages_nodemask
+               get_page_from_freelist
+
+     0.13%  cyclictest  [kernel.vmlinux]  [k] perf_event_mmap
+     0.02%  perf_5.4    [kernel.vmlinux]  [k] perf_iterate_sb
+     0.00%  perf_5.4    [kernel.vmlinux]  [k] perf_event_exec
+
+
+#
+# (Tip: Compare performance results with: perf diff [<old file> <new file>])
+#
